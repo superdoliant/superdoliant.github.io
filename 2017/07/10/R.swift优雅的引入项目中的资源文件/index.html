@@ -74,6 +74,8 @@
 
 
 
+  <link rel="alternate" href="/atom.xml" title="Doliant's Meditation World" type="application/atom+xml" />
+
 
 
 
@@ -87,7 +89,7 @@
 <meta property="og:site_name" content="Doliant&#39;s Meditation World">
 <meta property="og:description" content="R.swift是一个高效引入iOS资源的框架,避免了使用字符串引入资源文件导致程序崩溃的尴尬。目前R.swift支持到Swift3.0版本  优势使用代码的方式来引入资源:  类型完整: 减少推断和转换方法返回值的类型 编译时检查: 不会再因为不正确的字符串导致App产生运行时崩溃 自动补全: 不再需要输入图片名称  示例： 12345之前: let image = UIImage(named:">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-20T10:08:22.668Z">
+<meta property="og:updated_time" content="2018-03-30T08:43:43.836Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="R.swift优雅的引入项目中的资源文件">
 <meta name="twitter:description" content="R.swift是一个高效引入iOS资源的框架,避免了使用字符串引入资源文件导致程序崩溃的尴尬。目前R.swift支持到Swift3.0版本  优势使用代码的方式来引入资源:  类型完整: 减少推断和转换方法返回值的类型 编译时检查: 不会再因为不正确的字符串导致App产生运行时崩溃 自动补全: 不再需要输入图片名称  示例： 12345之前: let image = UIImage(named:">
@@ -191,6 +193,26 @@
         </li>
       
         
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
@@ -273,6 +295,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/mobile-developement/" itemprop="url" rel="index">
+                    <span itemprop="name">mobile developement</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -353,7 +397,9 @@
 <p><strong>R.swift</strong>:</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">performSegue(withIdentifier: <span class="type">R</span>.segue.overviewController.openSettings, sender: <span class="keyword">self</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">prepare</span><span class="params">(<span class="keyword">for</span> segue: UIStoryboardSegue, sender: Any?)</span></span> &#123;</span><br><span class="line">  <span class="keyword">if</span> <span class="keyword">let</span> typedInfo = <span class="type">R</span>.segue.overviewController.openSettings(segue: segue) &#123;</span><br><span class="line">    typedInfo.segue.animationType = .<span class="type">LockAnimation</span></span><br><span class="line">    typedInfo.destinationViewController.lockSettings = <span class="literal">true</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 <h3 id="6、Nibs"><a href="#6、Nibs" class="headerlink" title="6、Nibs"></a>6、Nibs</h3><p><strong>之前</strong>:</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> nameOfNib = <span class="string">"CustomView"</span></span><br><span class="line"><span class="keyword">let</span> customViewNib = <span class="type">UINib</span>(nibName: <span class="string">"CustomView"</span>, bundle: <span class="literal">nil</span>)</span><br><span class="line"><span class="keyword">let</span> rootViews = customViewNib.instantiate(withOwner: <span class="literal">nil</span>, options: <span class="literal">nil</span>)</span><br><span class="line"><span class="keyword">let</span> customView = rootViews[<span class="number">0</span>] <span class="keyword">as</span>? <span class="type">CustomView</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> viewControllerWithNib = <span class="type">CustomViewController</span>(nibName: <span class="string">"CustomView"</span>, bundle: <span class="literal">nil</span>)</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">**<span class="type">R</span>.swift**:</span><br><span class="line"></span><br><span class="line">```swift</span><br><span class="line"><span class="keyword">let</span> nameOfNib = <span class="type">R</span>.nib.customView.name</span><br><span class="line"><span class="keyword">let</span> customViewNib = <span class="type">R</span>.nib.customView()</span><br><span class="line"><span class="keyword">let</span> rootViews = <span class="type">R</span>.nib.customView.instantiate(withOwner: <span class="literal">nil</span>)</span><br><span class="line"><span class="keyword">let</span> customView = <span class="type">R</span>.nib.customView.firstView(owner: <span class="literal">nil</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> viewControllerWithNib = <span class="type">CustomViewController</span>(nib: <span class="type">R</span>.nib.customView)</span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> nameOfNib = <span class="string">"CustomView"</span></span><br><span class="line"><span class="keyword">let</span> customViewNib = <span class="type">UINib</span>(nibName: <span class="string">"CustomView"</span>, bundle: <span class="literal">nil</span>)</span><br><span class="line"><span class="keyword">let</span> rootViews = customViewNib.instantiate(withOwner: <span class="literal">nil</span>, options: <span class="literal">nil</span>)</span><br><span class="line"><span class="keyword">let</span> customView = rootViews[<span class="number">0</span>] <span class="keyword">as</span>? <span class="type">CustomView</span></span><br><span class="line"><span class="keyword">let</span> viewControllerWithNib = <span class="type">CustomViewController</span>(nibName: <span class="string">"CustomView"</span>, bundle: <span class="literal">nil</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>R.swift</strong>:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> nameOfNib = <span class="type">R</span>.nib.customView.name</span><br><span class="line"><span class="keyword">let</span> customViewNib = <span class="type">R</span>.nib.customView()</span><br><span class="line"><span class="keyword">let</span> rootViews = <span class="type">R</span>.nib.customView.instantiate(withOwner: <span class="literal">nil</span>)</span><br><span class="line"><span class="keyword">let</span> customView = <span class="type">R</span>.nib.customView.firstView(owner: <span class="literal">nil</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> viewControllerWithNib = <span class="type">CustomViewController</span>(nib: <span class="type">R</span>.nib.customView)</span><br></pre></td></tr></table></figure>
 <h3 id="7、Reusable-table-view-cells"><a href="#7、Reusable-table-view-cells" class="headerlink" title="7、Reusable table view cells"></a>7、Reusable table view cells</h3><h4 id="UITableView"><a href="#UITableView" class="headerlink" title="UITableView"></a>UITableView</h4><p><strong>之前:</strong></p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FaqAnswerController</span>: <span class="title">UITableViewController</span> </span>&#123;</span><br><span class="line">  <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">viewDidLoad</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">super</span>.viewDidLoad()</span><br><span class="line">    <span class="keyword">let</span> textCellNib = <span class="type">UINib</span>(nibName: <span class="string">"TextCell"</span>, bundle: <span class="literal">nil</span>)</span><br><span class="line">    tableView.register(textCellNib, forCellReuseIdentifier: <span class="string">"TextCellIdentifier"</span>)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">tableView</span><span class="params">(<span class="number">_</span> tableView: UITableView, cellForRowAt indexPath: IndexPath)</span></span> -&gt; <span class="type">UITableViewCell</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> textCell = tableView.dequeueReusableCell(withIdentifier: <span class="string">"TextCellIdentifier"</span>, <span class="keyword">for</span>: indexPath) <span class="keyword">as</span>! <span class="type">TextCell</span></span><br><span class="line">    textCell.mainLabel.text = <span class="string">"Hello World"</span></span><br><span class="line">    <span class="keyword">return</span> textCell</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">**<span class="type">R</span>.swift**:</span><br><span class="line"></span><br><span class="line">```swift</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FaqAnswerController</span>: <span class="title">UITableViewController</span> </span>&#123;</span><br><span class="line">  <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">viewDidLoad</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">super</span>.viewDidLoad()</span><br><span class="line">    tableView.register(<span class="type">R</span>.nib.textCell)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">tableView</span><span class="params">(<span class="number">_</span> tableView: UITableView, cellForRowAt indexPath: IndexPath)</span></span> -&gt; <span class="type">UITableViewCell</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> textCell = tableView.dequeueReusableCell(withIdentifier: <span class="type">R</span>.nib.textCell.identifier, <span class="keyword">for</span>: indexPath)!</span><br><span class="line">    textCell.mainLabel.text = <span class="string">"Hello World"</span></span><br><span class="line">    <span class="keyword">return</span> textCell</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="UICollectionView"><a href="#UICollectionView" class="headerlink" title="UICollectionView"></a>UICollectionView</h4><p><strong>之前</strong>:</p>
@@ -378,7 +424,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/iOS/" rel="tag"># iOS</a>
+            <a href="/tags/iOS/" rel="tag"><i class="fa fa-tag"></i> iOS</a>
           
         </div>
       
@@ -474,7 +520,7 @@
                 alt="Doliant" />
             
               <p class="site-author-name" itemprop="name">Doliant</p>
-              <p class="site-description motion-element" itemprop="description">光阴荏苒，唯以此记录生命之点滴</p>
+              <p class="site-description motion-element" itemprop="description">点滴之始，汇于江海</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -491,20 +537,36 @@
             
 
             
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
 
             
               
               
               <div class="site-state-item site-state-tags">
-                
+                <a href="/tags/index.html">
                   <span class="site-state-item-count">1</span>
                   <span class="site-state-item-name">标签</span>
-                
+                </a>
               </div>
             
 
           </nav>
 
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
           
 
           
@@ -514,6 +576,18 @@
                     <a href="https://github.com/Hstripe" target="_blank" title="GitHub">
                       
                         <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="1245788161@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-globe"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/Doliant_DoDo" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
                   </span>
                 
             </div>
@@ -560,7 +634,8 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -570,6 +645,12 @@
 </div>
 
 
+  <div class="powered-by">
+  <i class="fa fa-user-md"></i><span
+  id="busuanzi_container_site_uv">
+    访客数:<span id="busuanzi_value_site_uv"></span>
+  </span>
+  </div>
   <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
