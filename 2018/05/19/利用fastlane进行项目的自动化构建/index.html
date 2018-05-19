@@ -81,20 +81,20 @@
 
 
 
-<meta name="description" content="在一个iOS项目进行到了测试和开发阶段，一般都会经历一次又一次的打包-截图-上传及metadata填写的修改过程。这点做服务器开发的同学就要比我们幸福太多了，因为这一部分的工作他们可以交付给运维同学来完成。那我们就只能自己手动去做这些重复且耗时的操作了么？答案并不是，fastlane就给我们提供了一整套工具来帮助我们实现自动化。">
+<meta name="description" content="在一个iOS项目进行到了测试和发布阶段，一般都会经历一次又一次的打包-截图-上传及metadata填写的修改过程。这点做服务器开发的同学就要比我们幸福太多了，因为这一部分的工作他们可以交付给运维同学来完成。那我们就只能自己手动去做这些重复且耗时的操作了么？答案并不是，fastlane就给我们提供了一整套工具来帮助我们实现自动化。">
 <meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="利用fastlane进行项目的自动化构建">
 <meta property="og:url" content="http://yoursite.com/2018/05/19/利用fastlane进行项目的自动化构建/index.html">
 <meta property="og:site_name" content="Doliant&#39;s Meditation World">
-<meta property="og:description" content="在一个iOS项目进行到了测试和开发阶段，一般都会经历一次又一次的打包-截图-上传及metadata填写的修改过程。这点做服务器开发的同学就要比我们幸福太多了，因为这一部分的工作他们可以交付给运维同学来完成。那我们就只能自己手动去做这些重复且耗时的操作了么？答案并不是，fastlane就给我们提供了一整套工具来帮助我们实现自动化。">
+<meta property="og:description" content="在一个iOS项目进行到了测试和发布阶段，一般都会经历一次又一次的打包-截图-上传及metadata填写的修改过程。这点做服务器开发的同学就要比我们幸福太多了，因为这一部分的工作他们可以交付给运维同学来完成。那我们就只能自己手动去做这些重复且耗时的操作了么？答案并不是，fastlane就给我们提供了一整套工具来帮助我们实现自动化。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://p8surce23.bkt.clouddn.com/15267238868015.jpg">
 <meta property="og:image" content="http://p8surce23.bkt.clouddn.com/15267377580117.jpg">
-<meta property="og:updated_time" content="2018-05-19T14:58:03.408Z">
+<meta property="og:updated_time" content="2018-05-19T15:03:12.241Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="利用fastlane进行项目的自动化构建">
-<meta name="twitter:description" content="在一个iOS项目进行到了测试和开发阶段，一般都会经历一次又一次的打包-截图-上传及metadata填写的修改过程。这点做服务器开发的同学就要比我们幸福太多了，因为这一部分的工作他们可以交付给运维同学来完成。那我们就只能自己手动去做这些重复且耗时的操作了么？答案并不是，fastlane就给我们提供了一整套工具来帮助我们实现自动化。">
+<meta name="twitter:description" content="在一个iOS项目进行到了测试和发布阶段，一般都会经历一次又一次的打包-截图-上传及metadata填写的修改过程。这点做服务器开发的同学就要比我们幸福太多了，因为这一部分的工作他们可以交付给运维同学来完成。那我们就只能自己手动去做这些重复且耗时的操作了么？答案并不是，fastlane就给我们提供了一整套工具来帮助我们实现自动化。">
 <meta name="twitter:image" content="http://p8surce23.bkt.clouddn.com/15267238868015.jpg">
 
 
@@ -349,7 +349,7 @@
       
         <p><img src="http://p8surce23.bkt.clouddn.com/15267238868015.jpg" alt="fastlane"></p>
 <blockquote>
-<p>在一个iOS项目进行到了测试和开发阶段，一般都会经历一次又一次的打包-截图-上传及metadata填写的修改过程。这点做服务器开发的同学就要比我们幸福太多了，因为这一部分的工作他们可以交付给运维同学来完成。那我们就只能自己手动去做这些重复且耗时的操作了么？答案并不是，fastlane就给我们提供了一整套工具来帮助我们实现自动化。</p>
+<p>在一个iOS项目进行到了测试和发布阶段，一般都会经历一次又一次的打包-截图-上传及metadata填写的修改过程。这点做服务器开发的同学就要比我们幸福太多了，因为这一部分的工作他们可以交付给运维同学来完成。那我们就只能自己手动去做这些重复且耗时的操作了么？答案并不是，fastlane就给我们提供了一整套工具来帮助我们实现自动化。</p>
 </blockquote>
  <a id="more"></a>
 <h1 id="一、Fastlane简介及配置安装"><a href="#一、Fastlane简介及配置安装" class="headerlink" title="一、Fastlane简介及配置安装"></a>一、Fastlane简介及配置安装</h1><h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1.简介"></a>1.简介</h2><p><code>fastlane</code>是一套基于<code>ruby</code>开发的自动化构建工具，为项目的发布流程提供一整套解决方案。</p>
