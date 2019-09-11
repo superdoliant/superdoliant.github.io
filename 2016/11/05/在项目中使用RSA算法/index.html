@@ -6,10 +6,10 @@
 
 
 <html class="theme-next muse use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
 
@@ -20,8 +20,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -40,7 +40,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -48,9 +48,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -68,13 +68,13 @@
 
 
 
-  <meta name="keywords" content="iOS," />
+  <meta name="keywords" content="iOS,">
 
 
 
 
 
-  <link rel="alternate" href="/atom.xml" title="Doliant's Meditation World" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="Doliant's Meditation World" type="application/atom+xml">
 
 
 
@@ -89,12 +89,12 @@
 <meta property="og:site_name" content="Doliant&#39;s Meditation World">
 <meta property="og:description" content="在正文开始之前先吐个槽，看自己上一篇发文已经是好几个月之前的了。之前的设想是每周输出一篇技术方面的文档，接着就被硬生生拖成了一个月，然后就不知道几个月去了……其间还是有有不少可以写的题材，都是因为这该死的拖延~~~好了进入正题。  1.前言契机是公司换了一套新接口，要求进行全报文加密。以前公司项目基本上都使用的对称加密的模式3DES、AES，由于对称加密的密钥只有一对，有很大的密钥泄露风险。身">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2005687-f82f309807d319a4.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-05-19T09:14:47.360Z">
+<meta property="og:image" content="https://mytest1oss.oss-cn-beijing.aliyuncs.com/rsa/rsa.jpeg?Expires=1568173914&OSSAccessKeyId=TMP.hWnnuiEdPEnEDTFYGRbuDMUVaStTXNp9Ryq6rYamyvRTb4eaxh1vwodGTrhgLGVQBmF9SNcYUEJ1W943WcL4SnxyCutvia2s88EbhX1YrWdqn7NYS9bQyA71pyEwSV.tmp&Signature=IyeH98rtaH1vfre7adbRlawvrE8%3D">
+<meta property="og:updated_time" content="2019-09-11T02:53:09.464Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在项目中使用RSA算法">
 <meta name="twitter:description" content="在正文开始之前先吐个槽，看自己上一篇发文已经是好几个月之前的了。之前的设想是每周输出一篇技术方面的文档，接着就被硬生生拖成了一个月，然后就不知道几个月去了……其间还是有有不少可以写的题材，都是因为这该死的拖延~~~好了进入正题。  1.前言契机是公司换了一套新接口，要求进行全报文加密。以前公司项目基本上都使用的对称加密的模式3DES、AES，由于对称加密的密钥只有一对，有很大的密钥泄露风险。身">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/2005687-f82f309807d319a4.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:image" content="https://mytest1oss.oss-cn-beijing.aliyuncs.com/rsa/rsa.jpeg?Expires=1568173914&OSSAccessKeyId=TMP.hWnnuiEdPEnEDTFYGRbuDMUVaStTXNp9Ryq6rYamyvRTb4eaxh1vwodGTrhgLGVQBmF9SNcYUEJ1W943WcL4SnxyCutvia2s88EbhX1YrWdqn7NYS9bQyA71pyEwSV.tmp&Signature=IyeH98rtaH1vfre7adbRlawvrE8%3D">
 
 
 
@@ -124,7 +124,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/11/05/在项目中使用RSA算法/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/11/05/在项目中使用RSA算法/">
 
 
 
@@ -158,7 +158,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Doliant's Meditation World</span>
         <span class="logo-line-after"><i></i></span>
@@ -188,7 +188,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -198,7 +198,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
           </a>
@@ -208,7 +208,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -218,7 +218,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -261,7 +261,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Doliant">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/17605923.jpeg">
     </span>
 
@@ -297,7 +297,7 @@
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -346,7 +346,7 @@
       
 
       
-        <p><img src="http://upload-images.jianshu.io/upload_images/2005687-f82f309807d319a4.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="封面图"></p>
+        <p><img src="https://mytest1oss.oss-cn-beijing.aliyuncs.com/rsa/rsa.jpeg?Expires=1568173914&amp;OSSAccessKeyId=TMP.hWnnuiEdPEnEDTFYGRbuDMUVaStTXNp9Ryq6rYamyvRTb4eaxh1vwodGTrhgLGVQBmF9SNcYUEJ1W943WcL4SnxyCutvia2s88EbhX1YrWdqn7NYS9bQyA71pyEwSV.tmp&amp;Signature=IyeH98rtaH1vfre7adbRlawvrE8%3D" alt="封面图"></p>
 <blockquote>
 <p>在正文开始之前先吐个槽，看自己上一篇发文已经是好几个月之前的了。之前的设想是每周输出一篇技术方面的文档，接着就被硬生生拖成了一个月，然后就不知道几个月去了……其间还是有有不少可以写的题材，都是因为这该死的拖延~~~好了进入正题。</p>
 </blockquote>
@@ -366,7 +366,7 @@
 <h3 id="3-转换公钥为PKCS8格式，这种格式可以直接在iOS项目中使用"><a href="#3-转换公钥为PKCS8格式，这种格式可以直接在iOS项目中使用" class="headerlink" title="3).转换公钥为PKCS8格式，这种格式可以直接在iOS项目中使用:"></a>3).转换公钥为<code>PKCS8</code>格式，这种格式可以直接在iOS项目中使用:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl pkcs8 -topk8 -in rsa_private_key.pem -out pkcs8_rsa_private_key.pem -nocrypt</span><br></pre></td></tr></table></figure>
 <p>我司的情况是由公司后台生成私钥和公钥，提供<code>.pem</code>格式的公钥给移动端，因此我直接使用的是pkcs8格式的公钥。</p>
 <p><strong>注意</strong>：不建议将私钥保存在客户端，私钥泄露后果会很严重！</p>
-<h2 id="2、在项目中使用"><a href="#2、在项目中使用" class="headerlink" title="2、在项目中使用:"></a>2、在项目中使用:</h2><p>Demo地址:<a href="">https://github.com/Hstripe/RHRSAUtil</a></p>
+<h2 id="2、在项目中使用"><a href="#2、在项目中使用" class="headerlink" title="2、在项目中使用:"></a>2、在项目中使用:</h2><p>Demo地址:<a href>https://github.com/Hstripe/RHRSAUtil</a></p>
 <p>以上是我使用的<code>RSA</code>工具类，支持<code>RSA</code>在移动端的各种日常用法：加密、解密、加签、验签。跟网上很多工具类不同的是不需要导入<code>p12</code>、<code>der</code>格式的密钥文件，支持字符串形式的密钥文件非常方便。而且使用的是<code>Apple</code>自家的<code>Security.framework</code>。网上很多例程都是使用的<code>openSSL</code>那一套加密工具类，实现也很方便就是包体积略微有点大。</p>
 <p>若使用<code>IDE</code>是<code>Xcode8</code>及以上,请在<code>Capabilities</code>中将<code>KeyChain sharing</code>设置为<code>YES</code></p>
 <h3 id="1-公钥加密"><a href="#1-公钥加密" class="headerlink" title="1.)公钥加密"></a>1.)公钥加密</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSString</span> *string = <span class="string">@"doRSAEncrypt"</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">NSString</span> *publickey = <span class="string">@"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA61sODmFj/OXnrHUYzams\</span></span><br><span class="line"><span class="string"> c/6XLni9G0HYv9sBewaPjF6qlu845nwmYSA6dQ9zPk231o5l3tmHLpUQGNnp/5rH\</span></span><br><span class="line"><span class="string"> +84iB/tM+Y+2kTI8uILGbmby2DL3rgzBG+I9h7e3w3QktpdcD8Z+ZuEVa/CY3Xez\</span></span><br><span class="line"><span class="string"> 8X1uknEVzIIhDKY7ipAoebchVdELbTlH1BRLz8RH6mQ+Z8REH4UL0TiQLfSfTotv\</span></span><br><span class="line"><span class="string"> 1G5ZerNxVZ7Toi4K9KFDA+1UD+LeDGg8PY/sdg0AJpR4o6bfDBko50wKLDz4UYyp\</span></span><br><span class="line"><span class="string"> 7EFZv661o2Mr7+KoQ6Tpb7w8bTl7wrRKz9ugB5+tM2F7aDvv1mzr7STIF+2c7tEx\</span></span><br><span class="line"><span class="string"> DQIDAQAB"</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">NSString</span> *encryptString = [IPNRSAUtil encryptString:string publicKey:publickey];</span><br></pre></td></tr></table></figure>
@@ -487,9 +487,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image"
-                src="/images/17605923.jpeg"
-                alt="Doliant" />
+              <img class="site-author-image" itemprop="image" src="/images/17605923.jpeg" alt="Doliant">
             
               <p class="site-author-name" itemprop="name">Doliant</p>
               <p class="site-description motion-element" itemprop="description">More Than a Coder  Email:1245788161@qq.com</p>
@@ -612,8 +610,7 @@
 
 
   <div class="powered-by">
-  <i class="fa fa-user-md"></i><span
-  id="busuanzi_container_site_uv">
+  <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
     访客数:<span id="busuanzi_value_site_uv"></span>
   </span>
   </div>
