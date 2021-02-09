@@ -947,7 +947,7 @@
           <blockquote>
 <p>之前项目的老代码有一部分是用RN写的,在迭代一个需求的时候出现了bug,因此必须与RN刚正面了。以前完全没有接触过RN、JS的实际开发,走了很多弯路算上看文档的时间差不多三天左右找出bug,4天的时间完成bug的修正(虽然还不是很完美)</p>
 </blockquote>
-<h2 id="1-Could-not-connected-to-development-server"><a href="#1-Could-not-connected-to-development-server" class="headerlink" title="1.Could not connected to development server."></a>1.Could not connected to development server.</h2><p><img src="https://mytest1oss.oss-cn-beijing.aliyuncs.com/RN_New/q1.png?Expires=1568173588&amp;OSSAccessKeyId=TMP.hWnnuiEdPEnEDTFYGRbuDMUVaStTXNp9Ryq6rYamyvRTb4eaxh1vwodGTrhgLGVQBmF9SNcYUEJ1W943WcL4SnxyCutvia2s88EbhX1YrWdqn7NYS9bQyA71pyEwSV.tmp&amp;Signature=GeZlqeu3%2FRNDxEglTq2tnTdqHEc%3D" alt="5E09428F-524A-4A89-99CB-0AFD43C76D78.png"></p>
+<h2 id="1-Could-not-connected-to-development-server"><a href="#1-Could-not-connected-to-development-server" class="headerlink" title="1.Could not connected to development server."></a>1.Could not connected to development server.</h2><p><img src="https://mytest1oss.oss-cn-beijing.aliyuncs.com/RN_New/q1.png" alt="5E09428F-524A-4A89-99CB-0AFD43C76D78.png"></p>
 <p><strong>问题分析</strong>:<br>这是一个纯新手才会犯的错误,问题的原因在于没有将本地的<code>node sever</code>启动。</p>
 <p><strong>解决方案</strong>:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm start</span><br><span class="line">或者 </span><br><span class="line">yarn start</span><br></pre></td></tr></table></figure>
@@ -1401,7 +1401,7 @@
 
       
         
-          <p><img src="https://mytest1oss.oss-cn-beijing.aliyuncs.com/rsa/rsa.jpeg?Expires=1568173914&amp;OSSAccessKeyId=TMP.hWnnuiEdPEnEDTFYGRbuDMUVaStTXNp9Ryq6rYamyvRTb4eaxh1vwodGTrhgLGVQBmF9SNcYUEJ1W943WcL4SnxyCutvia2s88EbhX1YrWdqn7NYS9bQyA71pyEwSV.tmp&amp;Signature=IyeH98rtaH1vfre7adbRlawvrE8%3D" alt="封面图"></p>
+          <p><img src="https://mytest1oss.oss-cn-beijing.aliyuncs.com/rsa/rsa.jpeg" alt="封面图"></p>
 <blockquote>
 <p>在正文开始之前先吐个槽，看自己上一篇发文已经是好几个月之前的了。之前的设想是每周输出一篇技术方面的文档，接着就被硬生生拖成了一个月，然后就不知道几个月去了……其间还是有有不少可以写的题材，都是因为这该死的拖延~~~好了进入正题。</p>
 </blockquote>
@@ -1556,7 +1556,7 @@
 
       
         
-          <p><img src="https://mytest1oss.oss-cn-beijing.aliyuncs.com/static_lib/s1.png?Expires=1568175259&amp;OSSAccessKeyId=TMP.hWnnuiEdPEnEDTFYGRbuDMUVaStTXNp9Ryq6rYamyvRTb4eaxh1vwodGTrhgLGVQBmF9SNcYUEJ1W943WcL4SnxyCutvia2s88EbhX1YrWdqn7NYS9bQyA71pyEwSV.tmp&amp;Signature=OiSl8baGWVphfkvU0py2zfaJvg0%3D" alt="毫无意义的封面图"></p>
+          <p><img src="https://mytest1oss.oss-cn-beijing.aliyuncs.com/static_lib/s1.png" alt="毫无意义的封面图"></p>
 <h1 id="一-概述"><a href="#一-概述" class="headerlink" title="一.概述"></a>一.概述</h1><p>日常开发中，静态库的开发总是要花费开发者很大的精力。工作中我们一般都是在项目中进行代码编写，在需要的时候把代码提出来另行打包，若有需求修改或者调试时，总需要把代码或者库拿回原程序中进行测试修改。<br>由于工作需要我要经常修改静态库代码中的内容，恰好最近在静态库联调的时候出现了一些问题，记录下来以后避免踩到这些坑。<br>
           <!--noindex-->
           <div class="post-button text-center">
@@ -1710,9 +1710,7 @@
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gem install -n /usr/local/bin cocoapods</span><br></pre></td></tr></table></figure>
 <p>版本更新结束之后我们开始注册trunk:</p>
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod trunk register &lt;邮箱&gt;  &lt;<span class="string">'用户名'</span>&gt; --description=<span class="string">'macbook pro'</span></span><br></pre></td></tr></table></figure>
-<p>其中邮箱是最重要的，因为注册之后pod会往你的邮箱发一封激活邮件，所以邮箱名就当相当于你的trunkID了。至于用户名个人感觉写不写都不太有所谓，–description参数是cocoapods推荐添加的，若以后你在别的设备上登录了trunk方便判断终端信息，也是一个可有可无的参数。点击邮箱中的注册链接，使用下列命令就可以向trunk服务器查询到自己的注册信息。</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod trunk me</span><br></pre></td></tr></table></figure>
-<p>输出下列信息即表示注册成功：<br><img src="https://mytest1oss.oss-cn-beijing.aliyuncs.com/pods/pod%E6%B3%A8%E5%86%8C%E4%BF%A1%E6%81%AF.jpeg?Expires=1568173037&amp;OSSAccessKeyId=TMP.hWnnuiEdPEnEDTFYGRbuDMUVaStTXNp9Ryq6rYamyvRTb4eaxh1vwodGTrhgLGVQBmF9SNcYUEJ1W943WcL4SnxyCutvia2s88EbhX1YrWdqn7NYS9bQyA71pyEwSV.tmp&amp;Signature=ZMEFDXZINEf8HgcYI4PVRehOvEM%3D" alt="注册信息"></p>
+<p>其中邮箱是最重要的，因为注册之后pod会往你的邮箱发一封激活邮件，所以邮箱名就当相当于你的trunkID了。至于用户名个人感觉写不写都不太有所谓，–description参数是cocoapods推荐添加的，若以后你在别的设备上登录了trunk方便判断终端信息，也是一个可有可无的参数。点击邮箱中的注册链接，使用下列命令就可以向trunk服务器查询到自己的注册信息。<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2016/07/06/将代码发布到CocoaPods(trunk方式)/#more" rel="contents">
@@ -1722,7 +1720,7 @@
           <!--/noindex-->
         
       
-    </div>
+    </p></div>
     
     
     
@@ -1884,7 +1882,7 @@
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

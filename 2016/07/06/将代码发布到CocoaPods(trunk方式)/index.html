@@ -89,13 +89,13 @@
 <meta property="og:site_name" content="Doliant&#39;s Meditation World">
 <meta property="og:description" content="一、概述Cocoapods是当前iOS开发最流行的版本依赖工具，开发者使用Cocoapods进行项目的依赖管理会为开发节省不少时间。相信大家都尝试过通过Cocoapods管理自己的项目，但如何将自己开发的代码发布到Cocoapods上让别人也可以搜索使用呢？下面就将介绍trunk方式接入的方法，以及在过程中可能遇到的坑。 二、注册接入的第一步就是要注册trunk，在注册trunk之前需要确认当前的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://mytest1oss.oss-cn-beijing.aliyuncs.com/pods/pod%E6%B3%A8%E5%86%8C%E4%BF%A1%E6%81%AF.jpeg?Expires=1568173037&OSSAccessKeyId=TMP.hWnnuiEdPEnEDTFYGRbuDMUVaStTXNp9Ryq6rYamyvRTb4eaxh1vwodGTrhgLGVQBmF9SNcYUEJ1W943WcL4SnxyCutvia2s88EbhX1YrWdqn7NYS9bQyA71pyEwSV.tmp&Signature=ZMEFDXZINEf8HgcYI4PVRehOvEM%3D">
-<meta property="og:image" content="https://mytest1oss.oss-cn-beijing.aliyuncs.com/pods/pod%E6%B3%A8%E5%86%8C%E6%88%90%E5%8A%9F.png?Expires=1568173069&OSSAccessKeyId=TMP.hWnnuiEdPEnEDTFYGRbuDMUVaStTXNp9Ryq6rYamyvRTb4eaxh1vwodGTrhgLGVQBmF9SNcYUEJ1W943WcL4SnxyCutvia2s88EbhX1YrWdqn7NYS9bQyA71pyEwSV.tmp&Signature=J3mt%2FFjI0Y2rUI2Th3I%2Bb2fyE2o%3D">
-<meta property="og:updated_time" content="2019-09-11T03:04:02.967Z">
+<meta property="og:image" content="https://mytest1oss.oss-cn-beijing.aliyuncs.com/pods/pod%E6%B3%A8%E5%86%8C%E4%BF%A1%E6%81%AF.jpeg">
+<meta property="og:image" content="https://mytest1oss.oss-cn-beijing.aliyuncs.com/pods/pod%E6%B3%A8%E5%86%8C%E6%88%90%E5%8A%9F.png">
+<meta property="og:updated_time" content="2021-02-09T02:35:46.620Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="将代码发布到CocoaPods(trunk方式)">
 <meta name="twitter:description" content="一、概述Cocoapods是当前iOS开发最流行的版本依赖工具，开发者使用Cocoapods进行项目的依赖管理会为开发节省不少时间。相信大家都尝试过通过Cocoapods管理自己的项目，但如何将自己开发的代码发布到Cocoapods上让别人也可以搜索使用呢？下面就将介绍trunk方式接入的方法，以及在过程中可能遇到的坑。 二、注册接入的第一步就是要注册trunk，在注册trunk之前需要确认当前的">
-<meta name="twitter:image" content="https://mytest1oss.oss-cn-beijing.aliyuncs.com/pods/pod%E6%B3%A8%E5%86%8C%E4%BF%A1%E6%81%AF.jpeg?Expires=1568173037&OSSAccessKeyId=TMP.hWnnuiEdPEnEDTFYGRbuDMUVaStTXNp9Ryq6rYamyvRTb4eaxh1vwodGTrhgLGVQBmF9SNcYUEJ1W943WcL4SnxyCutvia2s88EbhX1YrWdqn7NYS9bQyA71pyEwSV.tmp&Signature=ZMEFDXZINEf8HgcYI4PVRehOvEM%3D">
+<meta name="twitter:image" content="https://mytest1oss.oss-cn-beijing.aliyuncs.com/pods/pod%E6%B3%A8%E5%86%8C%E4%BF%A1%E6%81%AF.jpeg">
 
 
 
@@ -354,10 +354,9 @@
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gem install -n /usr/local/bin cocoapods</span><br></pre></td></tr></table></figure>
 <p>版本更新结束之后我们开始注册trunk:</p>
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod trunk register &lt;邮箱&gt;  &lt;<span class="string">'用户名'</span>&gt; --description=<span class="string">'macbook pro'</span></span><br></pre></td></tr></table></figure>
-<p>其中邮箱是最重要的，因为注册之后pod会往你的邮箱发一封激活邮件，所以邮箱名就当相当于你的trunkID了。至于用户名个人感觉写不写都不太有所谓，–description参数是cocoapods推荐添加的，若以后你在别的设备上登录了trunk方便判断终端信息，也是一个可有可无的参数。点击邮箱中的注册链接，使用下列命令就可以向trunk服务器查询到自己的注册信息。</p>
+<p>其中邮箱是最重要的，因为注册之后pod会往你的邮箱发一封激活邮件，所以邮箱名就当相当于你的trunkID了。至于用户名个人感觉写不写都不太有所谓，–description参数是cocoapods推荐添加的，若以后你在别的设备上登录了trunk方便判断终端信息，也是一个可有可无的参数。点击邮箱中的注册链接，使用下列命令就可以向trunk服务器查询到自己的注册信息。<br><a id="more"></a></p>
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod trunk me</span><br></pre></td></tr></table></figure>
-<p>输出下列信息即表示注册成功：<br><img src="https://mytest1oss.oss-cn-beijing.aliyuncs.com/pods/pod%E6%B3%A8%E5%86%8C%E4%BF%A1%E6%81%AF.jpeg?Expires=1568173037&amp;OSSAccessKeyId=TMP.hWnnuiEdPEnEDTFYGRbuDMUVaStTXNp9Ryq6rYamyvRTb4eaxh1vwodGTrhgLGVQBmF9SNcYUEJ1W943WcL4SnxyCutvia2s88EbhX1YrWdqn7NYS9bQyA71pyEwSV.tmp&amp;Signature=ZMEFDXZINEf8HgcYI4PVRehOvEM%3D" alt="注册信息"></p>
-<a id="more"></a>
+<p>输出下列信息即表示注册成功：<br><img src="https://mytest1oss.oss-cn-beijing.aliyuncs.com/pods/pod%E6%B3%A8%E5%86%8C%E4%BF%A1%E6%81%AF.jpeg" alt="注册信息"></p>
 <h1 id="三、配置podspec"><a href="#三、配置podspec" class="headerlink" title="三、配置podspec"></a>三、配置podspec</h1><h2 id="3-1添加podspec文件"><a href="#3-1添加podspec文件" class="headerlink" title="3.1添加podspec文件"></a>3.1添加podspec文件</h2><p><code>podspec</code>文件就相当于你的项目简介，可以让<code>cocoapods</code>搜索引擎知道作者名、项目概述、版本号、源代码地址、依赖库等信息，因此<code>cocoapods</code>上的每个项目都会有一个<code>podspec</code>描述文件。<code>cocoapods</code>在<code>Github</code>上通过一个repo来管理所有支持<code>cocoapods</code>的代码<a href="https://github.com/CocoaPods/Specs" target="_blank" rel="noopener">https://github.com/CocoaPods/Specs</a>。<br>如何创建一个podspec文件呢？我们可以通过：</p>
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod spec create &lt;name&gt;</span><br></pre></td></tr></table></figure>
 <p>来创建一个podspec文件，但官方的spec文件写的非常冗余，看起来不够简明，如果是第一次写podspec官方的spec文件还是可以去看一下的，毕竟文档注释比较详细。最终还是建议参考github上各种开源库上的podspec文件来进行自身项目的podspec文件配置，在此分享出自己编辑的podspec文件来供大家学习交流。</p>
@@ -369,7 +368,7 @@
 <p>完成以上参数配置之后，接着进行下一步</p>
 <h2 id="3-2-本地检查"><a href="#3-2-本地检查" class="headerlink" title="3.2 本地检查"></a>3.2 本地检查</h2><p>完成<code>podspec</code>描述文件的参数配置之后，最好是先进行<code>podspec</code>文件的本地检查，命令如下：</p>
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod lib lint --verbose</span><br></pre></td></tr></table></figure>
-<p>verbose的作用是输出过程中的调试信息方便我们查错，若有错误的话根据<code>Build Failed</code>中的错误信息进行<code>podspec</code>内容的修改。<br>如果输入终端执行完之后，显示的是如下信息：<br><img src="https://mytest1oss.oss-cn-beijing.aliyuncs.com/pods/pod%E6%B3%A8%E5%86%8C%E6%88%90%E5%8A%9F.png?Expires=1568173069&amp;OSSAccessKeyId=TMP.hWnnuiEdPEnEDTFYGRbuDMUVaStTXNp9Ryq6rYamyvRTb4eaxh1vwodGTrhgLGVQBmF9SNcYUEJ1W943WcL4SnxyCutvia2s88EbhX1YrWdqn7NYS9bQyA71pyEwSV.tmp&amp;Signature=J3mt%2FFjI0Y2rUI2Th3I%2Bb2fyE2o%3D" alt="检查成功"><br>那么恭喜你，我们可以进行下一步了。</p>
+<p>verbose的作用是输出过程中的调试信息方便我们查错，若有错误的话根据<code>Build Failed</code>中的错误信息进行<code>podspec</code>内容的修改。<br>如果输入终端执行完之后，显示的是如下信息：<br><img src="https://mytest1oss.oss-cn-beijing.aliyuncs.com/pods/pod%E6%B3%A8%E5%86%8C%E6%88%90%E5%8A%9F.png" alt="检查成功"><br>那么恭喜你，我们可以进行下一步了。</p>
 <h2 id="3-3-通过Trunk-push-podspec文件"><a href="#3-3-通过Trunk-push-podspec文件" class="headerlink" title="3.3 通过Trunk push podspec文件"></a>3.3 通过Trunk push podspec文件</h2><p>1.在进行trunk push之前，首先确保你已经把你的项目文件上传到<code>Github</code>上了，若还没上传源码，可以用终端<code>cd</code>到项目文件夹执行一下操作上传代码到<code>Github</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m &quot;版本内容&quot;</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
 <p>2.为你上传上去的代码打上tag标签，使得<code>cocoapods</code>可以更精确的查找到你的版本</p>
@@ -602,7 +601,7 @@
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
