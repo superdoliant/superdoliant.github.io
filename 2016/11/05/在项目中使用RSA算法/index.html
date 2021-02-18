@@ -1,37 +1,794 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
 
 
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
-{% block page_class %}page-post-detail{% endblock %}
+  
 
 
-{% block content %}
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="iOS," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Doliant's Meditation World" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="在正文开始之前先吐个槽，看自己上一篇发文已经是好几个月之前的了。之前的设想是每周输出一篇技术方面的文档，接着就被硬生生拖成了一个月，然后就不知道几个月去了……其间还是有有不少可以写的题材，都是因为这该死的拖延~~~好了进入正题。  1.前言契机是公司换了一套新接口，要求进行全报文加密。以前公司项目基本上都使用的对称加密的模式3DES、AES，由于对称加密的密钥只有一对，有很大的密钥泄露风险。身">
+<meta name="keywords" content="iOS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在项目中使用RSA算法">
+<meta property="og:url" content="http://yoursite.com/2016/11/05/%E5%9C%A8%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%BD%BF%E7%94%A8RSA%E7%AE%97%E6%B3%95/index.html">
+<meta property="og:site_name" content="Doliant&#39;s Meditation World">
+<meta property="og:description" content="在正文开始之前先吐个槽，看自己上一篇发文已经是好几个月之前的了。之前的设想是每周输出一篇技术方面的文档，接着就被硬生生拖成了一个月，然后就不知道几个月去了……其间还是有有不少可以写的题材，都是因为这该死的拖延~~~好了进入正题。  1.前言契机是公司换了一套新接口，要求进行全报文加密。以前公司项目基本上都使用的对称加密的模式3DES、AES，由于对称加密的密钥只有一对，有很大的密钥泄露风险。身">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://mytest1oss.oss-cn-beijing.aliyuncs.com/rsa/rsa.jpeg">
+<meta property="og:updated_time" content="2021-02-09T02:20:43.042Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://mytest1oss.oss-cn-beijing.aliyuncs.com/rsa/rsa.jpeg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/11/05/在项目中使用RSA算法/"/>
+
+
+
+
+
+  <title>在项目中使用RSA算法 | Doliant's Meditation World</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Doliant's Meditation World</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">我心中曾经执剑的少年，此刻也混迹在市井之间</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
 
   <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/05/%E5%9C%A8%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%BD%BF%E7%94%A8RSA%E7%AE%97%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Doliant">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/17605923.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Doliant's Meditation World">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">在项目中使用RSA算法</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-05T07:39:35+08:00">
+                2016-11-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/mobile-development/" itemprop="url" rel="index">
+                    <span itemprop="name">mobile development</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://mytest1oss.oss-cn-beijing.aliyuncs.com/rsa/rsa.jpeg" alt="封面图"></p>
+<blockquote>
+<p>在正文开始之前先吐个槽，看自己上一篇发文已经是好几个月之前的了。之前的设想是每周输出一篇技术方面的文档，接着就被硬生生拖成了一个月，然后就不知道几个月去了……其间还是有有不少可以写的题材，都是因为这该死的拖延~~~好了进入正题。</p>
+</blockquote>
+<h1 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h1><p>契机是公司换了一套新接口，要求进行全报文加密。以前公司项目基本上都使用的对称加密的模式<code>3DES</code>、<code>AES</code>，由于对称加密的密钥只有一对，有很大的密钥泄露风险。身处金融这个极为敏感的行业，对安全的要求也是极高。趁着这个机会，把项目中的加密模式统一替换成<code>RSA</code>非对称加密。</p>
+<h1 id="2-关于加密算法"><a href="#2-关于加密算法" class="headerlink" title="2.关于加密算法"></a>2.关于加密算法</h1><p>本篇不会对<code>RSA</code>加密算法原理进行详细的解释。在互联网异常发达的今天，<code>RSA</code>算法详细的资料很容易就能获取到。安全领域也是一个能够深挖的领域，本篇文章偏向工程向，仅对一些基本基本概念进行简单的解释。</p>
+<ul>
+<li><p><strong>对称加密和非对称加密</strong><br><strong>对称加密</strong> ：加密和解密用的是同一套密钥，缺陷是密钥管理存在风险。常用的加密方式有：<code>DES</code>、<code>3DES</code>、<code>AES</code>等。<br><strong>非对称加密</strong> ：加密和解密用的不同的密钥，公钥加密私钥解密。常用的加密方式有<code>RSA</code>。</p>
+</li>
+<li><p><strong>RSA常见用法</strong>：<br> 1.公钥加密，私钥解密；<br> 2.私钥签名;<br> 3.公钥验签。</p>
+<a id="more"></a>
+</li>
+</ul>
+<h1 id="3-实践"><a href="#3-实践" class="headerlink" title="3.实践"></a>3.实践</h1><h2 id="1、生成密钥："><a href="#1、生成密钥：" class="headerlink" title="1、生成密钥："></a>1、生成密钥：</h2><p>使用终端openssl命令生成密钥</p>
+<h3 id="1-生成私钥-密钥长度为2048bit，base64编码。"><a href="#1-生成私钥-密钥长度为2048bit，base64编码。" class="headerlink" title="1).生成私钥,密钥长度为2048bit，base64编码。"></a>1).生成私钥,密钥长度为2048bit，base64编码。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl genrsa -out rsa_private_key.pem 2048</span><br></pre></td></tr></table></figure>
+<p>关于密钥长度，这里要进行一下特别说明。每次加密的数据不能超出密钥的长度，2048bit长度的密钥，只能单次只能加密(2048 / 8 - 11) = 245byte长度的数据。(那11byte是RSA预留的长度)。若待加密的数据长度超过了245byte，就需要对数据进行分段加密。</p>
+<h3 id="2-根据之前生成的私钥生成公钥"><a href="#2-根据之前生成的私钥生成公钥" class="headerlink" title="2).根据之前生成的私钥生成公钥:"></a>2).根据之前生成的私钥生成公钥:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl rsa -in rsa_private_key.pem -out rsa_public_key.pem -pubout</span><br></pre></td></tr></table></figure>
+<h3 id="3-转换公钥为PKCS8格式，这种格式可以直接在iOS项目中使用"><a href="#3-转换公钥为PKCS8格式，这种格式可以直接在iOS项目中使用" class="headerlink" title="3).转换公钥为PKCS8格式，这种格式可以直接在iOS项目中使用:"></a>3).转换公钥为<code>PKCS8</code>格式，这种格式可以直接在iOS项目中使用:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl pkcs8 -topk8 -in rsa_private_key.pem -out pkcs8_rsa_private_key.pem -nocrypt</span><br></pre></td></tr></table></figure>
+<p>我司的情况是由公司后台生成私钥和公钥，提供<code>.pem</code>格式的公钥给移动端，因此我直接使用的是pkcs8格式的公钥。</p>
+<p><strong>注意</strong>：不建议将私钥保存在客户端，私钥泄露后果会很严重！</p>
+<h2 id="2、在项目中使用"><a href="#2、在项目中使用" class="headerlink" title="2、在项目中使用:"></a>2、在项目中使用:</h2><p>Demo地址:<a href="">https://github.com/Hstripe/RHRSAUtil</a></p>
+<p>以上是我使用的<code>RSA</code>工具类，支持<code>RSA</code>在移动端的各种日常用法：加密、解密、加签、验签。跟网上很多工具类不同的是不需要导入<code>p12</code>、<code>der</code>格式的密钥文件，支持字符串形式的密钥文件非常方便。而且使用的是<code>Apple</code>自家的<code>Security.framework</code>。网上很多例程都是使用的<code>openSSL</code>那一套加密工具类，实现也很方便就是包体积略微有点大。</p>
+<p>若使用<code>IDE</code>是<code>Xcode8</code>及以上,请在<code>Capabilities</code>中将<code>KeyChain sharing</code>设置为<code>YES</code></p>
+<h3 id="1-公钥加密"><a href="#1-公钥加密" class="headerlink" title="1.)公钥加密"></a>1.)公钥加密</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSString</span> *string = <span class="string">@"doRSAEncrypt"</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">NSString</span> *publickey = <span class="string">@"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA61sODmFj/OXnrHUYzams\</span></span><br><span class="line"><span class="string"> c/6XLni9G0HYv9sBewaPjF6qlu845nwmYSA6dQ9zPk231o5l3tmHLpUQGNnp/5rH\</span></span><br><span class="line"><span class="string"> +84iB/tM+Y+2kTI8uILGbmby2DL3rgzBG+I9h7e3w3QktpdcD8Z+ZuEVa/CY3Xez\</span></span><br><span class="line"><span class="string"> 8X1uknEVzIIhDKY7ipAoebchVdELbTlH1BRLz8RH6mQ+Z8REH4UL0TiQLfSfTotv\</span></span><br><span class="line"><span class="string"> 1G5ZerNxVZ7Toi4K9KFDA+1UD+LeDGg8PY/sdg0AJpR4o6bfDBko50wKLDz4UYyp\</span></span><br><span class="line"><span class="string"> 7EFZv661o2Mr7+KoQ6Tpb7w8bTl7wrRKz9ugB5+tM2F7aDvv1mzr7STIF+2c7tEx\</span></span><br><span class="line"><span class="string"> DQIDAQAB"</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">NSString</span> *encryptString = [IPNRSAUtil encryptString:string publicKey:publickey];</span><br></pre></td></tr></table></figure>
+<h3 id="2-私钥解密"><a href="#2-私钥解密" class="headerlink" title="2.)私钥解密"></a>2.)私钥解密</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSString</span> *privatekey = <span class="string">@"MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDrWw4OYWP85ees\</span></span><br><span class="line"><span class="string"> dRjNqaxz/pcueL0bQdi/2wF7Bo+MXqqW7zjmfCZhIDp1D3M+TbfWjmXe2YculRAY\</span></span><br><span class="line"><span class="string"> 2en/msf7ziIH+0z5j7aRMjy4gsZuZvLYMveuDMEb4j2Ht7fDdCS2l1wPxn5m4RVr\</span></span><br><span class="line"><span class="string"> 8Jjdd7PxfW6ScRXMgiEMpjuKkCh5tyFV0QttOUfUFEvPxEfqZD5nxEQfhQvROJAt\</span></span><br><span class="line"><span class="string"> 9J9Oi2/Ubll6s3FVntOiLgr0oUMD7VQP4t4MaDw9j+x2DQAmlHijpt8MGSjnTAos\</span></span><br><span class="line"><span class="string"> PPhRjKnsQVm/rrWjYyvv4qhDpOlvvDxtOXvCtErP26AHn60zYXtoO+/WbOvtJMgX\</span></span><br><span class="line"><span class="string"> 7Zzu0TENAgMBAAECggEBAOMf6w+ror9y6sE9+6K1hEwoO6NIN06vm8mCQwqDiVIw\</span></span><br><span class="line"><span class="string"> JTYlQ+cBllQSsvc24sMUYz32C48ko1Ur2u3wleXqa+Wvxp2nQWBw9QFn1rtE0NPI\</span></span><br><span class="line"><span class="string"> G8DSZr0bZ9xN1406mWdQlQF0Tg6XQnJr8q1I8WyAUTHSFzvRT/Uc+2Hmpf0RI05Y\</span></span><br><span class="line"><span class="string"> t0dt5bsGn/g+ijGbCm63Z2U8u5yWXidxWfU/KyYf1Y3mw9lGLR6IJc/q9N+TO4ih\</span></span><br><span class="line"><span class="string"> JM5pCraMFI4zWblGobkN2WKy7MrQ45FLSKul4W00+VyM/rVivW/fYUaqFEnlBog3\</span></span><br><span class="line"><span class="string"> /4hgI6Bsw2IuSk2Ubhbc4fp//146vJf6oL4WAJHmAiECgYEA+e3AFph8joC5gC1Q\</span></span><br><span class="line"><span class="string"> ok97tLJqt95fZCx4VCw6lPPbWxOHG6TJlvlo7kZIeUfKrGIlOWn38yuw5thEZKwW\</span></span><br><span class="line"><span class="string"> bzE8kn5WGlUgkOQ7hJ6Iiw/TzCFPRHxV63WBKa8OnyFIn3w91zI8ZTcUgrgyns+F\</span></span><br><span class="line"><span class="string"> gE5uxkEjb6iIyxxnpqC7Fk3lnikCgYEA8RKtn7kqoe0T/Yv7UsPLm7KzuWn3/01r\</span></span><br><span class="line"><span class="string"> LGA+x+GCp4rP2Lf0u1K+7VY6Dv/ceTBuA/2Yujenkjt0LaF+Bz0tLWFB5BTw3n+u\</span></span><br><span class="line"><span class="string"> 6QshVdP3O1im4w6p3e8O9mfBCSV/CX5oBkbamemyQ7DTB9VtYNNmtGTs2aySuoel\</span></span><br><span class="line"><span class="string"> zPU0czETEEUCgYAjVhwclb62nzibCM0nxbkl2TwBdy1hinAQ5pf5y2iuPdqSbAAc\</span></span><br><span class="line"><span class="string"> mnLdjY5dp2reaJn+vh7SgNDoMpeo7DPX0MxRog8mdfa+xaYsoAWKM9isOeFtO28i\</span></span><br><span class="line"><span class="string"> dWCnthqJITmVYwmTTYUAgoMh4E036vtjIrPC0B7kgJ2mqgN1qbAJ/UWD0QKBgFSO\</span></span><br><span class="line"><span class="string"> U53hacWwDUHydm2aRXFQJd/T/mtq8Tt4aqzbOWOgubRvGYUWyecfRm/6aI+NYBlA\</span></span><br><span class="line"><span class="string"> OvCeEsWk2uQib70ERTNUmLLycWXpbSVKhR/AoEgNmUOs4gH5FstwqvGVWFCxKLWC\</span></span><br><span class="line"><span class="string"> 5qvzn1ZE0FBAGQRMQgrmF3lmIXURnSMdoo8A2IntAoGAVCFmPpXvI8rMk2N3CvQ4\</span></span><br><span class="line"><span class="string"> dkDfP3W6w1KpyMzuQRZE9N1IUBYh3KN25HfzeW1OIFHPuxInMm/6zaU/rUHJSy/b\</span></span><br><span class="line"><span class="string"> ynVdQ6jvM4ZIt3rYUXZN6+a14AeA/MNNrY2LzCYlCxWIbVyNj9UN8/uda0zEtZ73\</span></span><br><span class="line"><span class="string"> RWYX1BlKVMSIx5Bf7eNH4fI="</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">NSString</span> *decryptString = [IPNRSAUtil decryptString:encryptString privateKey:privatekey];</span><br></pre></td></tr></table></figure>
+<h3 id="3-私钥加签"><a href="#3-私钥加签" class="headerlink" title="3.)私钥加签"></a>3.)私钥加签</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSString</span> *signature = [IPNRSAUtil rsaSignString:string WithPrivateKey:privatekey];</span><br></pre></td></tr></table></figure>
+<h3 id="4-公钥验签"><a href="#4-公钥验签" class="headerlink" title="4.)公钥验签"></a>4.)公钥验签</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">BOOL</span> result = [IPNRSAUtil rsaVerifySignature:signature plainString:string WithPublicKey:publickey];</span><br></pre></td></tr></table></figure>
+<h3 id="5-分段加密"><a href="#5-分段加密" class="headerlink" title="5.)分段加密"></a>5.)分段加密</h3><p>若待加密的数据长度大于密钥长度，就需要对待加密的数据进行分段加密</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// n为密钥单次加密长度，这里使用的是2048位的密钥，因此n的值为245(2048/8 - 11)。</span></span><br><span class="line"><span class="built_in">NSInteger</span> n = <span class="number">245</span>;</span><br><span class="line"><span class="built_in">NSMutableData</span> *preData = [[<span class="built_in">NSMutableData</span> alloc] init];</span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">NSInteger</span> i=<span class="number">0</span>; i&lt;=ceilf(string.length / n); i++)&#123;</span><br><span class="line"><span class="built_in">NSString</span> *subString = [string substringWithRange:<span class="built_in">NSMakeRange</span>(i * n, MIN(n, string.length - i * <span class="number">245</span>))];</span><br><span class="line"><span class="built_in">NSData</span> *encryptData = [IPNRSAUtil encryptData:[subString dataUsingEncoding:<span class="built_in">NSUTF8StringEncoding</span>] publicKey:publickey];</span><br><span class="line"><span class="comment">// 分段加密需要拼接加密后的data数据，不要将data转换成字符串再拼接，这样会导致结果错误。</span></span><br><span class="line">[preData appendData:encryptData];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">NSData</span> *finalData = [[<span class="built_in">NSData</span> alloc] initWithData:preData];</span><br><span class="line">finalData = [finalData base64EncodedDataWithOptions:<span class="number">0</span>];</span><br><span class="line"><span class="built_in">NSString</span> *result = [[<span class="built_in">NSString</span> alloc] initWithData:finalData encoding:<span class="built_in">NSUTF8StringEncoding</span>];</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"result:%@"</span>,result);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="4-后记"><a href="#4-后记" class="headerlink" title="4.后记"></a>4.后记</h1><p>为了搞这个工具类前前后后花了也有半个多月的时间了，看了很多文档和例程加上自己的实践调试才有了这个工具类。一开始使用的是<code>openSSL</code>那一套加密工具实现的，但是觉得<code>openSSL</code>占用的空间略大，还是用<code>Security.framework</code>来实现的。平时总是忙于业务需求的实现，忽视了客户端方面的安全，网上对客户端安全这一块的资源也比较有限，但愿我这篇文章能对后来人有所帮助吧。</p>
+<h1 id="5-参考资料"><a href="#5-参考资料" class="headerlink" title="5.参考资料"></a>5.参考资料</h1><blockquote>
+<p>看的资料比较多就不一一列举了，主要还是通过<code>Google</code>、<code>GitHub</code>、<code>StackOverFlow</code>、<code>简书</code>、<code>知乎</code>等平台来获取相关资源的。最后，就在这里统一感谢一下相关资源的贡献者吧。</p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/iOS/" rel="tag"><i class="fa fa-tag"></i> iOS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/12/%E9%9D%99%E6%80%81%E5%BA%93%E8%81%94%E8%B0%83%E4%B8%AD%E7%9A%84%E8%8B%A5%E5%B9%B2%E9%97%AE%E9%A2%98/" rel="next" title="静态库联调中的若干问题">
+                <i class="fa fa-chevron-left"></i> 静态库联调中的若干问题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/10/R.swift%E4%BC%98%E9%9B%85%E7%9A%84%E5%BC%95%E5%85%A5%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6/" rel="prev" title="R.swift优雅的引入项目中的资源文件">
+                R.swift优雅的引入项目中的资源文件 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
 
     <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
-      {% endif %}
+      
     </div>
   </div>
 
-{% endblock %}
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+          </div>
+          
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/17605923.jpeg"
+                alt="Doliant" />
+            
+              <p class="site-author-name" itemprop="name">Doliant</p>
+              <p class="site-description motion-element" itemprop="description">More Than a Coder  Email:hrbistu@gmail.com</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/superdoliant" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/Doliant_DoDo" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-前言"><span class="nav-number">1.</span> <span class="nav-text">1.前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-关于加密算法"><span class="nav-number">2.</span> <span class="nav-text">2.关于加密算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-实践"><span class="nav-number">3.</span> <span class="nav-text">3.实践</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、生成密钥："><span class="nav-number">3.1.</span> <span class="nav-text">1、生成密钥：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-生成私钥-密钥长度为2048bit，base64编码。"><span class="nav-number">3.1.1.</span> <span class="nav-text">1).生成私钥,密钥长度为2048bit，base64编码。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-根据之前生成的私钥生成公钥"><span class="nav-number">3.1.2.</span> <span class="nav-text">2).根据之前生成的私钥生成公钥:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-转换公钥为PKCS8格式，这种格式可以直接在iOS项目中使用"><span class="nav-number">3.1.3.</span> <span class="nav-text">3).转换公钥为PKCS8格式，这种格式可以直接在iOS项目中使用:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、在项目中使用"><span class="nav-number">3.2.</span> <span class="nav-text">2、在项目中使用:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-公钥加密"><span class="nav-number">3.2.1.</span> <span class="nav-text">1.)公钥加密</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-私钥解密"><span class="nav-number">3.2.2.</span> <span class="nav-text">2.)私钥解密</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-私钥加签"><span class="nav-number">3.2.3.</span> <span class="nav-text">3.)私钥加签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-公钥验签"><span class="nav-number">3.2.4.</span> <span class="nav-text">4.)公钥验签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-分段加密"><span class="nav-number">3.2.5.</span> <span class="nav-text">5.)分段加密</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-后记"><span class="nav-number">4.</span> <span class="nav-text">4.后记</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-参考资料"><span class="nav-number">5.</span> <span class="nav-text">5.参考资料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Doliant</span>
+
+  
+</div>
+
+
+  <div class="powered-by">
+  <i class="fa fa-user-md"></i><span
+  id="busuanzi_container_site_uv">
+    访客数:<span id="busuanzi_value_site_uv"></span>
+  </span>
+  </div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
