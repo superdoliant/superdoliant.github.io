@@ -84,7 +84,7 @@
 <meta name="description" content="More Than a Coder  Email:hrbistu@gmail.com">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Doliant&#39;s Meditation World">
-<meta property="og:url" content="http://yoursite.com/archives/2017/11/index.html">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="Doliant&#39;s Meditation World">
 <meta property="og:description" content="More Than a Coder  Email:hrbistu@gmail.com">
 <meta property="og:locale" content="zh-Hans">
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2017/11/">
+  <link rel="canonical" href="http://yoursite.com/page/2/">
 
 
 
 
 
-  <title>归档 | Doliant's Meditation World</title>
+  <title>Doliant's Meditation World</title>
   
 
 
@@ -145,7 +145,8 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left 
+  page-home">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -238,72 +239,167 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
-
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        嗯..! 目前共计 11 篇日志。 继续努力。
-      </span>
-
+  <section id="posts" class="posts-expand">
+    
       
 
-        
-        
-        
+  
 
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2017">2017</h1>
-          </div>
-        
-        
-
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/07/06/将代码发布到CocoaPods(trunk方式)/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Doliant">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/17605923.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Doliant's Meditation World">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2017/11/18/React-Native使用中出现的问题/" itemprop="url">
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/07/06/将代码发布到CocoaPods(trunk方式)/" itemprop="url">将代码发布到CocoaPods(trunk方式)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
               
-                <span itemprop="name">React-Native使用中出现的问题</span>
+                <span class="post-meta-item-text">发表于</span>
               
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-06T17:39:35+08:00">
+                2016-07-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/mobile-development/" itemprop="url" rel="index">
+                    <span itemprop="name">mobile development</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h1><p>Cocoapods是当前iOS开发最流行的版本依赖工具，开发者使用Cocoapods进行项目的依赖管理会为开发节省不少时间。相信大家都尝试过通过Cocoapods管理自己的项目，但如何将自己开发的代码发布到Cocoapods上让别人也可以搜索使用呢？下面就将介绍trunk方式接入的方法，以及在过程中可能遇到的坑。</p>
+<h1 id="二、注册"><a href="#二、注册" class="headerlink" title="二、注册"></a>二、注册</h1><p>接入的第一步就是要注册trunk，在注册trunk之前需要确认当前的CocoaPods版本必须在0.33以上。若低于该版本请打开Terminal使用ruby的gem命令更新pod：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gem install cocoapods</span><br></pre></td></tr></table></figure>
+<p>若OSX版本在10.11以上请使用以下安装命令</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gem install -n /usr/local/bin cocoapods</span><br></pre></td></tr></table></figure>
+<p>版本更新结束之后我们开始注册trunk:</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod trunk register &lt;邮箱&gt;  &lt;<span class="string">'用户名'</span>&gt; --description=<span class="string">'macbook pro'</span></span><br></pre></td></tr></table></figure>
+<p>其中邮箱是最重要的，因为注册之后pod会往你的邮箱发一封激活邮件，所以邮箱名就当相当于你的trunkID了。至于用户名个人感觉写不写都不太有所谓，–description参数是cocoapods推荐添加的，若以后你在别的设备上登录了trunk方便判断终端信息，也是一个可有可无的参数。点击邮箱中的注册链接，使用下列命令就可以向trunk服务器查询到自己的注册信息。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/07/06/将代码发布到CocoaPods(trunk方式)/#more" rel="contents">
+              阅读全文 &raquo;
             </a>
+          </div>
+          <!--/noindex-->
         
-      </h2>
+      
+    </p></div>
+    
+    
+    
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-11-18T20:39:40+08:00" content="2017-11-18">
-          11-18
-        </time>
-      </div>
+    
 
-    </header>
-  </article>
+    
 
+    
 
+    <footer class="post-footer">
+      
 
       
 
-    </div>
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
   </div>
   
   
   
+  </article>
+
+
+    
+  </section>
 
   
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
 
 
 
