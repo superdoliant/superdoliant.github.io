@@ -44,7 +44,7 @@
 <meta property="og:image" content="https://mytest1oss.oss-cn-beijing.aliyuncs.com/mweb/2021_09_04/wx202109031429572x.png">
 <meta property="og:image" content="https://mytest1oss.oss-cn-beijing.aliyuncs.com/mweb/2021_09_04/wx20210903151013.png">
 <meta property="og:image" content="https://mytest1oss.oss-cn-beijing.aliyuncs.com/mweb/2021_09_04/16306539743912.png">
-<meta property="og:updated_time" content="2021-09-04T14:21:45.834Z">
+<meta property="og:updated_time" content="2021-09-04T14:53:18.987Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://mytest1oss.oss-cn-beijing.aliyuncs.com/mweb/2021_09_04/screen-shot-20210902-at-52214-pm.png">
 
@@ -201,7 +201,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-09-04 22:12:08 / 修改时间：22:21:45" itemprop="dateCreated datePublished" datetime="2021-09-04T22:12:08+08:00">2021-09-04</time>
+              <time title="创建时间：2021-09-04 22:12:08 / 修改时间：22:53:18" itemprop="dateCreated datePublished" datetime="2021-09-04T22:12:08+08:00">2021-09-04</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -292,7 +292,7 @@
 <p><strong>Auto preview updating paused</strong>, 每次更新完UI部分的代码，都需要手动点击<code>resume</code>来刷新，丢失了此前丝滑的开发感受。</p>
 <p>对于这个问题刚开始没有任何思路，却在点击右侧<code>resume</code>按钮的时候，发现其会重新触发一次<code>Build</code>流程。</p>
 <p><img src="https://mytest1oss.oss-cn-beijing.aliyuncs.com/mweb/2021_09_04/16306397466868.png" alt=""></p>
-<p>从这个角度入手，尝试查找<code>MFE</code>在<code>Build</code>的过程中是否有额外的操作。在<code>Shceme</code>-<code>Build</code>-<code>Post-actions</code>, 发现了一个之前给Xcode文件排序用的脚本。</p>
+<p>从这个角度入手，尝试查找<code>MFE</code>在<code>Build</code>的过程中是否有额外的操作。在<code>Scheme</code>-<code>Build</code>-<code>Post-actions</code>, 发现了一个之前给Xcode文件排序用的脚本。</p>
 <p><img src="https://mytest1oss.oss-cn-beijing.aliyuncs.com/mweb/2021_09_04/wx202109031429572x.png" alt="WX20210903-142957@2x"></p>
 <p>尝试移除这个文件排序脚本，<strong>Auto preview</strong>可以正常工作了。那么文件排序的工作该如何处理？</p>
 <ul>
@@ -328,7 +328,10 @@
     <a href="/2021/02/10/%E8%80%8C%E7%AB%8B%E5%B0%86%E8%87%B3/" rel="prev" title="而立将至">
       <i class="fa fa-chevron-left"></i> 而立将至
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2022/01/03/%E5%86%99%E5%9C%A820%E5%B2%81%E7%9A%84%E6%9C%80%E5%90%8E%E4%B8%80%E5%B9%B4/" rel="next" title="写在20岁的最后一年">
+      写在20岁的最后一年 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -403,7 +406,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -457,7 +460,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

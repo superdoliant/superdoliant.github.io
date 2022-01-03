@@ -157,6 +157,96 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/05/%E5%9C%A8%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%BD%BF%E7%94%A8RSA%E7%AE%97%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Avatar.jpeg">
+      <meta itemprop="name" content="Author">
+      <meta itemprop="description" content="More Than a Coder.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Doliant's Meditation World">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2016/11/05/%E5%9C%A8%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%BD%BF%E7%94%A8RSA%E7%AE%97%E6%B3%95/" class="post-title-link" itemprop="url">在项目中使用RSA算法</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2016-11-05 07:39:35" itemprop="dateCreated datePublished" datetime="2016-11-05T07:39:35+08:00">2016-11-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-09 10:20:43" itemprop="dateModified" datetime="2021-02-09T10:20:43+08:00">2021-02-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/mobile-development/" itemprop="url" rel="index"><span itemprop="name">mobile development</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="https://mytest1oss.oss-cn-beijing.aliyuncs.com/rsa/rsa.jpeg" alt="封面图"></p>
+<blockquote>
+<p>在正文开始之前先吐个槽，看自己上一篇发文已经是好几个月之前的了。之前的设想是每周输出一篇技术方面的文档，接着就被硬生生拖成了一个月，然后就不知道几个月去了……其间还是有有不少可以写的题材，都是因为这该死的拖延~~~好了进入正题。</p>
+</blockquote>
+<h1 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h1><p>契机是公司换了一套新接口，要求进行全报文加密。以前公司项目基本上都使用的对称加密的模式<code>3DES</code>、<code>AES</code>，由于对称加密的密钥只有一对，有很大的密钥泄露风险。身处金融这个极为敏感的行业，对安全的要求也是极高。趁着这个机会，把项目中的加密模式统一替换成<code>RSA</code>非对称加密。</p>
+<h1 id="2-关于加密算法"><a href="#2-关于加密算法" class="headerlink" title="2.关于加密算法"></a>2.关于加密算法</h1><p>本篇不会对<code>RSA</code>加密算法原理进行详细的解释。在互联网异常发达的今天，<code>RSA</code>算法详细的资料很容易就能获取到。安全领域也是一个能够深挖的领域，本篇文章偏向工程向，仅对一些基本基本概念进行简单的解释。</p>
+<ul>
+<li><p><strong>对称加密和非对称加密</strong><br><strong>对称加密</strong> ：加密和解密用的是同一套密钥，缺陷是密钥管理存在风险。常用的加密方式有：<code>DES</code>、<code>3DES</code>、<code>AES</code>等。<br><strong>非对称加密</strong> ：加密和解密用的不同的密钥，公钥加密私钥解密。常用的加密方式有<code>RSA</code>。</p>
+</li>
+<li><p><strong>RSA常见用法</strong>：<br> 1.公钥加密，私钥解密；<br> 2.私钥签名;<br> 3.公钥验签。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2016/11/05/%E5%9C%A8%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%BD%BF%E7%94%A8RSA%E7%AE%97%E6%B3%95/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/08/12/%E9%9D%99%E6%80%81%E5%BA%93%E8%81%94%E8%B0%83%E4%B8%AD%E7%9A%84%E8%8B%A5%E5%B9%B2%E9%97%AE%E9%A2%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -394,7 +484,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -448,7 +538,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-09-04T14:21:45.834Z</updated>
+  <updated>2022-01-03T05:20:06.647Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>写在20岁的最后一年</title>
+    <link href="http://yoursite.com/2022/01/03/%E5%86%99%E5%9C%A820%E5%B2%81%E7%9A%84%E6%9C%80%E5%90%8E%E4%B8%80%E5%B9%B4/"/>
+    <id>http://yoursite.com/2022/01/03/写在20岁的最后一年/</id>
+    <published>2022-01-03T03:29:02.000Z</published>
+    <updated>2022-01-03T05:20:06.647Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://mytest1oss.oss-cn-beijing.aliyuncs.com/mweb/2022_01_03/istockphoto1283271579170667a.jpeg&quot; alt=&quot;istockphoto-1283271579-170667a&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;2021年度总结&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;概览&quot;&gt;&lt;a href=&quot;#概览&quot; class=&quot;headerlink&quot; title=&quot;概览&quot;&gt;&lt;/a&gt;概览&lt;/h2&gt;&lt;p&gt;2021年经历了相当多的变化，人生踏上了一个新的台阶。回顾2020年给2021年制定的年度目标，和前些年的差不多，依旧好些没完成。&lt;/p&gt;
+&lt;p&gt;所在的平台今年又兴起了&lt;code&gt;OKR&lt;/code&gt;，&lt;code&gt;Google&lt;/code&gt;在90年就提出的目标管理工具。其中有一个重要的点就是需要订立一些有挑战的目标，因此如果你的目标都被很好的完成了，可能是因为你的目标订的没有那么有挑战……&lt;/p&gt;
+&lt;p&gt;每年都有订立计划的习惯，2022年也不会例外。准备尝试一些不一样的东西，所以并不准备再把计划公开出来。可能会以里程碑的形式，在明年的复盘计划中展示出来。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="annual review" scheme="http://yoursite.com/categories/annual-review/"/>
+    
+    
+      <category term="blog" scheme="http://yoursite.com/tags/blog/"/>
+    
+  </entry>
+  
+  <entry>
     <title>基于SwiftUI的组件化构建实践</title>
     <link href="http://yoursite.com/2021/09/04/%E5%9F%BA%E4%BA%8ESwiftUI%E7%9A%84%E7%BB%84%E4%BB%B6%E5%8C%96%E6%9E%84%E5%BB%BA%E5%AE%9E%E8%B7%B5/"/>
     <id>http://yoursite.com/2021/09/04/基于SwiftUI的组件化构建实践/</id>
     <published>2021-09-04T14:12:08.000Z</published>
-    <updated>2021-09-04T14:21:45.834Z</updated>
+    <updated>2021-09-04T14:53:18.987Z</updated>
     
     <summary type="html">
     
