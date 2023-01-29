@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.0.0">
+<meta name="generator" content="Hexo 6.3.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -21,14 +21,16 @@
   </script>
 
   <meta name="description" content="一、前言   Swift相较于OC是一门类型更加安全的语言,其中引入的Optional类型便是为了增强取值可靠性的一种方式。然而在新旧语言的转换过程中总是会踩到坑中,由于自己对于这个概念的理解还没有到位，在最近一次的实践中就遇到了由于Optional Binding引发的问题。 二、问题场景   textFiled中的text属性是一个可选(optional)类型,在对输入状态进行处理的时候肯定会">
-<meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Swift中可选绑定引发的值类型与引用类型的思考">
 <meta property="og:url" content="http://yoursite.com/2017/09/11/Swift%E4%B8%AD%E5%8F%AF%E9%80%89%E7%BB%91%E5%AE%9A%E5%BC%95%E5%8F%91%E7%9A%84%E5%80%BC%E7%B1%BB%E5%9E%8B%E4%B8%8E%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%80%9D%E8%80%83/index.html">
 <meta property="og:site_name" content="Doliant&#39;s Meditation World">
 <meta property="og:description" content="一、前言   Swift相较于OC是一门类型更加安全的语言,其中引入的Optional类型便是为了增强取值可靠性的一种方式。然而在新旧语言的转换过程中总是会踩到坑中,由于自己对于这个概念的理解还没有到位，在最近一次的实践中就遇到了由于Optional Binding引发的问题。 二、问题场景   textFiled中的text属性是一个可选(optional)类型,在对输入状态进行处理的时候肯定会">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2021-02-09T02:25:49.000Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2017-09-11T09:39:35.000Z">
+<meta property="article:modified_time" content="2021-02-09T02:25:49.000Z">
+<meta property="article:author" content="Doliant">
+<meta property="article:tag" content="iOS">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://yoursite.com/2017/09/11/Swift%E4%B8%AD%E5%8F%AF%E9%80%89%E7%BB%91%E5%AE%9A%E5%BC%95%E5%8F%91%E7%9A%84%E5%80%BC%E7%B1%BB%E5%9E%8B%E4%B8%8E%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%80%9D%E8%80%83/">
@@ -215,8 +217,8 @@
       
         <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>   <code>Swift</code>相较于<code>OC</code>是一门类型更加安全的语言,其中引入的<code>Optional</code>类型便是为了增强取值可靠性的一种方式。然而在新旧语言的转换过程中总是会踩到坑中,由于自己对于这个概念的理解还没有到位，在最近一次的实践中就遇到了由于<code>Optional Binding</code>引发的问题。</p>
 <h1 id="二、问题场景"><a href="#二、问题场景" class="headerlink" title="二、问题场景"></a>二、问题场景</h1><p>   <code>textFiled</code>中的<code>text</code>属性是一个可选(<code>optional</code>)类型,在对输入状态进行处理的时候肯定会涉及到对输入内容的逻辑操作。在<code>OC</code>中这种操作还是很直接的,直接使用<code>.</code>语法(<code>textField.text</code>)获取属性进行判断。<br>    但在<code>swift</code>中<code>text</code>是一个可选属性,直接对属性进行操作就比较冗余了。因此我们往往会写出如下的代码。</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">var</span> text = textField.text &#123;</span><br><span class="line">  <span class="comment">/// 逻辑操作</span></span><br><span class="line">&#125;</span><br><span class="line">```    </span><br><span class="line"></span><br><span class="line">这是swift中推荐的可选绑定的写法,在其中的逻辑操作中`text`就是`textField.text`解包出的值,因此可以通过判断`text`的状态,获知`textField.text`的状态。</span><br><span class="line"></span><br><span class="line">那么问题来了,当我们判断完成需要对`textField.text`进行赋值的时候,一不小心就有可能直接写出这样的代码。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">```swift</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">var</span> text = textField.text 【</span><br><span class="line">	<span class="comment">/// 逻辑操作</span></span><br><span class="line">	text = <span class="string">"XXXXXXX"</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">print</span>(textField.text!)</span><br></pre></td></tr></table></figure>
-<p>打印<code>textField.text</code>就会发现并不是<code>text</code>赋值的值。<br><a id="more"></a></p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">var</span> text <span class="operator">=</span> textField.text &#123;</span><br><span class="line">  <span class="comment">/// 逻辑操作</span></span><br><span class="line">&#125;</span><br><span class="line">```    </span><br><span class="line"></span><br><span class="line">这是swift中推荐的可选绑定的写法,在其中的逻辑操作中`text`就是`textField.text`解包出的值,因此可以通过判断`text`的状态,获知`textField.text`的状态<span class="operator">。</span></span><br><span class="line"></span><br><span class="line">那么问题来了,当我们判断完成需要对`textField.text`进行赋值的时候,一不小心就有可能直接写出这样的代码<span class="operator">。</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">```swift</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">var</span> text <span class="operator">=</span> textField.text <span class="operator">【</span></span><br><span class="line">	<span class="comment">/// 逻辑操作</span></span><br><span class="line">	text <span class="operator">=</span> <span class="string">&quot;XXXXXXX&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">print</span>(textField.text<span class="operator">!</span>)</span><br></pre></td></tr></table></figure>
+<p>打印<code>textField.text</code>就会发现并不是<code>text</code>赋值的值。<br><span id="more"></span></p>
 <h1 id="三、问题分析"><a href="#三、问题分析" class="headerlink" title="三、问题分析"></a>三、问题分析</h1><p>一开始遇到问题我以为我是对<code>Optional Binding</code>的理解有一些问题,查看了苹果的官方文档</p>
 <blockquote>
 <p>You use optional binding to find out whether an optional contains a value, and if so, to make that value available as a temporary constant or variable. </p>
@@ -225,11 +227,11 @@
 <p>使用可选绑定去确认一个可选类型是存在值的,进而可以将这个值作为一个临时的常量或者变量。</p>
 </blockquote>
 <p>文档上这个<code>temporary</code>让我以为是作用域的问题,然而情况并不是这样。我专门声明了一个<code>textField?</code>类型的变量。</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> testTextField: <span class="type">UITextField?</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> testTextField: <span class="type">UITextField</span>? </span><br></pre></td></tr></table></figure>
 <p>接着创建一个<code>textfield</code></p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> textField = <span class="type">UITextField</span>(frame: <span class="type">CGRect</span>(x: <span class="number">100</span>, y: <span class="number">100</span>, width: <span class="number">100</span>, height: <span class="number">50</span>))</span><br><span class="line">textField.text = <span class="string">"测试数据"</span></span><br><span class="line">testTextField = textField</span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> textField <span class="operator">=</span> <span class="type">UITextField</span>(frame: <span class="type">CGRect</span>(x: <span class="number">100</span>, y: <span class="number">100</span>, width: <span class="number">100</span>, height: <span class="number">50</span>))</span><br><span class="line">textField.text <span class="operator">=</span> <span class="string">&quot;测试数据&quot;</span></span><br><span class="line">testTextField <span class="operator">=</span> textField</span><br></pre></td></tr></table></figure>
 <p>通过可选绑定获取解包之后的<code>testTextField</code></p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> testTextField = testTextField &#123;</span><br><span class="line">	testTextField.text = <span class="string">"测试数据1"</span></span><br><span class="line">&#125;	</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(testTextField!.text!)</span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> testTextField <span class="operator">=</span> testTextField &#123;</span><br><span class="line">	testTextField.text <span class="operator">=</span> <span class="string">&quot;测试数据1&quot;</span></span><br><span class="line">&#125;	</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(testTextField<span class="operator">!</span>.text<span class="operator">!</span>)</span><br></pre></td></tr></table></figure>
 <p>此处的打印结果应该是什么呢？–<code>测试数据1</code>。<br>结果表明我们对可选绑定后的变量赋值是成功的,那么问题又来了为何之前<code>text</code>赋值不成功呢？</p>
 <p>既然有成功的案例自然就证明了这个锅并不该由<code>Optional Binding</code>来背。</p>
 <p>所以问题到底是出在哪里呢？<br>仔细看两次可选绑定的类型,一个使用了<code>let</code>一个使用了<code>var</code>,是因为这个原因么？明显不是,两次可选绑定的对象类型一个是<code>UITextField？</code>,另一个是<code>String?</code>看出问题了么？</p>
@@ -321,7 +323,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、前言"><span class="nav-number">1.</span> <span class="nav-text">一、前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、问题场景"><span class="nav-number">2.</span> <span class="nav-text">二、问题场景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、问题分析"><span class="nav-number">3.</span> <span class="nav-text">三、问题分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、总结"><span class="nav-number">4.</span> <span class="nav-text">四、总结</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">一、前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E9%97%AE%E9%A2%98%E5%9C%BA%E6%99%AF"><span class="nav-number">2.</span> <span class="nav-text">二、问题场景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90"><span class="nav-number">3.</span> <span class="nav-text">三、问题分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E6%80%BB%E7%BB%93"><span class="nav-number">4.</span> <span class="nav-text">四、总结</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -337,7 +339,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -357,16 +359,16 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/superdoliant" title="GitHub → https://github.com/superdoliant" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/superdoliant" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;superdoliant" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
         <a href="mailto:hrbistu@gmail.com" title="E-Mail → mailto:hrbistu@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://twitter.com/Doliant_DoDo" title="Twitter → https://twitter.com/Doliant_DoDo" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+        <a href="https://twitter.com/Doliant_DoDo" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;Doliant_DoDo" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
       </span>
       <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → /atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
       </span>
   </div>
 
@@ -391,13 +393,13 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2022</span>
+  <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Author</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
   </div>
 
         
@@ -417,9 +419,17 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/muse.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 

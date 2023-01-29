@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2022-01-03T05:20:06.647Z</updated>
+  <updated>2023-01-29T10:08:11.149Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>迟到的2022总结</title>
+    <link href="http://yoursite.com/2023/01/28/%E8%BF%9F%E5%88%B0%E7%9A%842022%E6%80%BB%E7%BB%93/"/>
+    <id>http://yoursite.com/2023/01/28/迟到的2022总结/</id>
+    <published>2023-01-28T06:28:21.000Z</published>
+    <updated>2023-01-29T10:08:11.149Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;img src=&quot;https://diary-notes.oss-cn-shanghai.aliyuncs.com/picgo/diarynikko-macaspac-6SNbWyFwuhk-unsplash.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h2
+        
+      
+    
+    </summary>
+    
+      <category term="annual review" scheme="http://yoursite.com/categories/annual-review/"/>
+    
+    
+      <category term="blog" scheme="http://yoursite.com/tags/blog/"/>
+    
+  </entry>
+  
+  <entry>
     <title>写在20岁的最后一年</title>
     <link href="http://yoursite.com/2022/01/03/%E5%86%99%E5%9C%A820%E5%B2%81%E7%9A%84%E6%9C%80%E5%90%8E%E4%B8%80%E5%B9%B4/"/>
     <id>http://yoursite.com/2022/01/03/写在20岁的最后一年/</id>
     <published>2022-01-03T03:29:02.000Z</published>
-    <updated>2022-01-03T05:20:06.647Z</updated>
+    <updated>2022-01-03T05:20:06.000Z</updated>
     
     <summary type="html">
     
@@ -47,7 +74,7 @@
     <link href="http://yoursite.com/2021/09/04/%E5%9F%BA%E4%BA%8ESwiftUI%E7%9A%84%E7%BB%84%E4%BB%B6%E5%8C%96%E6%9E%84%E5%BB%BA%E5%AE%9E%E8%B7%B5/"/>
     <id>http://yoursite.com/2021/09/04/基于SwiftUI的组件化构建实践/</id>
     <published>2021-09-04T14:12:08.000Z</published>
-    <updated>2021-09-04T14:53:18.987Z</updated>
+    <updated>2021-09-04T14:53:18.000Z</updated>
     
     <summary type="html">
     
@@ -224,7 +251,7 @@
     
       &lt;h1 id=&quot;一、前言&quot;&gt;&lt;a href=&quot;#一、前言&quot; class=&quot;headerlink&quot; title=&quot;一、前言&quot;&gt;&lt;/a&gt;一、前言&lt;/h1&gt;&lt;p&gt;   &lt;code&gt;Swift&lt;/code&gt;相较于&lt;code&gt;OC&lt;/code&gt;是一门类型更加安全的语言,其中引入的&lt;code&gt;Optional&lt;/code&gt;类型便是为了增强取值可靠性的一种方式。然而在新旧语言的转换过程中总是会踩到坑中,由于自己对于这个概念的理解还没有到位，在最近一次的实践中就遇到了由于&lt;code&gt;Optional Binding&lt;/code&gt;引发的问题。&lt;/p&gt;
 &lt;h1 id=&quot;二、问题场景&quot;&gt;&lt;a href=&quot;#二、问题场景&quot; class=&quot;headerlink&quot; title=&quot;二、问题场景&quot;&gt;&lt;/a&gt;二、问题场景&lt;/h1&gt;&lt;p&gt;   &lt;code&gt;textFiled&lt;/code&gt;中的&lt;code&gt;text&lt;/code&gt;属性是一个可选(&lt;code&gt;optional&lt;/code&gt;)类型,在对输入状态进行处理的时候肯定会涉及到对输入内容的逻辑操作。在&lt;code&gt;OC&lt;/code&gt;中这种操作还是很直接的,直接使用&lt;code&gt;.&lt;/code&gt;语法(&lt;code&gt;textField.text&lt;/code&gt;)获取属性进行判断。&lt;br&gt;    但在&lt;code&gt;swift&lt;/code&gt;中&lt;code&gt;text&lt;/code&gt;是一个可选属性,直接对属性进行操作就比较冗余了。因此我们往往会写出如下的代码。&lt;/p&gt;
-&lt;figure class=&quot;highlight swift&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; text = textField.text &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;/// 逻辑操作&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;```    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;这是swift中推荐的可选绑定的写法,在其中的逻辑操作中`text`就是`textField.text`解包出的值,因此可以通过判断`text`的状态,获知`textField.text`的状态。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;那么问题来了,当我们判断完成需要对`textField.text`进行赋值的时候,一不小心就有可能直接写出这样的代码。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;```swift&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; text = textField.text 【&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;/// 逻辑操作&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	text = &lt;span class=&quot;string&quot;&gt;&quot;XXXXXXX&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;print&lt;/span&gt;(textField.text!)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight swift&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; text &lt;span class=&quot;operator&quot;&gt;=&lt;/span&gt; textField.text &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;/// 逻辑操作&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;```    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;这是swift中推荐的可选绑定的写法,在其中的逻辑操作中`text`就是`textField.text`解包出的值,因此可以通过判断`text`的状态,获知`textField.text`的状态&lt;span class=&quot;operator&quot;&gt;。&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;那么问题来了,当我们判断完成需要对`textField.text`进行赋值的时候,一不小心就有可能直接写出这样的代码&lt;span class=&quot;operator&quot;&gt;。&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;```swift&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; text &lt;span class=&quot;operator&quot;&gt;=&lt;/span&gt; textField.text &lt;span class=&quot;operator&quot;&gt;【&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;/// 逻辑操作&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	text &lt;span class=&quot;operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&amp;quot;XXXXXXX&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;print&lt;/span&gt;(textField.text&lt;span class=&quot;operator&quot;&gt;!&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;打印&lt;code&gt;textField.text&lt;/code&gt;就会发现并不是&lt;code&gt;text&lt;/code&gt;赋值的值。&lt;br&gt;
     
     </summary>
@@ -255,7 +282,7 @@
 &lt;li&gt;&lt;strong&gt;自动补全&lt;/strong&gt;: 不再需要输入图片名称&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;figure class=&quot;highlight swift&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;之前: &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; image = &lt;span class=&quot;type&quot;&gt;UIImage&lt;/span&gt;(named: &lt;span class=&quot;string&quot;&gt;&quot;imageName&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;type&quot;&gt;R&lt;/span&gt;.swift: &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; image = &lt;span class=&quot;type&quot;&gt;R&lt;/span&gt;.image.imageName()&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight swift&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;之前: &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; image &lt;span class=&quot;operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;type&quot;&gt;UIImage&lt;/span&gt;(named: &lt;span class=&quot;string&quot;&gt;&amp;quot;imageName&amp;quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;type&quot;&gt;R&lt;/span&gt;.swift: &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; image &lt;span class=&quot;operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;type&quot;&gt;R&lt;/span&gt;.image.imageName()&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -331,7 +358,7 @@
 &lt;p&gt;若OSX版本在10.11以上请使用以下安装命令&lt;/p&gt;
 &lt;figure class=&quot;highlight ruby&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo gem install -n /usr/local/bin cocoapods&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;版本更新结束之后我们开始注册trunk:&lt;/p&gt;
-&lt;figure class=&quot;highlight ruby&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;pod trunk register &amp;lt;邮箱&amp;gt;  &amp;lt;&lt;span class=&quot;string&quot;&gt;&#39;用户名&#39;&lt;/span&gt;&amp;gt; --description=&lt;span class=&quot;string&quot;&gt;&#39;macbook pro&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight ruby&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;pod trunk register &amp;lt;邮箱&amp;gt;  &amp;lt;&lt;span class=&quot;string&quot;&gt;&amp;#x27;用户名&amp;#x27;&lt;/span&gt;&amp;gt; --description=&lt;span class=&quot;string&quot;&gt;&amp;#x27;macbook pro&amp;#x27;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;其中邮箱是最重要的，因为注册之后pod会往你的邮箱发一封激活邮件，所以邮箱名就当相当于你的trunkID了。至于用户名个人感觉写不写都不太有所谓，–description参数是cocoapods推荐添加的，若以后你在别的设备上登录了trunk方便判断终端信息，也是一个可有可无的参数。点击邮箱中的注册链接，使用下列命令就可以向trunk服务器查询到自己的注册信息。&lt;br&gt;
     
     </summary>

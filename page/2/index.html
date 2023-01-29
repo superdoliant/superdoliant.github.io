@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.0.0">
+<meta name="generator" content="Hexo 6.3.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -26,7 +26,8 @@
 <meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="Doliant&#39;s Meditation World">
 <meta property="og:description" content="More Than a Coder.">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Doliant">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://yoursite.com/page/2/">
@@ -153,6 +154,97 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/10/R.swift%E4%BC%98%E9%9B%85%E7%9A%84%E5%BC%95%E5%85%A5%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Avatar.jpeg">
+      <meta itemprop="name" content="Author">
+      <meta itemprop="description" content="More Than a Coder.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Doliant's Meditation World">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/07/10/R.swift%E4%BC%98%E9%9B%85%E7%9A%84%E5%BC%95%E5%85%A5%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6/" class="post-title-link" itemprop="url">R.swift优雅的引入项目中的资源文件</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017-07-10 09:39:35" itemprop="dateCreated datePublished" datetime="2017-07-10T09:39:35+08:00">2017-07-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-09-11 11:04:10" itemprop="dateModified" datetime="2019-09-11T11:04:10+08:00">2019-09-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/mobile-development/" itemprop="url" rel="index"><span itemprop="name">mobile development</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
+<p>R.swift是一个高效引入iOS资源的框架,避免了使用字符串引入资源文件导致程序崩溃的尴尬。<br>目前R.swift支持到Swift3.0版本</p>
+</blockquote>
+<h2 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h2><p>使用代码的方式来引入资源:</p>
+<ul>
+<li><strong>类型完整</strong>: 减少推断和转换方法返回值的类型</li>
+<li><strong>编译时检查</strong>: 不会再因为不正确的字符串导致App产生运行时崩溃</li>
+<li><strong>自动补全</strong>: 不再需要输入图片名称</li>
+</ul>
+<p>示例：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">之前: </span><br><span class="line"><span class="keyword">let</span> image <span class="operator">=</span> <span class="type">UIImage</span>(named: <span class="string">&quot;imageName&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="type">R</span>.swift: </span><br><span class="line"><span class="keyword">let</span> image <span class="operator">=</span> <span class="type">R</span>.image.imageName()</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/07/10/R.swift%E4%BC%98%E9%9B%85%E7%9A%84%E5%BC%95%E5%85%A5%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -389,7 +481,7 @@
 <p>若OSX版本在10.11以上请使用以下安装命令</p>
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gem install -n /usr/local/bin cocoapods</span><br></pre></td></tr></table></figure>
 <p>版本更新结束之后我们开始注册trunk:</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod trunk register &lt;邮箱&gt;  &lt;<span class="string">'用户名'</span>&gt; --description=<span class="string">'macbook pro'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod trunk register &lt;邮箱&gt;  &lt;<span class="string">&#x27;用户名&#x27;</span>&gt; --description=<span class="string">&#x27;macbook pro&#x27;</span></span><br></pre></td></tr></table></figure>
 <p>其中邮箱是最重要的，因为注册之后pod会往你的邮箱发一封激活邮件，所以邮箱名就当相当于你的trunkID了。至于用户名个人感觉写不写都不太有所谓，–description参数是cocoapods推荐添加的，若以后你在别的设备上登录了trunk方便判断终端信息，也是一个可有可无的参数。点击邮箱中的注册链接，使用下列命令就可以向trunk服务器查询到自己的注册信息。<br>
           <!--noindex-->
             <div class="post-button">
@@ -484,7 +576,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -504,16 +596,16 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/superdoliant" title="GitHub → https://github.com/superdoliant" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/superdoliant" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;superdoliant" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
         <a href="mailto:hrbistu@gmail.com" title="E-Mail → mailto:hrbistu@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://twitter.com/Doliant_DoDo" title="Twitter → https://twitter.com/Doliant_DoDo" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+        <a href="https://twitter.com/Doliant_DoDo" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;Doliant_DoDo" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
       </span>
       <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → /atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
       </span>
   </div>
 
@@ -538,13 +630,13 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2022</span>
+  <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Author</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
   </div>
 
         
@@ -564,9 +656,17 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/muse.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 

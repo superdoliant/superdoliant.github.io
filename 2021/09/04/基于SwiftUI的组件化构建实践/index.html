@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.0.0">
+<meta name="generator" content="Hexo 6.3.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -21,13 +21,12 @@
   </script>
 
   <meta name="description" content="阅读本文需要具备一定的iOS开发经验。   SwiftUI是Apple于2019年WWDC上发布的基于Swift语言构建的全新声明式UI框架，抛弃了之前Autolayout，Storyboard的布局方式，提供了Canvas实时预览功能，以提升UI开发的体验。  背景某迭代了10年+的大型单体iOS项目，之前完成了部分功能从Objective-C向Swift语言迁移的工作。加上近两年该司推行整个">
-<meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基于SwiftUI的组件化构建实践">
 <meta property="og:url" content="http://yoursite.com/2021/09/04/%E5%9F%BA%E4%BA%8ESwiftUI%E7%9A%84%E7%BB%84%E4%BB%B6%E5%8C%96%E6%9E%84%E5%BB%BA%E5%AE%9E%E8%B7%B5/index.html">
 <meta property="og:site_name" content="Doliant&#39;s Meditation World">
 <meta property="og:description" content="阅读本文需要具备一定的iOS开发经验。   SwiftUI是Apple于2019年WWDC上发布的基于Swift语言构建的全新声明式UI框架，抛弃了之前Autolayout，Storyboard的布局方式，提供了Canvas实时预览功能，以提升UI开发的体验。  背景某迭代了10年+的大型单体iOS项目，之前完成了部分功能从Objective-C向Swift语言迁移的工作。加上近两年该司推行整个">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://mytest1oss.oss-cn-beijing.aliyuncs.com/mweb/2021_09_04/screen-shot-20210902-at-52214-pm.png">
 <meta property="og:image" content="https://mytest1oss.oss-cn-beijing.aliyuncs.com/mweb/2021_09_04/16305842102287.png">
 <meta property="og:image" content="https://mytest1oss.oss-cn-beijing.aliyuncs.com/mweb/2021_09_04/16305846548634.png">
@@ -44,7 +43,10 @@
 <meta property="og:image" content="https://mytest1oss.oss-cn-beijing.aliyuncs.com/mweb/2021_09_04/wx202109031429572x.png">
 <meta property="og:image" content="https://mytest1oss.oss-cn-beijing.aliyuncs.com/mweb/2021_09_04/wx20210903151013.png">
 <meta property="og:image" content="https://mytest1oss.oss-cn-beijing.aliyuncs.com/mweb/2021_09_04/16306539743912.png">
-<meta property="og:updated_time" content="2021-09-04T14:53:18.987Z">
+<meta property="article:published_time" content="2021-09-04T14:12:08.000Z">
+<meta property="article:modified_time" content="2021-09-04T14:53:18.000Z">
+<meta property="article:author" content="Doliant">
+<meta property="article:tag" content="iOS">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://mytest1oss.oss-cn-beijing.aliyuncs.com/mweb/2021_09_04/screen-shot-20210902-at-52214-pm.png">
 
@@ -231,7 +233,7 @@
 <p>SwiftUI是Apple于2019年WWDC上发布的基于Swift语言构建的全新声明式UI框架，抛弃了之前Autolayout，Storyboard的布局方式，提供了Canvas实时预览功能，以提升UI开发的体验。</p>
 </blockquote>
 <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>某迭代了10年+的大型单体<code>iOS</code>项目，之前完成了部分功能从<code>Objective-C</code>向<code>Swift</code>语言迁移的工作。加上近两年该司推行整个大前端(web + mobile)向<code>MFE</code>(Micro-Front-End)迁移的策略，由此加入了一个<code>MFE</code>项目，工作内容是将主页功能剥离成独立的组件。</p>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="正篇"><a href="#正篇" class="headerlink" title="正篇"></a>正篇</h2><p>作为一个上层业务组件，我们会依赖一些已有基础组件框架。受限于一些历史遗留原因，无法直接使用<code>SPM</code>(Swift Package Manager)作为项目的依赖管理工具。还是使用了<code>Cocoapods</code>作为项目的依赖管理工具。</p>
 <h3 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h3><p>作为一个组件化项目，主要的业务代码会以<code>Framework</code>的方式提供给主工程。同时在开发的过程中会建立一个<code>ExampleApp</code>方便开发者调试。</p>
 <p>这个场景就有两种方案可以选择:</p>
@@ -266,8 +268,8 @@
 <p><code>Check</code>报错信息：<br><img src="https://mytest1oss.oss-cn-beijing.aliyuncs.com/mweb/2021_09_04/wechat18b28ab0c2b8aeebd84d25c23cfbf7a9.png" alt="WeChat18b28ab0c2b8aeebd84d25c23cfbf7a9"></p>
 <p>项目<code>MFE</code>依赖了一个基础的组件，log的最后一行输出了关键信息，<code>MFE</code>依赖的基础组件缺失。</p>
 <p>遇到依赖组件没有找到的问题，首先想到的是去查<code>DerivedData</code>中的<code>Build</code>结果。</p>
-<p>通过<code>/Users/{MAC_Account_Name}/Library/Developer/Xcode/DerivedData/TestMFE-etvmtlvxanvppnhldjgozcqkeqdq</code>路径，打开MFE的<code>DerivedData</code>的<code>Build</code>文件,发现<strong>SwiftUI</strong>项目多了一个<strong>Previews</strong>文件夹，在这个文件夹下找到<code>MFE</code>在模拟器中的编译生成文件。</p>
-<p>最终路径为:<code>/Users/{MAC_Account_Name}/Library/Developer/Xcode/DerivedData/TestMFE-etvmtlvxanvppnhldjgozcqkeqdq/Build/Intermediates.noindex/Previews/TestMFE/Intermediates.noindex/Debug-iphonesimulator</code>。</p>
+<p>通过<code>/Users/&#123;MAC_Account_Name&#125;/Library/Developer/Xcode/DerivedData/TestMFE-etvmtlvxanvppnhldjgozcqkeqdq</code>路径，打开MFE的<code>DerivedData</code>的<code>Build</code>文件,发现<strong>SwiftUI</strong>项目多了一个<strong>Previews</strong>文件夹，在这个文件夹下找到<code>MFE</code>在模拟器中的编译生成文件。</p>
+<p>最终路径为:<code>/Users/&#123;MAC_Account_Name&#125;/Library/Developer/Xcode/DerivedData/TestMFE-etvmtlvxanvppnhldjgozcqkeqdq/Build/Intermediates.noindex/Previews/TestMFE/Intermediates.noindex/Debug-iphonesimulator</code>。</p>
 <p>在这个路径下我们看到的文件结构是这样的:<br><img src="https://mytest1oss.oss-cn-beijing.aliyuncs.com/mweb/2021_09_04/16305866520322.png" alt="-w1003"></p>
 <p>可以看到<code>MFE</code>依赖的<code>SwifterSwift</code>库，并没有在<code>TestMFE.framework</code>的文件目录下。我们尝试手动将<code>SwifterSwift</code>放到<code>TestMFE.framework</code>文件下。</p>
 <p><img src="https://mytest1oss.oss-cn-beijing.aliyuncs.com/mweb/2021_09_04/wx202109022052262x.png" alt="WX20210902-205226@2x"></p>
@@ -276,14 +278,14 @@
 <p>依据这个思路得出</p>
 <ul>
 <li><p><strong>解决方案一</strong>:<br>在Xcode中的<code>Build phase</code>中，添加一个脚本，编译完成将依赖库复制到<code>MFE</code>的<code>Build</code>文件中去。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp -R "$BUILT_PRODUCTS_DIR/dependency/dependency.framework" "$BUILT_PRODUCTS_DIR/$FRAMEWORKS_FOLDER_PATH"</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp -R &quot;$BUILT_PRODUCTS_DIR/dependency/dependency.framework&quot; &quot;$BUILT_PRODUCTS_DIR/$FRAMEWORKS_FOLDER_PATH&quot;</span><br></pre></td></tr></table></figure>
 <p>但该解决方案有个弊端，如果<code>MFE</code>只依赖很少的基础组件还好。若需要依赖很多基础组件的话，维护这个脚本就需要很大的成本。<strong>那有没有更优的解法？</strong></p>
 </li>
 <li><p><strong>解决方案二</strong>：<br>既然我们使用<code>Cocoapods</code>进行依赖管理，那通过<code>pod</code>指定<strong>Preview</strong>的<code>search path</code>应该也可以<code>link</code>到相关的依赖库。</p>
 </li>
 </ul>
-<p>通过搜索<code>Cocoapods</code>的<a href="https://github.com/CocoaPods/CocoaPods/issues/9275#issuecomment-691032405" target="_blank" rel="noopener">Git issue</a>找到一种重写<code>pod</code>的<code>AggregateTargetSettings</code>, 为<strong>Preview</strong> link更多<code>search path</code>的方式。我们需要在<strong>Podfile</strong>中添加如下描述：</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">/<span class="regexp">/ In Podfile</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">class Pod::Target::BuildSettings::AggregateTargetSettings</span></span><br><span class="line"><span class="regexp">    alias_method :ld_runpath_search_paths_original, :ld_runpath_search_paths</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    def ld_runpath_search_paths</span></span><br><span class="line"><span class="regexp">        return ld_runpath_search_paths_original unless configuration_name == "Debug"</span></span><br><span class="line"><span class="regexp">        return (ld_runpath_search_paths_original || []) + (framework_search_paths || [])</span></span><br><span class="line"><span class="regexp">    end</span></span><br><span class="line"><span class="regexp">end</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">class Pod::Target::BuildSettings::PodTargetSettings</span></span><br><span class="line"><span class="regexp">    alias_method :ld_runpath_search_paths_original, :ld_runpath_search_paths</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    def ld_runpath_search_paths</span></span><br><span class="line"><span class="regexp">        return (ld_runpath_search_paths_original || []) + (framework_search_paths || [])</span></span><br><span class="line"><span class="regexp">    end</span></span><br><span class="line"><span class="regexp">end</span></span><br></pre></td></tr></table></figure>
+<p>通过搜索<code>Cocoapods</code>的<a target="_blank" rel="noopener" href="https://github.com/CocoaPods/CocoaPods/issues/9275#issuecomment-691032405">Git issue</a>找到一种重写<code>pod</code>的<code>AggregateTargetSettings</code>, 为<strong>Preview</strong> link更多<code>search path</code>的方式。我们需要在<strong>Podfile</strong>中添加如下描述：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">/<span class="regexp">/ In Podfile</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">class Pod::Target::BuildSettings::AggregateTargetSettings</span></span><br><span class="line"><span class="regexp">    alias_method :ld_runpath_search_paths_original, :ld_runpath_search_paths</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    def ld_runpath_search_paths</span></span><br><span class="line"><span class="regexp">        return ld_runpath_search_paths_original unless configuration_name == &quot;Debug&quot;</span></span><br><span class="line"><span class="regexp">        return (ld_runpath_search_paths_original || []) + (framework_search_paths || [])</span></span><br><span class="line"><span class="regexp">    end</span></span><br><span class="line"><span class="regexp">end</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">class Pod::Target::BuildSettings::PodTargetSettings</span></span><br><span class="line"><span class="regexp">    alias_method :ld_runpath_search_paths_original, :ld_runpath_search_paths</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    def ld_runpath_search_paths</span></span><br><span class="line"><span class="regexp">        return (ld_runpath_search_paths_original || []) + (framework_search_paths || [])</span></span><br><span class="line"><span class="regexp">    end</span></span><br><span class="line"><span class="regexp">end</span></span><br></pre></td></tr></table></figure>
 <p><strong>Canvas</strong>成功预览！</p>
 <p><strong>小结</strong>:<br><code>SwiftUI</code>是一套全新的<code>UI</code>框架，目前对其<strong>Canvas</strong>和<strong>Preview</strong>还不具有很深刻的认识。在解决上述预览问题的过程中，猜想<strong>Preview</strong>是用Xcode工程项目中对开发者不可见的<code>AggregateTarget</code>来构建的，随着相关文档逐渐完善，希望以后有机会更深入地了解其实现机制。</p>
 <p>解决了上述预览问题，打开工程准备开始写demo code, 随即出现了另一个影响开发的问题。</p>
@@ -301,7 +303,7 @@
 <li><p><strong>方案二</strong>：已经了解了<strong>Auto preview</strong>被pause是由于在<code>Build</code>前后插入了其他操作。那只需找到一个合适的位置插入对应的操作。在Xcode工程里面，哪里最适合做这些额外的脚本操作? –<code>Build Phases</code>。</p>
 <p>按照这个思路将文件排序的脚本放到<code>Compile</code>之后，<code>Link Binary</code>之前：<br><img src="https://mytest1oss.oss-cn-beijing.aliyuncs.com/mweb/2021_09_04/wx20210903151013.png" alt="WX20210903-151013"><br> 结果失败。</p>
 <p> 尝试将脚本移动到<code>Link Binary</code>之后，依然不work。行进至此，感觉进入了死胡同。</p>
-<p>绝望之中寄希望于<code>stack overflow</code>，找到了关于脚本执行的<a href="https://stackoverflow.com/questions/58490010/swiftui-automatic-preview-updating-paused-always" target="_blank" rel="noopener">解决方法</a>。</p>
+<p>绝望之中寄希望于<code>stack overflow</code>，找到了关于脚本执行的<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/58490010/swiftui-automatic-preview-updating-paused-always">解决方法</a>。</p>
 <p>通过环境变量，判断<strong>Preview</strong>的状态，在<strong>Preview</strong>结束之后再去执行脚本中的操作。改动后的脚本如下：<br><img src="https://mytest1oss.oss-cn-beijing.aliyuncs.com/mweb/2021_09_04/16306539743912.png" alt=""><br>问题解决!  <strong>Auto preview</strong> works well!！</p>
 </li>
 </ul>
@@ -390,7 +392,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正篇"><span class="nav-number">2.</span> <span class="nav-text">正篇</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#项目结构"><span class="nav-number">2.1.</span> <span class="nav-text">项目结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开发准备"><span class="nav-number">2.2.</span> <span class="nav-text">开发准备</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Canvas报错，预览无法正常工作"><span class="nav-number">2.2.1.</span> <span class="nav-text">Canvas报错，预览无法正常工作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Auto-Preview-Failure"><span class="nav-number">2.2.2.</span> <span class="nav-text">Auto Preview Failure</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后续"><span class="nav-number">3.</span> <span class="nav-text">后续</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%8C%E6%99%AF"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E7%AF%87"><span class="nav-number">2.</span> <span class="nav-text">正篇</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84"><span class="nav-number">2.1.</span> <span class="nav-text">项目结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E5%8F%91%E5%87%86%E5%A4%87"><span class="nav-number">2.2.</span> <span class="nav-text">开发准备</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Canvas%E6%8A%A5%E9%94%99%EF%BC%8C%E9%A2%84%E8%A7%88%E6%97%A0%E6%B3%95%E6%AD%A3%E5%B8%B8%E5%B7%A5%E4%BD%9C"><span class="nav-number">2.2.1.</span> <span class="nav-text">Canvas报错，预览无法正常工作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Auto-Preview-Failure"><span class="nav-number">2.2.2.</span> <span class="nav-text">Auto Preview Failure</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E7%BB%AD"><span class="nav-number">3.</span> <span class="nav-text">后续</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -406,7 +408,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -426,16 +428,16 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/superdoliant" title="GitHub → https://github.com/superdoliant" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/superdoliant" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;superdoliant" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
         <a href="mailto:hrbistu@gmail.com" title="E-Mail → mailto:hrbistu@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://twitter.com/Doliant_DoDo" title="Twitter → https://twitter.com/Doliant_DoDo" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+        <a href="https://twitter.com/Doliant_DoDo" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;Doliant_DoDo" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
       </span>
       <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → /atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
       </span>
   </div>
 
@@ -460,13 +462,13 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2022</span>
+  <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Author</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
   </div>
 
         
@@ -486,9 +488,17 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/muse.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 

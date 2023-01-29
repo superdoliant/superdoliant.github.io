@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.0.0">
+<meta name="generator" content="Hexo 6.3.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -21,13 +21,12 @@
   </script>
 
   <meta name="description" content="一.概述日常开发中，静态库的开发总是要花费开发者很大的精力。工作中我们一般都是在项目中进行代码编写，在需要的时候把代码提出来另行打包，若有需求修改或者调试时，总需要把代码或者库拿回原程序中进行测试修改。由于工作需要我要经常修改静态库代码中的内容，恰好最近在静态库联调的时候出现了一些问题，记录下来以后避免踩到这些坑。">
-<meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="静态库联调中的若干问题">
 <meta property="og:url" content="http://yoursite.com/2016/08/12/%E9%9D%99%E6%80%81%E5%BA%93%E8%81%94%E8%B0%83%E4%B8%AD%E7%9A%84%E8%8B%A5%E5%B9%B2%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="Doliant&#39;s Meditation World">
 <meta property="og:description" content="一.概述日常开发中，静态库的开发总是要花费开发者很大的精力。工作中我们一般都是在项目中进行代码编写，在需要的时候把代码提出来另行打包，若有需求修改或者调试时，总需要把代码或者库拿回原程序中进行测试修改。由于工作需要我要经常修改静态库代码中的内容，恰好最近在静态库联调的时候出现了一些问题，记录下来以后避免踩到这些坑。">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://mytest1oss.oss-cn-beijing.aliyuncs.com/static_lib/s1.png">
 <meta property="og:image" content="https://mytest1oss.oss-cn-beijing.aliyuncs.com/static_lib/s2.png">
 <meta property="og:image" content="https://mytest1oss.oss-cn-beijing.aliyuncs.com/static_lib/s3.png">
@@ -36,7 +35,10 @@
 <meta property="og:image" content="https://mytest1oss.oss-cn-beijing.aliyuncs.com/static_lib/s5.png">
 <meta property="og:image" content="https://mytest1oss.oss-cn-beijing.aliyuncs.com/static_lib/s6.png">
 <meta property="og:image" content="https://mytest1oss.oss-cn-beijing.aliyuncs.com/static_lib/s7.png">
-<meta property="og:updated_time" content="2021-02-09T02:24:01.000Z">
+<meta property="article:published_time" content="2016-08-12T02:39:35.000Z">
+<meta property="article:modified_time" content="2021-02-09T02:24:01.000Z">
+<meta property="article:author" content="Doliant">
+<meta property="article:tag" content="iOS">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://mytest1oss.oss-cn-beijing.aliyuncs.com/static_lib/s1.png">
 
@@ -223,14 +225,14 @@
 
       
         <p><img src="https://mytest1oss.oss-cn-beijing.aliyuncs.com/static_lib/s1.png" alt="毫无意义的封面图"></p>
-<h1 id="一-概述"><a href="#一-概述" class="headerlink" title="一.概述"></a>一.概述</h1><p>日常开发中，静态库的开发总是要花费开发者很大的精力。工作中我们一般都是在项目中进行代码编写，在需要的时候把代码提出来另行打包，若有需求修改或者调试时，总需要把代码或者库拿回原程序中进行测试修改。<br>由于工作需要我要经常修改静态库代码中的内容，恰好最近在静态库联调的时候出现了一些问题，记录下来以后避免踩到这些坑。<br><a id="more"></a></p>
+<h1 id="一-概述"><a href="#一-概述" class="headerlink" title="一.概述"></a>一.概述</h1><p>日常开发中，静态库的开发总是要花费开发者很大的精力。工作中我们一般都是在项目中进行代码编写，在需要的时候把代码提出来另行打包，若有需求修改或者调试时，总需要把代码或者库拿回原程序中进行测试修改。<br>由于工作需要我要经常修改静态库代码中的内容，恰好最近在静态库联调的时候出现了一些问题，记录下来以后避免踩到这些坑。<br><span id="more"></span></p>
 <h1 id="二、操作步骤"><a href="#二、操作步骤" class="headerlink" title="二、操作步骤"></a>二、操作步骤</h1><h2 id="1-创建工程"><a href="#1-创建工程" class="headerlink" title="1.创建工程"></a>1.创建工程</h2><p>用Xcode创建一个project，在<code>project</code>-<code>TARGETS</code>中创建一个.a静态库文件：<br><img src="https://mytest1oss.oss-cn-beijing.aliyuncs.com/static_lib/s2.png" alt="在project中创建静态库文件"><br>创建好的静态库文件会出现在这里<br><img src="https://mytest1oss.oss-cn-beijing.aliyuncs.com/static_lib/s3.png" alt="静态库创建完成"></p>
 <h2 id="2-在主项目中进行相关配置"><a href="#2-在主项目中进行相关配置" class="headerlink" title="2.在主项目中进行相关配置"></a>2.在主项目中进行相关配置</h2><p><img src="https://mytest1oss.oss-cn-beijing.aliyuncs.com/static_lib/s3-1.png" alt="主项目配置"></p>
 <h2 id="3-在静态库文件中配置需要暴露出的头文件"><a href="#3-在静态库文件中配置需要暴露出的头文件" class="headerlink" title="3.在静态库文件中配置需要暴露出的头文件"></a>3.在静态库文件中配置需要暴露出的头文件</h2><p><img src="https://mytest1oss.oss-cn-beijing.aliyuncs.com/static_lib/s4.png" alt="添加暴露的头文件"></p>
 <p>以上步骤操作是不是都很顺利，让人颇有一种岁月静好的既视感，然而问题来了。在我描述问题之前，先说明一下我project的配置。<br>在我的项目中除了自己需要打包发布的静态库文件以外，还需要引入很多第三方的SDK：<code>支付宝</code>、<code>微信</code>、<code>银联</code>、<code>银联ApplePay</code>、<code>QQ钱包</code>、<code>百度钱包</code>用于业务调试。</p>
 <h3 id="问题一："><a href="#问题一：" class="headerlink" title="问题一："></a>问题一：</h3><p>在我需要打包的静态库文件中，需要用到反射<code>NSClassFromString</code>来创建上文提到的SDK中的类以及类对象，然而我尝试了多次未能创建成功。<br>关于这个问题，在stackoverflow搜索到了相关内容</p>
 <blockquote>
-<p><a href="http://stackoverflow.com/questions/2227085/nsclassfromstring-returns-nil" target="_blank" rel="noopener">http://stackoverflow.com/questions/2227085/nsclassfromstring-returns-nil</a></p>
+<p><a target="_blank" rel="noopener" href="http://stackoverflow.com/questions/2227085/nsclassfromstring-returns-nil">http://stackoverflow.com/questions/2227085/nsclassfromstring-returns-nil</a></p>
 </blockquote>
 <p>上面提供了一个解决方法：当你需要实例化静态库中的类以及对象时，需要在<code>Build settings</code>-<code>Linking</code>-<code>Other Linking Flags</code>添加<code>-ObjC</code></p>
 <p><img src="https://mytest1oss.oss-cn-beijing.aliyuncs.com/static_lib/s5.png" alt="添加配置"></p>
@@ -239,14 +241,14 @@
 <h3 id="问题二"><a href="#问题二" class="headerlink" title="问题二:"></a>问题二:</h3><p>按照上述的解决办法设置完成，<code>command</code>+<code>B</code>一编译结果一片飘红：<br><img src="https://mytest1oss.oss-cn-beijing.aliyuncs.com/static_lib/s6.png" alt="错误信息"><br>结果一看错误信息，一个常见错误在项目中引入了同名的文件，但我之前的操作并没有引入新的文件进我的项目中，仅仅是添加了一个<code>-ObjC</code>参数的配置。</p>
 <p>于是我详细查了一下这个参数的意义 </p>
 <blockquote>
-<p>This flag causes the linker to load every object file in the library that defines an Objective-C class or category. While this option will typically result in a larger executable (due to additional object code loaded into the application), it will allow the successful creation of effective Objective-C static libraries that contain categories on existing classes.<br>–<a href="https://developer.apple.com/library/mac/qa/qa1490/_index.html" target="_blank" rel="noopener">https://developer.apple.com/library/mac/qa/qa1490/_index.html</a></p>
+<p>This flag causes the linker to load every object file in the library that defines an Objective-C class or category. While this option will typically result in a larger executable (due to additional object code loaded into the application), it will allow the successful creation of effective Objective-C static libraries that contain categories on existing classes.<br>–<a target="_blank" rel="noopener" href="https://developer.apple.com/library/mac/qa/qa1490/_index.html">https://developer.apple.com/library/mac/qa/qa1490/_index.html</a></p>
 </blockquote>
 <p>大概意思是设置了这个参数会让链接器加载所有Objective-C类和类别，同时也可以加载包含类别的Objective-C的静态库。</p>
 <p>这篇文档的最后一句话给了我启示，在没设置这个参数之前是不会链接静态库文件进行编译的，设置完这个参数之后出现了引入同名文件的错误，只有可能是链接上了一个静态库文件而里面的内容跟我project的代码文件重复了，顺着这个思路我联想到了在<code>2.在主项目中进行相关配置</code>进行的第4步:<br><img src="https://mytest1oss.oss-cn-beijing.aliyuncs.com/static_lib/s7.png" alt="链接刚创建的静态库文件"><br>可能是添加了<code>-ObjC</code>，链接上了这个静态库文件跟我项目中的代码文件冲突了。定位了问题发生点之后，剩下的就是行动了。果然，删除了这个位置的静态库文件就没有再报错了，项目就可以正常运行了。</p>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>踩过这次的坑，做一点总结吧。若你的project不需要引入第三方静态库的时候，可以在主项目中<code>Build Phases</code> - <code>Link Binary With Libraries</code>链接上你自己的静态库文件；若你的project中需要引入第三方静态库,需要在主项目中的<code>Build settings</code>-<code>Linking</code>-<code>Other Linking Flags</code>添加<code>-ObjC</code>参数，就别在<code>Build Phases</code> - <code>Link Binary With Libraries</code>链接上你自己的静态库文件了。</p>
 <p>平时开发的时候一般也不会特别的去关注设置某个参数的意义，只知道需要设置这个参数。而这次踩了坑才回头研究了一下某些参数的意义，果然还是要多掉坑成长才快呐~~~</p>
 <h1 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h1><blockquote>
-<p><a href="http://stackoverflow.com/questions/2227085/nsclassfromstring-returns-nil" target="_blank" rel="noopener">http://stackoverflow.com/questions/2227085/nsclassfromstring-returns-nil</a><br><a href="http://stackoverflow.com/questions/24298144/duplicate-symbols-for-architecture-x86-64" target="_blank" rel="noopener">http://stackoverflow.com/questions/24298144/duplicate-symbols-for-architecture-x86-64</a><br><a href="https://developer.apple.com/library/mac/qa/qa1490/_index.html" target="_blank" rel="noopener">https://developer.apple.com/library/mac/qa/qa1490/_index.html</a><br><a href="http://blog.csdn.net/yanglei3kyou/article/details/52020967" target="_blank" rel="noopener">http://blog.csdn.net/yanglei3kyou/article/details/52020967</a></p>
+<p><a target="_blank" rel="noopener" href="http://stackoverflow.com/questions/2227085/nsclassfromstring-returns-nil">http://stackoverflow.com/questions/2227085/nsclassfromstring-returns-nil</a><br><a target="_blank" rel="noopener" href="http://stackoverflow.com/questions/24298144/duplicate-symbols-for-architecture-x86-64">http://stackoverflow.com/questions/24298144/duplicate-symbols-for-architecture-x86-64</a><br><a target="_blank" rel="noopener" href="https://developer.apple.com/library/mac/qa/qa1490/_index.html">https://developer.apple.com/library/mac/qa/qa1490/_index.html</a><br><a target="_blank" rel="noopener" href="http://blog.csdn.net/yanglei3kyou/article/details/52020967">http://blog.csdn.net/yanglei3kyou/article/details/52020967</a></p>
 </blockquote>
 <hr>
 <h2 id="tags-iOS"><a href="#tags-iOS" class="headerlink" title="tags: iOS"></a>tags: iOS</h2>
@@ -332,7 +334,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-概述"><span class="nav-number">1.</span> <span class="nav-text">一.概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、操作步骤"><span class="nav-number">2.</span> <span class="nav-text">二、操作步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-创建工程"><span class="nav-number">2.1.</span> <span class="nav-text">1.创建工程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-在主项目中进行相关配置"><span class="nav-number">2.2.</span> <span class="nav-text">2.在主项目中进行相关配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-在静态库文件中配置需要暴露出的头文件"><span class="nav-number">2.3.</span> <span class="nav-text">3.在静态库文件中配置需要暴露出的头文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题一："><span class="nav-number">2.3.1.</span> <span class="nav-text">问题一：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题二"><span class="nav-number">2.3.2.</span> <span class="nav-text">问题二:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文档"><span class="nav-number">4.</span> <span class="nav-text">参考文档</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#tags-iOS"><span class="nav-number">4.1.</span> <span class="nav-text">tags: iOS</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80-%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">一.概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4"><span class="nav-number">2.</span> <span class="nav-text">二、操作步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%88%9B%E5%BB%BA%E5%B7%A5%E7%A8%8B"><span class="nav-number">2.1.</span> <span class="nav-text">1.创建工程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%9C%A8%E4%B8%BB%E9%A1%B9%E7%9B%AE%E4%B8%AD%E8%BF%9B%E8%A1%8C%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE"><span class="nav-number">2.2.</span> <span class="nav-text">2.在主项目中进行相关配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%9C%A8%E9%9D%99%E6%80%81%E5%BA%93%E6%96%87%E4%BB%B6%E4%B8%AD%E9%85%8D%E7%BD%AE%E9%9C%80%E8%A6%81%E6%9A%B4%E9%9C%B2%E5%87%BA%E7%9A%84%E5%A4%B4%E6%96%87%E4%BB%B6"><span class="nav-number">2.3.</span> <span class="nav-text">3.在静态库文件中配置需要暴露出的头文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E4%B8%80%EF%BC%9A"><span class="nav-number">2.3.1.</span> <span class="nav-text">问题一：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E4%BA%8C"><span class="nav-number">2.3.2.</span> <span class="nav-text">问题二:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3"><span class="nav-number">4.</span> <span class="nav-text">参考文档</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#tags-iOS"><span class="nav-number">4.1.</span> <span class="nav-text">tags: iOS</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -348,7 +350,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -368,16 +370,16 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/superdoliant" title="GitHub → https://github.com/superdoliant" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/superdoliant" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;superdoliant" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
         <a href="mailto:hrbistu@gmail.com" title="E-Mail → mailto:hrbistu@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://twitter.com/Doliant_DoDo" title="Twitter → https://twitter.com/Doliant_DoDo" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+        <a href="https://twitter.com/Doliant_DoDo" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;Doliant_DoDo" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
       </span>
       <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → /atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
       </span>
   </div>
 
@@ -402,13 +404,13 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2022</span>
+  <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Author</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
   </div>
 
         
@@ -428,9 +430,17 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/muse.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.0.0">
+<meta name="generator" content="Hexo 6.3.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -21,17 +21,19 @@
   </script>
 
   <meta name="description" content="之前项目的老代码有一部分是用RN写的,在迭代一个需求的时候出现了bug,因此必须与RN刚正面了。以前完全没有接触过RN、JS的实际开发,走了很多弯路算上看文档的时间差不多三天左右找出bug,4天的时间完成bug的修正(虽然还不是很完美)  1.Could not connected to development server. 问题分析:这是一个纯新手才会犯的错误,问题的原因在于没有将本地的no">
-<meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="React-Native使用中出现的问题">
 <meta property="og:url" content="http://yoursite.com/2017/11/18/React-Native%E4%BD%BF%E7%94%A8%E4%B8%AD%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="Doliant&#39;s Meditation World">
 <meta property="og:description" content="之前项目的老代码有一部分是用RN写的,在迭代一个需求的时候出现了bug,因此必须与RN刚正面了。以前完全没有接触过RN、JS的实际开发,走了很多弯路算上看文档的时间差不多三天左右找出bug,4天的时间完成bug的修正(虽然还不是很完美)  1.Could not connected to development server. 问题分析:这是一个纯新手才会犯的错误,问题的原因在于没有将本地的no">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://mytest1oss.oss-cn-beijing.aliyuncs.com/RN_New/q1.png">
 <meta property="og:image" content="https://mytest1oss.oss-cn-beijing.aliyuncs.com/RN_New/q2.png">
-<meta property="og:image" content="https://mytest1oss.oss-cn-beijing.aliyuncs.com/RN_New/q3.png?Expires=1612837006&amp;OSSAccessKeyId=TMP.3Kgqf2p3CCMk995ZmcY76FShmY1orMdb5zP3AkohbSByc79VWCYwFooze8XhVt6E8HQ7fUo9coWtAuhEKgvq9BxpZk3AKP&amp;Signature=UH%252BuW6TOx5aJnnIJqag73MVorCs%253D">
-<meta property="og:updated_time" content="2021-02-09T02:14:02.000Z">
+<meta property="og:image" content="https://mytest1oss.oss-cn-beijing.aliyuncs.com/RN_New/q3.png?Expires=1612837006&amp;OSSAccessKeyId=TMP.3Kgqf2p3CCMk995ZmcY76FShmY1orMdb5zP3AkohbSByc79VWCYwFooze8XhVt6E8HQ7fUo9coWtAuhEKgvq9BxpZk3AKP&amp;Signature=UH%2BuW6TOx5aJnnIJqag73MVorCs%3D">
+<meta property="article:published_time" content="2017-11-18T12:39:40.000Z">
+<meta property="article:modified_time" content="2021-02-09T02:14:02.000Z">
+<meta property="article:author" content="Doliant">
+<meta property="article:tag" content="iOS">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://mytest1oss.oss-cn-beijing.aliyuncs.com/RN_New/q1.png">
 
@@ -224,7 +226,7 @@
 <p><strong>问题分析</strong>:<br>这是一个纯新手才会犯的错误,问题的原因在于没有将本地的<code>node sever</code>启动。</p>
 <p><strong>解决方案</strong>:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm start</span><br><span class="line">或者 </span><br><span class="line">yarn start</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
+<span id="more"></span>
 <h2 id="2-Unable-to-resolve-module-react"><a href="#2-Unable-to-resolve-module-react" class="headerlink" title="2.Unable to resolve module react."></a>2.Unable to resolve module react.</h2><p><img src="https://mytest1oss.oss-cn-beijing.aliyuncs.com/RN_New/q2.png" alt="8356D3FC-EC22-4ABC-A106-379C27FD08EC.png"></p>
 <p><strong>问题分析</strong>:<br>此类问题产生的原因大部分是由于<code>react</code>和<code>react-native</code>版本不匹配导致的,现在的<code>react</code>和<code>react-native</code>需要精确的版本匹配才能正常运作。</p>
 <p><strong>解决方案</strong>:<br>安装<code>react-native</code>对应的<code>react</code>版本,若是不知道应该安装哪个版本的<code>react</code>,可以使用<code>react-native init appName --version react-native@版本号</code>新建一个对应<code>react-native</code>版本的程序,查看<code>Package.json</code>中的配置得到<code>react</code>相应的版本号。</p>
@@ -330,7 +332,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -350,16 +352,16 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/superdoliant" title="GitHub → https://github.com/superdoliant" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/superdoliant" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;superdoliant" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
         <a href="mailto:hrbistu@gmail.com" title="E-Mail → mailto:hrbistu@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://twitter.com/Doliant_DoDo" title="Twitter → https://twitter.com/Doliant_DoDo" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+        <a href="https://twitter.com/Doliant_DoDo" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;Doliant_DoDo" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
       </span>
       <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → /atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
       </span>
   </div>
 
@@ -384,13 +386,13 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2022</span>
+  <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Author</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
   </div>
 
         
@@ -410,9 +412,17 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/muse.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 
