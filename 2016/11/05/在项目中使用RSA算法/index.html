@@ -2,9 +2,9 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 6.3.0">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.0.0">
+
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -13,14 +13,13 @@
 <link rel="stylesheet" href="/css/main.css">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
-  </script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-  <meta name="description" content="在正文开始之前先吐个槽，看自己上一篇发文已经是好几个月之前的了。之前的设想是每周输出一篇技术方面的文档，接着就被硬生生拖成了一个月，然后就不知道几个月去了……其间还是有有不少可以写的题材，都是因为这该死的拖延~~~好了进入正题。  1.前言契机是公司换了一套新接口，要求进行全报文加密。以前公司项目基本上都使用的对称加密的模式3DES、AES，由于对称加密的密钥只有一对，有很大的密钥泄露风险。身">
+<script class="next-config" data-name="main" type="application/json">{"hostname":"yoursite.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="在正文开始之前先吐个槽，看自己上一篇发文已经是好几个月之前的了。之前的设想是每周输出一篇技术方面的文档，接着就被硬生生拖成了一个月，然后就不知道几个月去了……其间还是有有不少可以写的题材，都是因为这该死的拖延~~~好了进入正题。  1.前言契机是公司换了一套新接口，要求进行全报文加密。以前公司项目基本上都使用的对称加密的模式3DES、AES，由于对称加密的密钥只有一对，有很大的密钥泄露风险。身">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在项目中使用RSA算法">
 <meta property="og:url" content="http://yoursite.com/2016/11/05/%E5%9C%A8%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%BD%BF%E7%94%A8RSA%E7%AE%97%E6%B3%95/index.html">
@@ -35,20 +34,15 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://mytest1oss.oss-cn-beijing.aliyuncs.com/rsa/rsa.jpeg">
 
+
 <link rel="canonical" href="http://yoursite.com/2016/11/05/%E5%9C%A8%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%BD%BF%E7%94%A8RSA%E7%AE%97%E6%B3%95/">
 
 
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : false,
-    isPost : true,
-    lang   : 'zh-CN'
-  };
-</script>
 
-  <title>在项目中使用RSA算法 | Doliant's Meditation World</title>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://yoursite.com/2016/11/05/%E5%9C%A8%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%BD%BF%E7%94%A8RSA%E7%AE%97%E6%B3%95/","path":"2016/11/05/在项目中使用RSA算法/","title":"在项目中使用RSA算法"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>在项目中使用RSA算法 | Doliant's Meditation World</title>
   
 
 
@@ -56,57 +50,38 @@
 
 
 
+  <script async defer data-website-id="" src=""></script>
+
+  <script defer data-domain="" src=""></script>
+
   <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
 
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+    <div class="toggle" aria-label="切换导航栏" role="button">
     </div>
   </div>
 
   <div class="site-meta">
 
     <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Doliant's Meditation World</h1>
-      <span class="logo-line-after"><i></i></span>
+      <i class="logo-line"></i>
+      <p class="site-title">Doliant's Meditation World</p>
+      <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">我心中曾经执剑的少年，此刻也混迹在市井之间</p>
   </div>
 
   <div class="site-nav-right">
-    <div class="toggle popup-trigger">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
     </div>
   </div>
 </div>
@@ -114,99 +89,144 @@
 
 
 
-<nav class="site-nav">
-  <ul id="menu" class="menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
-
-  </li>
-        <li class="menu-item menu-item-tags">
-
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
-
-  </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
-
-  </li>
-  </ul>
-</nav>
 
 
 
+</header>
+        
+  
+  <aside class="sidebar">
 
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">1.前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E5%85%B3%E4%BA%8E%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">2.关于加密算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E5%AE%9E%E8%B7%B5"><span class="nav-number">3.</span> <span class="nav-text">3.实践</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E7%94%9F%E6%88%90%E5%AF%86%E9%92%A5%EF%BC%9A"><span class="nav-number">3.1.</span> <span class="nav-text">1、生成密钥：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E7%94%9F%E6%88%90%E7%A7%81%E9%92%A5-%E5%AF%86%E9%92%A5%E9%95%BF%E5%BA%A6%E4%B8%BA2048bit%EF%BC%8Cbase64%E7%BC%96%E7%A0%81%E3%80%82"><span class="nav-number">3.1.1.</span> <span class="nav-text">1).生成私钥,密钥长度为2048bit，base64编码。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%A0%B9%E6%8D%AE%E4%B9%8B%E5%89%8D%E7%94%9F%E6%88%90%E7%9A%84%E7%A7%81%E9%92%A5%E7%94%9F%E6%88%90%E5%85%AC%E9%92%A5"><span class="nav-number">3.1.2.</span> <span class="nav-text">2).根据之前生成的私钥生成公钥:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E8%BD%AC%E6%8D%A2%E5%85%AC%E9%92%A5%E4%B8%BAPKCS8%E6%A0%BC%E5%BC%8F%EF%BC%8C%E8%BF%99%E7%A7%8D%E6%A0%BC%E5%BC%8F%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E5%9C%A8iOS%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%BD%BF%E7%94%A8"><span class="nav-number">3.1.3.</span> <span class="nav-text">3).转换公钥为PKCS8格式，这种格式可以直接在iOS项目中使用:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E5%9C%A8%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%BD%BF%E7%94%A8"><span class="nav-number">3.2.</span> <span class="nav-text">2、在项目中使用:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%85%AC%E9%92%A5%E5%8A%A0%E5%AF%86"><span class="nav-number">3.2.1.</span> <span class="nav-text">1.)公钥加密</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E7%A7%81%E9%92%A5%E8%A7%A3%E5%AF%86"><span class="nav-number">3.2.2.</span> <span class="nav-text">2.)私钥解密</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E7%A7%81%E9%92%A5%E5%8A%A0%E7%AD%BE"><span class="nav-number">3.2.3.</span> <span class="nav-text">3.)私钥加签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%85%AC%E9%92%A5%E9%AA%8C%E7%AD%BE"><span class="nav-number">3.2.4.</span> <span class="nav-text">4.)公钥验签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E5%88%86%E6%AE%B5%E5%8A%A0%E5%AF%86"><span class="nav-number">3.2.5.</span> <span class="nav-text">5.)分段加密</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-%E5%90%8E%E8%AE%B0"><span class="nav-number">4.</span> <span class="nav-text">4.后记</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">5.</span> <span class="nav-text">5.参考资料</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Doliant"
+      src="/images/avatar.jpeg">
+  <p class="site-author-name" itemprop="name">Doliant</p>
+  <div class="site-description" itemprop="description">More Than a Coder.</div>
 </div>
-    </header>
-
-    
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/superdoliant" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;superdoliant" rel="noopener me" target="_blank"><i class="github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:hrbistu@gmail.com" title="E-Mail → mailto:hrbistu@gmail.com" rel="noopener me" target="_blank"><i class="envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/Doliant_DoDo" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;Doliant_DoDo" rel="noopener me" target="_blank"><i class="twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml" rel="noopener me"><i class="rss fa-fw"></i>RSS</a>
+      </span>
   </div>
 
-
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-
-          <div class="content post posts-expand">
-            
+        </div>
+      </div>
+    </div>
 
     
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/05/%E5%9C%A8%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%BD%BF%E7%94%A8RSA%E7%AE%97%E6%B3%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Avatar.jpeg">
-      <meta itemprop="name" content="Author">
-      <meta itemprop="description" content="More Than a Coder.">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="Doliant">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Doliant's Meditation World">
+      <meta itemprop="description" content="More Than a Coder.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="在项目中使用RSA算法 | Doliant's Meditation World">
+      <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           在项目中使用RSA算法
         </h1>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2016-11-05 07:39:35" itemprop="dateCreated datePublished" datetime="2016-11-05T07:39:35+08:00">2016-11-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-09 10:20:43" itemprop="dateModified" datetime="2021-02-09T10:20:43+08:00">2021-02-09</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/mobile-development/" itemprop="url" rel="index"><span itemprop="name">mobile development</span></a>
-                </span>
-            </span>
+      <time title="创建时间：2016-11-05 07:39:35" itemprop="dateCreated datePublished" datetime="2016-11-05T07:39:35+08:00">2016-11-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2021-02-09 10:20:43" itemprop="dateModified" datetime="2021-02-09T10:20:43+08:00">2021-02-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/mobile-development/" itemprop="url" rel="index"><span itemprop="name">mobile development</span></a>
+        </span>
+    </span>
 
-          
+  
+</div>
 
         </div>
       </header>
@@ -215,8 +235,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
         <p><img src="https://mytest1oss.oss-cn-beijing.aliyuncs.com/rsa/rsa.jpeg" alt="封面图"></p>
 <blockquote>
 <p>在正文开始之前先吐个槽，看自己上一篇发文已经是好几个月之前的了。之前的设想是每周输出一篇技术方面的文档，接着就被硬生生拖成了一个月，然后就不知道几个月去了……其间还是有有不少可以写的题材，都是因为这该死的拖延~~~好了进入正题。</p>
@@ -243,7 +261,7 @@
 <h3 id="1-公钥加密"><a href="#1-公钥加密" class="headerlink" title="1.)公钥加密"></a>1.)公钥加密</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSString</span> *string = <span class="string">@&quot;doRSAEncrypt&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">NSString</span> *publickey = <span class="string">@&quot;MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA61sODmFj/OXnrHUYzams\</span></span><br><span class="line"><span class="string"> c/6XLni9G0HYv9sBewaPjF6qlu845nwmYSA6dQ9zPk231o5l3tmHLpUQGNnp/5rH\</span></span><br><span class="line"><span class="string"> +84iB/tM+Y+2kTI8uILGbmby2DL3rgzBG+I9h7e3w3QktpdcD8Z+ZuEVa/CY3Xez\</span></span><br><span class="line"><span class="string"> 8X1uknEVzIIhDKY7ipAoebchVdELbTlH1BRLz8RH6mQ+Z8REH4UL0TiQLfSfTotv\</span></span><br><span class="line"><span class="string"> 1G5ZerNxVZ7Toi4K9KFDA+1UD+LeDGg8PY/sdg0AJpR4o6bfDBko50wKLDz4UYyp\</span></span><br><span class="line"><span class="string"> 7EFZv661o2Mr7+KoQ6Tpb7w8bTl7wrRKz9ugB5+tM2F7aDvv1mzr7STIF+2c7tEx\</span></span><br><span class="line"><span class="string"> DQIDAQAB&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">NSString</span> *encryptString = [IPNRSAUtil encryptString:string publicKey:publickey];</span><br></pre></td></tr></table></figure>
 <h3 id="2-私钥解密"><a href="#2-私钥解密" class="headerlink" title="2.)私钥解密"></a>2.)私钥解密</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSString</span> *privatekey = <span class="string">@&quot;MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDrWw4OYWP85ees\</span></span><br><span class="line"><span class="string"> dRjNqaxz/pcueL0bQdi/2wF7Bo+MXqqW7zjmfCZhIDp1D3M+TbfWjmXe2YculRAY\</span></span><br><span class="line"><span class="string"> 2en/msf7ziIH+0z5j7aRMjy4gsZuZvLYMveuDMEb4j2Ht7fDdCS2l1wPxn5m4RVr\</span></span><br><span class="line"><span class="string"> 8Jjdd7PxfW6ScRXMgiEMpjuKkCh5tyFV0QttOUfUFEvPxEfqZD5nxEQfhQvROJAt\</span></span><br><span class="line"><span class="string"> 9J9Oi2/Ubll6s3FVntOiLgr0oUMD7VQP4t4MaDw9j+x2DQAmlHijpt8MGSjnTAos\</span></span><br><span class="line"><span class="string"> PPhRjKnsQVm/rrWjYyvv4qhDpOlvvDxtOXvCtErP26AHn60zYXtoO+/WbOvtJMgX\</span></span><br><span class="line"><span class="string"> 7Zzu0TENAgMBAAECggEBAOMf6w+ror9y6sE9+6K1hEwoO6NIN06vm8mCQwqDiVIw\</span></span><br><span class="line"><span class="string"> JTYlQ+cBllQSsvc24sMUYz32C48ko1Ur2u3wleXqa+Wvxp2nQWBw9QFn1rtE0NPI\</span></span><br><span class="line"><span class="string"> G8DSZr0bZ9xN1406mWdQlQF0Tg6XQnJr8q1I8WyAUTHSFzvRT/Uc+2Hmpf0RI05Y\</span></span><br><span class="line"><span class="string"> t0dt5bsGn/g+ijGbCm63Z2U8u5yWXidxWfU/KyYf1Y3mw9lGLR6IJc/q9N+TO4ih\</span></span><br><span class="line"><span class="string"> JM5pCraMFI4zWblGobkN2WKy7MrQ45FLSKul4W00+VyM/rVivW/fYUaqFEnlBog3\</span></span><br><span class="line"><span class="string"> /4hgI6Bsw2IuSk2Ubhbc4fp//146vJf6oL4WAJHmAiECgYEA+e3AFph8joC5gC1Q\</span></span><br><span class="line"><span class="string"> ok97tLJqt95fZCx4VCw6lPPbWxOHG6TJlvlo7kZIeUfKrGIlOWn38yuw5thEZKwW\</span></span><br><span class="line"><span class="string"> bzE8kn5WGlUgkOQ7hJ6Iiw/TzCFPRHxV63WBKa8OnyFIn3w91zI8ZTcUgrgyns+F\</span></span><br><span class="line"><span class="string"> gE5uxkEjb6iIyxxnpqC7Fk3lnikCgYEA8RKtn7kqoe0T/Yv7UsPLm7KzuWn3/01r\</span></span><br><span class="line"><span class="string"> LGA+x+GCp4rP2Lf0u1K+7VY6Dv/ceTBuA/2Yujenkjt0LaF+Bz0tLWFB5BTw3n+u\</span></span><br><span class="line"><span class="string"> 6QshVdP3O1im4w6p3e8O9mfBCSV/CX5oBkbamemyQ7DTB9VtYNNmtGTs2aySuoel\</span></span><br><span class="line"><span class="string"> zPU0czETEEUCgYAjVhwclb62nzibCM0nxbkl2TwBdy1hinAQ5pf5y2iuPdqSbAAc\</span></span><br><span class="line"><span class="string"> mnLdjY5dp2reaJn+vh7SgNDoMpeo7DPX0MxRog8mdfa+xaYsoAWKM9isOeFtO28i\</span></span><br><span class="line"><span class="string"> dWCnthqJITmVYwmTTYUAgoMh4E036vtjIrPC0B7kgJ2mqgN1qbAJ/UWD0QKBgFSO\</span></span><br><span class="line"><span class="string"> U53hacWwDUHydm2aRXFQJd/T/mtq8Tt4aqzbOWOgubRvGYUWyecfRm/6aI+NYBlA\</span></span><br><span class="line"><span class="string"> OvCeEsWk2uQib70ERTNUmLLycWXpbSVKhR/AoEgNmUOs4gH5FstwqvGVWFCxKLWC\</span></span><br><span class="line"><span class="string"> 5qvzn1ZE0FBAGQRMQgrmF3lmIXURnSMdoo8A2IntAoGAVCFmPpXvI8rMk2N3CvQ4\</span></span><br><span class="line"><span class="string"> dkDfP3W6w1KpyMzuQRZE9N1IUBYh3KN25HfzeW1OIFHPuxInMm/6zaU/rUHJSy/b\</span></span><br><span class="line"><span class="string"> ynVdQ6jvM4ZIt3rYUXZN6+a14AeA/MNNrY2LzCYlCxWIbVyNj9UN8/uda0zEtZ73\</span></span><br><span class="line"><span class="string"> RWYX1BlKVMSIx5Bf7eNH4fI=&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">NSString</span> *decryptString = [IPNRSAUtil decryptString:encryptString privateKey:privatekey];</span><br></pre></td></tr></table></figure>
 <h3 id="3-私钥加签"><a href="#3-私钥加签" class="headerlink" title="3.)私钥加签"></a>3.)私钥加签</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSString</span> *signature = [IPNRSAUtil rsaSignString:string WithPrivateKey:privatekey];</span><br></pre></td></tr></table></figure>
-<h3 id="4-公钥验签"><a href="#4-公钥验签" class="headerlink" title="4.)公钥验签"></a>4.)公钥验签</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">BOOL</span> result = [IPNRSAUtil rsaVerifySignature:signature plainString:string WithPublicKey:publickey];</span><br></pre></td></tr></table></figure>
+<h3 id="4-公钥验签"><a href="#4-公钥验签" class="headerlink" title="4.)公钥验签"></a>4.)公钥验签</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">BOOL</span> result = [IPNRSAUtil rsaVerifySignature:signature plainString:string WithPublicKey:publickey];</span><br></pre></td></tr></table></figure>
 <h3 id="5-分段加密"><a href="#5-分段加密" class="headerlink" title="5.)分段加密"></a>5.)分段加密</h3><p>若待加密的数据长度大于密钥长度，就需要对待加密的数据进行分段加密</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// n为密钥单次加密长度，这里使用的是2048位的密钥，因此n的值为245(2048/8 - 11)。</span></span><br><span class="line"><span class="built_in">NSInteger</span> n = <span class="number">245</span>;</span><br><span class="line"><span class="built_in">NSMutableData</span> *preData = [[<span class="built_in">NSMutableData</span> alloc] init];</span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">NSInteger</span> i=<span class="number">0</span>; i&lt;=ceilf(string.length / n); i++)&#123;</span><br><span class="line"><span class="built_in">NSString</span> *subString = [string substringWithRange:<span class="built_in">NSMakeRange</span>(i * n, MIN(n, string.length - i * <span class="number">245</span>))];</span><br><span class="line"><span class="built_in">NSData</span> *encryptData = [IPNRSAUtil encryptData:[subString dataUsingEncoding:<span class="built_in">NSUTF8StringEncoding</span>] publicKey:publickey];</span><br><span class="line"><span class="comment">// 分段加密需要拼接加密后的data数据，不要将data转换成字符串再拼接，这样会导致结果错误。</span></span><br><span class="line">[preData appendData:encryptData];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">NSData</span> *finalData = [[<span class="built_in">NSData</span> alloc] initWithData:preData];</span><br><span class="line">finalData = [finalData base64EncodedDataWithOptions:<span class="number">0</span>];</span><br><span class="line"><span class="built_in">NSString</span> *result = [[<span class="built_in">NSString</span> alloc] initWithData:finalData encoding:<span class="built_in">NSUTF8StringEncoding</span>];</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@&quot;result:%@&quot;</span>,result);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="4-后记"><a href="#4-后记" class="headerlink" title="4.后记"></a>4.后记</h1><p>为了搞这个工具类前前后后花了也有半个多月的时间了，看了很多文档和例程加上自己的实践调试才有了这个工具类。一开始使用的是<code>openSSL</code>那一套加密工具实现的，但是觉得<code>openSSL</code>占用的空间略大，还是用<code>Security.framework</code>来实现的。平时总是忙于业务需求的实现，忽视了客户端方面的安全，网上对客户端安全这一块的资源也比较有限，但愿我这篇文章能对后来人有所帮助吧。</p>
@@ -257,188 +275,77 @@
     
     
 
-      <footer class="post-footer">
+    <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/iOS/" rel="tag"># iOS</a>
           </div>
 
         
 
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2016/08/12/%E9%9D%99%E6%80%81%E5%BA%93%E8%81%94%E8%B0%83%E4%B8%AD%E7%9A%84%E8%8B%A5%E5%B9%B2%E9%97%AE%E9%A2%98/" rel="prev" title="静态库联调中的若干问题">
-      <i class="fa fa-chevron-left"></i> 静态库联调中的若干问题
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/2017/07/10/R.swift%E4%BC%98%E9%9B%85%E7%9A%84%E5%BC%95%E5%85%A5%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6/" rel="next" title="R.swift优雅的引入项目中的资源文件">
-      R.swift优雅的引入项目中的资源文件 <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
-    
-  </article>
-  
-  
-  
-
-
-
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2016/08/12/%E9%9D%99%E6%80%81%E5%BA%93%E8%81%94%E8%B0%83%E4%B8%AD%E7%9A%84%E8%8B%A5%E5%B9%B2%E9%97%AE%E9%A2%98/" rel="prev" title="静态库联调中的若干问题">
+                  <i class="fa fa-chevron-left"></i> 静态库联调中的若干问题
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2017/07/10/R.swift%E4%BC%98%E9%9B%85%E7%9A%84%E5%BC%95%E5%85%A5%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6/" rel="next" title="R.swift优雅的引入项目中的资源文件">
+                  R.swift优雅的引入项目中的资源文件 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
           </div>
-          
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">1.前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E5%85%B3%E4%BA%8E%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">2.关于加密算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E5%AE%9E%E8%B7%B5"><span class="nav-number">3.</span> <span class="nav-text">3.实践</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E7%94%9F%E6%88%90%E5%AF%86%E9%92%A5%EF%BC%9A"><span class="nav-number">3.1.</span> <span class="nav-text">1、生成密钥：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E7%94%9F%E6%88%90%E7%A7%81%E9%92%A5-%E5%AF%86%E9%92%A5%E9%95%BF%E5%BA%A6%E4%B8%BA2048bit%EF%BC%8Cbase64%E7%BC%96%E7%A0%81%E3%80%82"><span class="nav-number">3.1.1.</span> <span class="nav-text">1).生成私钥,密钥长度为2048bit，base64编码。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%A0%B9%E6%8D%AE%E4%B9%8B%E5%89%8D%E7%94%9F%E6%88%90%E7%9A%84%E7%A7%81%E9%92%A5%E7%94%9F%E6%88%90%E5%85%AC%E9%92%A5"><span class="nav-number">3.1.2.</span> <span class="nav-text">2).根据之前生成的私钥生成公钥:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E8%BD%AC%E6%8D%A2%E5%85%AC%E9%92%A5%E4%B8%BAPKCS8%E6%A0%BC%E5%BC%8F%EF%BC%8C%E8%BF%99%E7%A7%8D%E6%A0%BC%E5%BC%8F%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E5%9C%A8iOS%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%BD%BF%E7%94%A8"><span class="nav-number">3.1.3.</span> <span class="nav-text">3).转换公钥为PKCS8格式，这种格式可以直接在iOS项目中使用:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E5%9C%A8%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%BD%BF%E7%94%A8"><span class="nav-number">3.2.</span> <span class="nav-text">2、在项目中使用:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%85%AC%E9%92%A5%E5%8A%A0%E5%AF%86"><span class="nav-number">3.2.1.</span> <span class="nav-text">1.)公钥加密</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E7%A7%81%E9%92%A5%E8%A7%A3%E5%AF%86"><span class="nav-number">3.2.2.</span> <span class="nav-text">2.)私钥解密</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E7%A7%81%E9%92%A5%E5%8A%A0%E7%AD%BE"><span class="nav-number">3.2.3.</span> <span class="nav-text">3.)私钥加签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%85%AC%E9%92%A5%E9%AA%8C%E7%AD%BE"><span class="nav-number">3.2.4.</span> <span class="nav-text">4.)公钥验签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E5%88%86%E6%AE%B5%E5%8A%A0%E5%AF%86"><span class="nav-number">3.2.5.</span> <span class="nav-text">5.)分段加密</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-%E5%90%8E%E8%AE%B0"><span class="nav-number">4.</span> <span class="nav-text">4.后记</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">5.</span> <span class="nav-text">5.参考资料</span></a></li></ol></div>
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Author"
-      src="/images/Avatar.jpeg">
-  <p class="site-author-name" itemprop="name">Author</p>
-  <div class="site-description" itemprop="description">More Than a Coder.</div>
+    </footer>
+  </article>
 </div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">14</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/categories/">
-          
-        <span class="site-state-item-count">3</span>
-        <span class="site-state-item-name">分类</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-          
-        <span class="site-state-item-count">2</span>
-        <span class="site-state-item-name">标签</span></a>
-      </div>
-  </nav>
+
+
+
+
+
+
 </div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://github.com/superdoliant" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;superdoliant" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="mailto:hrbistu@gmail.com" title="E-Mail → mailto:hrbistu@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://twitter.com/Doliant_DoDo" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;Doliant_DoDo" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
-      </span>
-  </div>
+  </main>
 
+  <footer class="footer">
+    <div class="footer-inner">
 
-
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
 
 <div class="copyright">
-  
   &copy; 
   <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
-    <i class="fa fa-user"></i>
+    <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Author</span>
+  <span class="author" itemprop="copyrightHolder">Doliant</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
   </div>
 
-        
+    </div>
+  </footer>
 
-
-
-
-
-
-
-
-      </div>
-    </footer>
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
   </div>
 
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
   
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
 
-<script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/muse.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
+  
 
 
 
@@ -448,20 +355,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
 
 </body>
 </html>
