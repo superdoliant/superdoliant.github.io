@@ -119,7 +119,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-count">15</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -161,6 +161,101 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/11/Swift%E4%B8%AD%E5%8F%AF%E9%80%89%E7%BB%91%E5%AE%9A%E5%BC%95%E5%8F%91%E7%9A%84%E5%80%BC%E7%B1%BB%E5%9E%8B%E4%B8%8E%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%80%9D%E8%80%83/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="Doliant">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Doliant's Meditation World">
+      <meta itemprop="description" content="More Than a Coder.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Doliant's Meditation World">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2017/09/11/Swift%E4%B8%AD%E5%8F%AF%E9%80%89%E7%BB%91%E5%AE%9A%E5%BC%95%E5%8F%91%E7%9A%84%E5%80%BC%E7%B1%BB%E5%9E%8B%E4%B8%8E%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%80%9D%E8%80%83/" class="post-title-link" itemprop="url">Swift中可选绑定引发的值类型与引用类型的思考</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2017-09-11 17:39:35" itemprop="dateCreated datePublished" datetime="2017-09-11T17:39:35+08:00">2017-09-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2021-02-09 10:25:49" itemprop="dateModified" datetime="2021-02-09T10:25:49+08:00">2021-02-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/mobile-development/" itemprop="url" rel="index"><span itemprop="name">mobile development</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>   <code>Swift</code>相较于<code>OC</code>是一门类型更加安全的语言,其中引入的<code>Optional</code>类型便是为了增强取值可靠性的一种方式。然而在新旧语言的转换过程中总是会踩到坑中,由于自己对于这个概念的理解还没有到位，在最近一次的实践中就遇到了由于<code>Optional Binding</code>引发的问题。</p>
+<h1 id="二、问题场景"><a href="#二、问题场景" class="headerlink" title="二、问题场景"></a>二、问题场景</h1><p>   <code>textFiled</code>中的<code>text</code>属性是一个可选(<code>optional</code>)类型,在对输入状态进行处理的时候肯定会涉及到对输入内容的逻辑操作。在<code>OC</code>中这种操作还是很直接的,直接使用<code>.</code>语法(<code>textField.text</code>)获取属性进行判断。<br>    但在<code>swift</code>中<code>text</code>是一个可选属性,直接对属性进行操作就比较冗余了。因此我们往往会写出如下的代码。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">var</span> text <span class="operator">=</span> textField.text &#123;</span><br><span class="line">  <span class="comment">/// 逻辑操作</span></span><br><span class="line">&#125;</span><br><span class="line">```    </span><br><span class="line"></span><br><span class="line">这是swift中推荐的可选绑定的写法,在其中的逻辑操作中`text`就是`textField.text`解包出的值,因此可以通过判断`text`的状态,获知`textField.text`的状态<span class="operator">。</span></span><br><span class="line"></span><br><span class="line">那么问题来了,当我们判断完成需要对`textField.text`进行赋值的时候,一不小心就有可能直接写出这样的代码<span class="operator">。</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">```swift</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">var</span> text <span class="operator">=</span> textField.text <span class="operator">【</span></span><br><span class="line">	<span class="comment">/// 逻辑操作</span></span><br><span class="line">	text <span class="operator">=</span> <span class="string">&quot;XXXXXXX&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">print</span>(textField.text<span class="operator">!</span>)</span><br></pre></td></tr></table></figure>
+<p>打印<code>textField.text</code>就会发现并不是<code>text</code>赋值的值。<br>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/09/11/Swift%E4%B8%AD%E5%8F%AF%E9%80%89%E7%BB%91%E5%AE%9A%E5%BC%95%E5%8F%91%E7%9A%84%E5%80%BC%E7%B1%BB%E5%9E%8B%E4%B8%8E%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%80%9D%E8%80%83/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -570,7 +665,7 @@
 
 <div class="copyright">
   &copy; 
-  <span itemprop="copyrightYear">2023</span>
+  <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
