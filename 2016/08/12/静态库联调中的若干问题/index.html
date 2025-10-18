@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.0.0">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 8.0.0">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"yoursite.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"yoursite.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="一.概述日常开发中，静态库的开发总是要花费开发者很大的精力。工作中我们一般都是在项目中进行代码编写，在需要的时候把代码提出来另行打包，若有需求修改或者调试时，总需要把代码或者库拿回原程序中进行测试修改。由于工作需要我要经常修改静态库代码中的内容，恰好最近在静态库联调的时候出现了一些问题，记录下来以后避免踩到这些坑。">
 <meta property="og:type" content="article">
@@ -64,6 +64,7 @@
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
+<link rel="alternate" href="/atom.xml" title="Doliant's Meditation World" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
@@ -123,16 +124,16 @@
 
         <div class="site-overview-wrap sidebar-panel">
           <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Doliant"
-      src="/images/avatar.jpeg">
-  <p class="site-author-name" itemprop="name">Doliant</p>
-  <div class="site-description" itemprop="description">More Than a Coder.</div>
+    <img class="site-author-image" itemprop="image" alt="Author"
+      src="https://diary-notes.oss-cn-shanghai.aliyuncs.com/picgo/IMG_0041.jpeg">
+  <p class="site-author-name" itemprop="name">Author</p>
+  <div class="site-description" itemprop="description">心虽有所觉，但亦不作解。</div>
 </div>
 <div class="site-state-wrap animated">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -187,13 +188,13 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/08/12/%E9%9D%99%E6%80%81%E5%BA%93%E8%81%94%E8%B0%83%E4%B8%AD%E7%9A%84%E8%8B%A5%E5%B9%B2%E9%97%AE%E9%A2%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-      <meta itemprop="name" content="Doliant">
+      <meta itemprop="image" content="https://diary-notes.oss-cn-shanghai.aliyuncs.com/picgo/IMG_0041.jpeg">
+      <meta itemprop="name" content="Author">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Doliant's Meditation World">
-      <meta itemprop="description" content="More Than a Coder.">
+      <meta itemprop="description" content="心虽有所觉，但亦不作解。">
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
@@ -250,7 +251,7 @@
 <p>以上步骤操作是不是都很顺利，让人颇有一种岁月静好的既视感，然而问题来了。在我描述问题之前，先说明一下我project的配置。<br>在我的项目中除了自己需要打包发布的静态库文件以外，还需要引入很多第三方的SDK：<code>支付宝</code>、<code>微信</code>、<code>银联</code>、<code>银联ApplePay</code>、<code>QQ钱包</code>、<code>百度钱包</code>用于业务调试。</p>
 <h3 id="问题一："><a href="#问题一：" class="headerlink" title="问题一："></a>问题一：</h3><p>在我需要打包的静态库文件中，需要用到反射<code>NSClassFromString</code>来创建上文提到的SDK中的类以及类对象，然而我尝试了多次未能创建成功。<br>关于这个问题，在stackoverflow搜索到了相关内容</p>
 <blockquote>
-<p><a target="_blank" rel="noopener" href="http://stackoverflow.com/questions/2227085/nsclassfromstring-returns-nil">http://stackoverflow.com/questions/2227085/nsclassfromstring-returns-nil</a></p>
+<p><a href="http://stackoverflow.com/questions/2227085/nsclassfromstring-returns-nil">http://stackoverflow.com/questions/2227085/nsclassfromstring-returns-nil</a></p>
 </blockquote>
 <p>上面提供了一个解决方法：当你需要实例化静态库中的类以及对象时，需要在<code>Build settings</code>-<code>Linking</code>-<code>Other Linking Flags</code>添加<code>-ObjC</code></p>
 <p><img src="https://mytest1oss.oss-cn-beijing.aliyuncs.com/static_lib/s5.png" alt="添加配置"></p>
@@ -259,14 +260,14 @@
 <h3 id="问题二"><a href="#问题二" class="headerlink" title="问题二:"></a>问题二:</h3><p>按照上述的解决办法设置完成，<code>command</code>+<code>B</code>一编译结果一片飘红：<br><img src="https://mytest1oss.oss-cn-beijing.aliyuncs.com/static_lib/s6.png" alt="错误信息"><br>结果一看错误信息，一个常见错误在项目中引入了同名的文件，但我之前的操作并没有引入新的文件进我的项目中，仅仅是添加了一个<code>-ObjC</code>参数的配置。</p>
 <p>于是我详细查了一下这个参数的意义 </p>
 <blockquote>
-<p>This flag causes the linker to load every object file in the library that defines an Objective-C class or category. While this option will typically result in a larger executable (due to additional object code loaded into the application), it will allow the successful creation of effective Objective-C static libraries that contain categories on existing classes.<br>–<a target="_blank" rel="noopener" href="https://developer.apple.com/library/mac/qa/qa1490/_index.html">https://developer.apple.com/library/mac/qa/qa1490/_index.html</a></p>
+<p>This flag causes the linker to load every object file in the library that defines an Objective-C class or category. While this option will typically result in a larger executable (due to additional object code loaded into the application), it will allow the successful creation of effective Objective-C static libraries that contain categories on existing classes.<br>–<a href="https://developer.apple.com/library/mac/qa/qa1490/_index.html">https://developer.apple.com/library/mac/qa/qa1490/_index.html</a></p>
 </blockquote>
 <p>大概意思是设置了这个参数会让链接器加载所有Objective-C类和类别，同时也可以加载包含类别的Objective-C的静态库。</p>
 <p>这篇文档的最后一句话给了我启示，在没设置这个参数之前是不会链接静态库文件进行编译的，设置完这个参数之后出现了引入同名文件的错误，只有可能是链接上了一个静态库文件而里面的内容跟我project的代码文件重复了，顺着这个思路我联想到了在<code>2.在主项目中进行相关配置</code>进行的第4步:<br><img src="https://mytest1oss.oss-cn-beijing.aliyuncs.com/static_lib/s7.png" alt="链接刚创建的静态库文件"><br>可能是添加了<code>-ObjC</code>，链接上了这个静态库文件跟我项目中的代码文件冲突了。定位了问题发生点之后，剩下的就是行动了。果然，删除了这个位置的静态库文件就没有再报错了，项目就可以正常运行了。</p>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>踩过这次的坑，做一点总结吧。若你的project不需要引入第三方静态库的时候，可以在主项目中<code>Build Phases</code> - <code>Link Binary With Libraries</code>链接上你自己的静态库文件；若你的project中需要引入第三方静态库,需要在主项目中的<code>Build settings</code>-<code>Linking</code>-<code>Other Linking Flags</code>添加<code>-ObjC</code>参数，就别在<code>Build Phases</code> - <code>Link Binary With Libraries</code>链接上你自己的静态库文件了。</p>
 <p>平时开发的时候一般也不会特别的去关注设置某个参数的意义，只知道需要设置这个参数。而这次踩了坑才回头研究了一下某些参数的意义，果然还是要多掉坑成长才快呐~~~</p>
 <h1 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h1><blockquote>
-<p><a target="_blank" rel="noopener" href="http://stackoverflow.com/questions/2227085/nsclassfromstring-returns-nil">http://stackoverflow.com/questions/2227085/nsclassfromstring-returns-nil</a><br><a target="_blank" rel="noopener" href="http://stackoverflow.com/questions/24298144/duplicate-symbols-for-architecture-x86-64">http://stackoverflow.com/questions/24298144/duplicate-symbols-for-architecture-x86-64</a><br><a target="_blank" rel="noopener" href="https://developer.apple.com/library/mac/qa/qa1490/_index.html">https://developer.apple.com/library/mac/qa/qa1490/_index.html</a><br><a target="_blank" rel="noopener" href="http://blog.csdn.net/yanglei3kyou/article/details/52020967">http://blog.csdn.net/yanglei3kyou/article/details/52020967</a></p>
+<p><a href="http://stackoverflow.com/questions/2227085/nsclassfromstring-returns-nil">http://stackoverflow.com/questions/2227085/nsclassfromstring-returns-nil</a><br><a href="http://stackoverflow.com/questions/24298144/duplicate-symbols-for-architecture-x86-64">http://stackoverflow.com/questions/24298144/duplicate-symbols-for-architecture-x86-64</a><br><a href="https://developer.apple.com/library/mac/qa/qa1490/_index.html">https://developer.apple.com/library/mac/qa/qa1490/_index.html</a><br><a href="http://blog.csdn.net/yanglei3kyou/article/details/52020967">http://blog.csdn.net/yanglei3kyou/article/details/52020967</a></p>
 </blockquote>
 <hr>
 <h2 id="tags-iOS"><a href="#tags-iOS" class="headerlink" title="tags: iOS"></a>tags: iOS</h2>
@@ -313,11 +314,11 @@
 
 <div class="copyright">
   &copy; 
-  <span itemprop="copyrightYear">2024</span>
+  <span itemprop="copyrightYear">2025</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Doliant</span>
+  <span class="author" itemprop="copyrightHolder">Author</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
   </div>

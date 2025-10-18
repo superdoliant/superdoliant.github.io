@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Doliant&#39;s Meditation World</title>
-  
+  <icon>http://yoursite.com/icon.png</icon>
   <subtitle>我心中曾经执剑的少年，此刻也混迹在市井之间</subtitle>
-  <link href="/atom.xml" rel="self"/>
+  <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2024-03-08T02:21:59.374Z</updated>
+  <updated>2025-10-18T14:14:43.292Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,286 +14,298 @@
     
   </author>
   
-  <generator uri="http://hexo.io/">Hexo</generator>
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2024年度总结</title>
+    <link href="http://yoursite.com/2024/12/31/2024%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/"/>
+    <id>http://yoursite.com/2024/12/31/2024%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/</id>
+    <published>2024-12-31T15:59:59.000Z</published>
+    <updated>2025-10-18T14:14:43.292Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;开篇&quot;&gt;&lt;a href=&quot;#开篇&quot; class=&quot;headerlink&quot; title=&quot;开篇&quot;&gt;&lt;/a&gt;开篇&lt;/h2&gt;&lt;p&gt;从2014年开始，我每年都会写一篇年度总结，而2024年的这一篇，恰好是第十年。时间过得真快，转眼间已从少年步入中年。很感谢10年前的自己，养成了文字记录生活的习惯。让如今中年时感煎熬的我，能够时不时回望少年时的心境。现在看来，那时虽有些幼稚，却充满了朝气和活力。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;种一棵树最好的时机是十年前，其次是现在。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如今，我对这句话有了共鸣。&lt;/p&gt;
+&lt;p&gt;其实，2023年的总结也写了，但当时没有选择公开。最大的原因还是那一年的状态比较负面，不想释放出太多负面的情绪。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="annual review" scheme="http://yoursite.com/categories/annual-review/"/>
+    
+    
+    <category term="blog" scheme="http://yoursite.com/tags/blog/"/>
+    
+  </entry>
   
   <entry>
     <title>我的2023</title>
     <link href="http://yoursite.com/2024/03/07/%E6%88%91%E7%9A%842023/"/>
-    <id>http://yoursite.com/2024/03/07/我的2023/</id>
+    <id>http://yoursite.com/2024/03/07/%E6%88%91%E7%9A%842023/</id>
     <published>2024-03-07T08:42:38.000Z</published>
-    <updated>2024-03-08T02:21:59.374Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://diary-notes.oss-cn-shanghai.aliyuncs.com/picgo/diary/202403081019.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;写于 2024 年 3 月第七日，是我第 32 个生日。于 2014 年大学本科毕业后，我养成了每年自我总结的习惯。2023 是我迟迟没有完成的一年，曾一度想要放弃，但我转念一想，已经坚持了将近10年了，实在不应该停下。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="annual review" scheme="http://yoursite.com/categories/annual-review/"/>
+    <updated>2024-03-08T02:23:54.000Z</updated>
     
     
-      <category term="blog" scheme="http://yoursite.com/tags/blog/"/>
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://diary-notes.oss-cn-shanghai.aliyuncs.com/picgo/diary/202403081019.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;写于 2024 年 3 月第七日，是我第 32 个生日。于 2014 年大学本科毕业后，我养成了每年自我总结的习惯。2023 是我迟迟没有完成的一年，曾一度想要放弃，但我转念一想，已经坚持了将近10年了，实在不应该停下。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="annual review" scheme="http://yoursite.com/categories/annual-review/"/>
+    
+    
+    <category term="blog" scheme="http://yoursite.com/tags/blog/"/>
     
   </entry>
   
   <entry>
     <title>迟到的2022总结</title>
     <link href="http://yoursite.com/2023/01/28/%E8%BF%9F%E5%88%B0%E7%9A%842022%E6%80%BB%E7%BB%93/"/>
-    <id>http://yoursite.com/2023/01/28/迟到的2022总结/</id>
+    <id>http://yoursite.com/2023/01/28/%E8%BF%9F%E5%88%B0%E7%9A%842022%E6%80%BB%E7%BB%93/</id>
     <published>2023-01-28T06:28:21.000Z</published>
-    <updated>2023-02-01T07:16:13.664Z</updated>
+    <updated>2023-01-31T10:44:40.000Z</updated>
     
-    <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;https://diary-notes.oss-cn-shanghai.aliyuncs.com/picgo/diarynikko-macaspac-6SNbWyFwuhk-unsplash.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://diary-notes.oss-cn-shanghai.aliyuncs.com/picgo/diarynikko-macaspac-6SNbWyFwuhk-unsplash.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;开篇&quot;&gt;&lt;a href=&quot;#开篇&quot; class=&quot;headerlink&quot; title=&quot;开篇&quot;&gt;&lt;/a&gt;开篇&lt;/h2&gt;&lt;p&gt;从未觉得年度总结有这么难写。回想过去的那一年，能记录的内容实在乏善可陈。果真是到了一定年纪，生活愈加趋于平淡。没进步也就罢了，还有好些退坡。疫情三年使得整体环境都显挣扎，家中幼儿也占用了相当精力，2022过的确不容易。&lt;/p&gt;
 &lt;p&gt;抛出三个问题，尝试给自己找找答案：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;2022年做成了什么事情？&lt;/li&gt;
 &lt;li&gt;2022年学到了什么知识技能(有什么成就)？&lt;/li&gt;
 &lt;li&gt;2022年认知有什么提升？&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-      <category term="annual review" scheme="http://yoursite.com/categories/annual-review/"/>
+&lt;/ol&gt;</summary>
     
     
-      <category term="blog" scheme="http://yoursite.com/tags/blog/"/>
+    
+    <category term="annual review" scheme="http://yoursite.com/categories/annual-review/"/>
+    
+    
+    <category term="blog" scheme="http://yoursite.com/tags/blog/"/>
     
   </entry>
   
   <entry>
     <title>写在20岁的最后一年</title>
     <link href="http://yoursite.com/2022/01/03/%E5%86%99%E5%9C%A820%E5%B2%81%E7%9A%84%E6%9C%80%E5%90%8E%E4%B8%80%E5%B9%B4/"/>
-    <id>http://yoursite.com/2022/01/03/写在20岁的最后一年/</id>
+    <id>http://yoursite.com/2022/01/03/%E5%86%99%E5%9C%A820%E5%B2%81%E7%9A%84%E6%9C%80%E5%90%8E%E4%B8%80%E5%B9%B4/</id>
     <published>2022-01-03T03:29:02.000Z</published>
     <updated>2022-01-03T05:20:06.000Z</updated>
     
-    <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;https://mytest1oss.oss-cn-beijing.aliyuncs.com/mweb/2022_01_03/istockphoto1283271579170667a.jpeg&quot; alt=&quot;istockphoto-1283271579-170667a&quot;&gt;&lt;/p&gt;
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://mytest1oss.oss-cn-beijing.aliyuncs.com/mweb/2022_01_03/istockphoto1283271579170667a.jpeg&quot; alt=&quot;istockphoto-1283271579-170667a&quot;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;2021年度总结&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&quot;概览&quot;&gt;&lt;a href=&quot;#概览&quot; class=&quot;headerlink&quot; title=&quot;概览&quot;&gt;&lt;/a&gt;概览&lt;/h2&gt;&lt;p&gt;2021年经历了相当多的变化，人生踏上了一个新的台阶。回顾2020年给2021年制定的年度目标，和前些年的差不多，依旧好些没完成。&lt;/p&gt;
 &lt;p&gt;所在的平台今年又兴起了&lt;code&gt;OKR&lt;/code&gt;，&lt;code&gt;Google&lt;/code&gt;在90年就提出的目标管理工具。其中有一个重要的点就是需要订立一些有挑战的目标，因此如果你的目标都被很好的完成了，可能是因为你的目标订的没有那么有挑战……&lt;/p&gt;
-&lt;p&gt;每年都有订立计划的习惯，2022年也不会例外。准备尝试一些不一样的东西，所以并不准备再把计划公开出来。可能会以里程碑的形式，在明年的复盘计划中展示出来。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="annual review" scheme="http://yoursite.com/categories/annual-review/"/>
+&lt;p&gt;每年都有订立计划的习惯，2022年也不会例外。准备尝试一些不一样的东西，所以并不准备再把计划公开出来。可能会以里程碑的形式，在明年的复盘计划中展示出来。&lt;/p&gt;</summary>
     
     
-      <category term="blog" scheme="http://yoursite.com/tags/blog/"/>
+    
+    <category term="annual review" scheme="http://yoursite.com/categories/annual-review/"/>
+    
+    
+    <category term="blog" scheme="http://yoursite.com/tags/blog/"/>
     
   </entry>
   
   <entry>
     <title>基于SwiftUI的组件化构建实践</title>
     <link href="http://yoursite.com/2021/09/04/%E5%9F%BA%E4%BA%8ESwiftUI%E7%9A%84%E7%BB%84%E4%BB%B6%E5%8C%96%E6%9E%84%E5%BB%BA%E5%AE%9E%E8%B7%B5/"/>
-    <id>http://yoursite.com/2021/09/04/基于SwiftUI的组件化构建实践/</id>
+    <id>http://yoursite.com/2021/09/04/%E5%9F%BA%E4%BA%8ESwiftUI%E7%9A%84%E7%BB%84%E4%BB%B6%E5%8C%96%E6%9E%84%E5%BB%BA%E5%AE%9E%E8%B7%B5/</id>
     <published>2021-09-04T14:12:08.000Z</published>
     <updated>2021-09-04T14:53:18.000Z</updated>
     
-    <summary type="html">
     
-      &lt;blockquote&gt;
+    <summary type="html">&lt;blockquote&gt;
 &lt;p&gt;阅读本文需要具备一定的iOS开发经验。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;blockquote&gt;
 &lt;p&gt;SwiftUI是Apple于2019年WWDC上发布的基于Swift语言构建的全新声明式UI框架，抛弃了之前Autolayout，Storyboard的布局方式，提供了Canvas实时预览功能，以提升UI开发的体验。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;某迭代了10年+的大型单体&lt;code&gt;iOS&lt;/code&gt;项目，之前完成了部分功能从&lt;code&gt;Objective-C&lt;/code&gt;向&lt;code&gt;Swift&lt;/code&gt;语言迁移的工作。加上近两年该司推行整个大前端(web + mobile)向&lt;code&gt;MFE&lt;/code&gt;(Micro-Front-End)迁移的策略，由此加入了一个&lt;code&gt;MFE&lt;/code&gt;项目，工作内容是将主页功能剥离成独立的组件。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="mobile development" scheme="http://yoursite.com/categories/mobile-development/"/>
+&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;某迭代了10年+的大型单体&lt;code&gt;iOS&lt;/code&gt;项目，之前完成了部分功能从&lt;code&gt;Objective-C&lt;/code&gt;向&lt;code&gt;Swift&lt;/code&gt;语言迁移的工作。加上近两年该司推行整个大前端(web + mobile)向&lt;code&gt;MFE&lt;/code&gt;(Micro-Front-End)迁移的策略，由此加入了一个&lt;code&gt;MFE&lt;/code&gt;项目，工作内容是将主页功能剥离成独立的组件。&lt;/p&gt;</summary>
     
     
-      <category term="iOS" scheme="http://yoursite.com/tags/iOS/"/>
+    
+    <category term="mobile development" scheme="http://yoursite.com/categories/mobile-development/"/>
+    
+    
+    <category term="iOS" scheme="http://yoursite.com/tags/iOS/"/>
     
   </entry>
   
   <entry>
     <title>而立将至</title>
     <link href="http://yoursite.com/2021/02/10/%E8%80%8C%E7%AB%8B%E5%B0%86%E8%87%B3/"/>
-    <id>http://yoursite.com/2021/02/10/而立将至/</id>
+    <id>http://yoursite.com/2021/02/10/%E8%80%8C%E7%AB%8B%E5%B0%86%E8%87%B3/</id>
     <published>2021-02-10T12:13:15.000Z</published>
     <updated>2021-02-18T12:01:05.000Z</updated>
     
-    <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://mytest1oss.oss-cn-beijing.aliyuncs.com/mweb/2021_02_18/titleimage-copy.png?x-oss-process=image/auto-orient,1/format,png&quot; alt=&quot;title_image copy&quot;&gt;&lt;/p&gt;
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;http://mytest1oss.oss-cn-beijing.aliyuncs.com/mweb/2021_02_18/titleimage-copy.png?x-oss-process=image/auto-orient,1/format,png&quot; alt=&quot;title_image copy&quot;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;2020年度总结&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h1 id=&quot;Overview&quot;&gt;&lt;a href=&quot;#Overview&quot; class=&quot;headerlink&quot; title=&quot;Overview&quot;&gt;&lt;/a&gt;Overview&lt;/h1&gt;&lt;p&gt;&lt;code&gt;COVID-19&lt;/code&gt;的出现，让每个人的2020过得都不那么容易。记得年初从木木家回成都的艰辛，刚从齐齐哈尔到哈尔滨，晚上得知直飞成都航班取消，连夜改签从北京中转回成都的航班，所幸按时到家。之后又经历了长时间的WFH，2020似乎是从三月正式开启的。&lt;/p&gt;
-&lt;p&gt;按照惯例先&lt;code&gt;high-level&lt;/code&gt;的&lt;code&gt;review&lt;/code&gt;2020的目标:&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="annual review" scheme="http://yoursite.com/categories/annual-review/"/>
+&lt;p&gt;按照惯例先&lt;code&gt;high-level&lt;/code&gt;的&lt;code&gt;review&lt;/code&gt;2020的目标:&lt;/p&gt;</summary>
     
     
-      <category term="blog" scheme="http://yoursite.com/tags/blog/"/>
+    
+    <category term="annual review" scheme="http://yoursite.com/categories/annual-review/"/>
+    
+    
+    <category term="blog" scheme="http://yoursite.com/tags/blog/"/>
     
   </entry>
   
   <entry>
     <title>我的2019</title>
     <link href="http://yoursite.com/2020/03/02/%E6%88%91%E7%9A%842019/"/>
-    <id>http://yoursite.com/2020/03/02/我的2019/</id>
+    <id>http://yoursite.com/2020/03/02/%E6%88%91%E7%9A%842019/</id>
     <published>2020-03-02T00:40:42.000Z</published>
     <updated>2021-02-18T02:35:51.000Z</updated>
     
-    <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;https://s2.ax1x.com/2020/03/02/32v3vQ.png&quot; alt=&quot;封面图&quot;&gt;&lt;/p&gt;
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://s2.ax1x.com/2020/03/02/32v3vQ.png&quot; alt=&quot;封面图&quot;&gt;&lt;/p&gt;
 &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;2014年从大学毕业之后，就强制自己写日记和年度总结。回看每年的年度总结，没有一篇是在当年年末完成的，17年的总结写于18年三月，18年的总结写于19年二月。这彷佛成为了一种习惯，19年的也不例外起笔于2020年的三月。&lt;/p&gt;
-&lt;p&gt;算上今年已经写了六年的年度总结，现在回看过去的文字还能回忆起当时的种种。不得不说站在现在看过去是一件很有意思的事情，也能体会到这些年的经历对自身的改变。总体而言能让自己感到骄傲的事情不多， 年轻时候强制让自己养成的一些习惯还得以保持算是一个。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="annual review" scheme="http://yoursite.com/categories/annual-review/"/>
+&lt;p&gt;算上今年已经写了六年的年度总结，现在回看过去的文字还能回忆起当时的种种。不得不说站在现在看过去是一件很有意思的事情，也能体会到这些年的经历对自身的改变。总体而言能让自己感到骄傲的事情不多， 年轻时候强制让自己养成的一些习惯还得以保持算是一个。&lt;/p&gt;</summary>
     
     
-      <category term="blog" scheme="http://yoursite.com/tags/blog/"/>
+    
+    <category term="annual review" scheme="http://yoursite.com/categories/annual-review/"/>
+    
+    
+    <category term="blog" scheme="http://yoursite.com/tags/blog/"/>
     
   </entry>
   
   <entry>
     <title>我的2018</title>
     <link href="http://yoursite.com/2019/02/09/%E6%88%91%E7%9A%842018/"/>
-    <id>http://yoursite.com/2019/02/09/我的2018/</id>
+    <id>http://yoursite.com/2019/02/09/%E6%88%91%E7%9A%842018/</id>
     <published>2019-02-09T06:06:05.000Z</published>
     <updated>2021-02-18T02:36:17.000Z</updated>
     
-    <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;https://s2.ax1x.com/2019/02/07/ktwDYt.jpg&quot; alt=&quot;图片来自Pinterest&quot;&gt;&lt;/p&gt;
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://s2.ax1x.com/2019/02/07/ktwDYt.jpg&quot; alt=&quot;图片来自Pinterest&quot;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;写本文的时候看了下去年的年度总结,完成时间是在3月份，这份总结跟去年相比也算提前了，不过年度总结还是应该在新年的首月完成，拖延症欠下的债便只能用春节的假期来弥补了。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;blockquote&gt;
 &lt;p&gt;以往的年度总结都是以时间线来进行的，这次换个写法按主题叙述。&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="annual review" scheme="http://yoursite.com/categories/annual-review/"/>
+&lt;/blockquote&gt;</summary>
     
     
-      <category term="blog" scheme="http://yoursite.com/tags/blog/"/>
+    
+    <category term="annual review" scheme="http://yoursite.com/categories/annual-review/"/>
+    
+    
+    <category term="blog" scheme="http://yoursite.com/tags/blog/"/>
     
   </entry>
   
   <entry>
     <title>利用fastlane进行项目的自动化构建</title>
     <link href="http://yoursite.com/2018/05/19/%E5%88%A9%E7%94%A8fastlane%E8%BF%9B%E8%A1%8C%E9%A1%B9%E7%9B%AE%E7%9A%84%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA/"/>
-    <id>http://yoursite.com/2018/05/19/利用fastlane进行项目的自动化构建/</id>
+    <id>http://yoursite.com/2018/05/19/%E5%88%A9%E7%94%A8fastlane%E8%BF%9B%E8%A1%8C%E9%A1%B9%E7%9B%AE%E7%9A%84%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA/</id>
     <published>2018-05-19T09:10:57.000Z</published>
     <updated>2019-04-16T08:14:09.000Z</updated>
     
-    <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;https://s2.ax1x.com/2019/02/07/ktw6l8.png&quot; alt=&quot;fastlane&quot;&gt;&lt;/p&gt;
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://s2.ax1x.com/2019/02/07/ktw6l8.png&quot; alt=&quot;fastlane&quot;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;在一个iOS项目进行到了测试和发布阶段，一般都会经历一次又一次的打包-截图-上传及metadata填写及修改的过程。这点做服务器开发的同学就要比我们幸福太多了，因为这一部分的工作他们可以交付给运维同学来完成。那我们就只能自己手动去做这些重复且耗时的操作了么？答案并不是，fastlane就给我们提供了一整套工具来帮助我们实现自动化。&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="mobile development" scheme="http://yoursite.com/categories/mobile-development/"/>
+&lt;/blockquote&gt;</summary>
     
     
-      <category term="iOS" scheme="http://yoursite.com/tags/iOS/"/>
+    
+    <category term="mobile development" scheme="http://yoursite.com/categories/mobile-development/"/>
+    
+    
+    <category term="iOS" scheme="http://yoursite.com/tags/iOS/"/>
     
   </entry>
   
   <entry>
     <title>将博客从Jekyll迁移至Hexo</title>
     <link href="http://yoursite.com/2018/03/31/%E5%B0%86%E5%8D%9A%E5%AE%A2%E4%BB%8EJekyll%E8%BF%81%E7%A7%BB%E8%87%B3Hexo/"/>
-    <id>http://yoursite.com/2018/03/31/将博客从Jekyll迁移至Hexo/</id>
+    <id>http://yoursite.com/2018/03/31/%E5%B0%86%E5%8D%9A%E5%AE%A2%E4%BB%8EJekyll%E8%BF%81%E7%A7%BB%E8%87%B3Hexo/</id>
     <published>2018-03-31T14:06:36.000Z</published>
     <updated>2018-03-31T15:45:16.000Z</updated>
     
-    <summary type="html">
     
-      &lt;h1 id=&quot;动机&quot;&gt;&lt;a href=&quot;#动机&quot; class=&quot;headerlink&quot; title=&quot;动机&quot;&gt;&lt;/a&gt;动机&lt;/h1&gt;&lt;p&gt;　　之前很久没有更新自己的博客了，想着每一年都应该写点东西记录自己的成长。于是在&lt;code&gt;2018&lt;/code&gt;年第一季度快要过去的时候，打开了自己那个风格早就过时的&lt;code&gt;blog&lt;/code&gt;准备重构。先简单介绍一下迁移前后的框架:&lt;/p&gt;
+    <summary type="html">&lt;h1 id=&quot;动机&quot;&gt;&lt;a href=&quot;#动机&quot; class=&quot;headerlink&quot; title=&quot;动机&quot;&gt;&lt;/a&gt;动机&lt;/h1&gt;&lt;p&gt;　　之前很久没有更新自己的博客了，想着每一年都应该写点东西记录自己的成长。于是在&lt;code&gt;2018&lt;/code&gt;年第一季度快要过去的时候，打开了自己那个风格早就过时的&lt;code&gt;blog&lt;/code&gt;准备重构。先简单介绍一下迁移前后的框架:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;jekyll: 一个基于&lt;code&gt;ruby&lt;/code&gt;的博客框架，不会在本地渲染静态页面，需要将整个页面上传至&lt;code&gt;github.io&lt;/code&gt;，由&lt;code&gt;github.io&lt;/code&gt;去渲染。&lt;br&gt;Hexo: 由&lt;code&gt;node.js&lt;/code&gt;构建的博客框架，会在本地渲染静态页面，再上传到&lt;code&gt;github.io&lt;/code&gt;上。&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="other" scheme="http://yoursite.com/categories/other/"/>
+&lt;/blockquote&gt;</summary>
     
     
-      <category term="blog" scheme="http://yoursite.com/tags/blog/"/>
+    
+    <category term="other" scheme="http://yoursite.com/categories/other/"/>
+    
+    
+    <category term="blog" scheme="http://yoursite.com/tags/blog/"/>
     
   </entry>
   
   <entry>
     <title>React-Native使用中出现的问题</title>
     <link href="http://yoursite.com/2017/11/18/React-Native%E4%BD%BF%E7%94%A8%E4%B8%AD%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98/"/>
-    <id>http://yoursite.com/2017/11/18/React-Native使用中出现的问题/</id>
+    <id>http://yoursite.com/2017/11/18/React-Native%E4%BD%BF%E7%94%A8%E4%B8%AD%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98/</id>
     <published>2017-11-18T12:39:40.000Z</published>
     <updated>2021-02-09T02:14:02.000Z</updated>
     
-    <summary type="html">
     
-      &lt;blockquote&gt;
+    <summary type="html">&lt;blockquote&gt;
 &lt;p&gt;之前项目的老代码有一部分是用RN写的,在迭代一个需求的时候出现了bug,因此必须与RN刚正面了。以前完全没有接触过RN、JS的实际开发,走了很多弯路算上看文档的时间差不多三天左右找出bug,4天的时间完成bug的修正(虽然还不是很完美)&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&quot;1-Could-not-connected-to-development-server&quot;&gt;&lt;a href=&quot;#1-Could-not-connected-to-development-server&quot; class=&quot;headerlink&quot; title=&quot;1.Could not connected to development server.&quot;&gt;&lt;/a&gt;1.Could not connected to development server.&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://mytest1oss.oss-cn-beijing.aliyuncs.com/RN_New/q1.png&quot; alt=&quot;5E09428F-524A-4A89-99CB-0AFD43C76D78.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;问题分析&lt;/strong&gt;:&lt;br&gt;这是一个纯新手才会犯的错误,问题的原因在于没有将本地的&lt;code&gt;node sever&lt;/code&gt;启动。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;解决方案&lt;/strong&gt;:&lt;/p&gt;
-&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm start&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;或者 &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;yarn start&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-      <category term="mobile development" scheme="http://yoursite.com/categories/mobile-development/"/>
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm start&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;或者 &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;yarn start&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
     
     
-      <category term="iOS" scheme="http://yoursite.com/tags/iOS/"/>
+    
+    <category term="mobile development" scheme="http://yoursite.com/categories/mobile-development/"/>
+    
+    
+    <category term="iOS" scheme="http://yoursite.com/tags/iOS/"/>
     
   </entry>
   
   <entry>
     <title>Swift中可选绑定引发的值类型与引用类型的思考</title>
     <link href="http://yoursite.com/2017/09/11/Swift%E4%B8%AD%E5%8F%AF%E9%80%89%E7%BB%91%E5%AE%9A%E5%BC%95%E5%8F%91%E7%9A%84%E5%80%BC%E7%B1%BB%E5%9E%8B%E4%B8%8E%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%80%9D%E8%80%83/"/>
-    <id>http://yoursite.com/2017/09/11/Swift中可选绑定引发的值类型与引用类型的思考/</id>
+    <id>http://yoursite.com/2017/09/11/Swift%E4%B8%AD%E5%8F%AF%E9%80%89%E7%BB%91%E5%AE%9A%E5%BC%95%E5%8F%91%E7%9A%84%E5%80%BC%E7%B1%BB%E5%9E%8B%E4%B8%8E%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%80%9D%E8%80%83/</id>
     <published>2017-09-11T09:39:35.000Z</published>
     <updated>2021-02-09T02:25:49.000Z</updated>
     
-    <summary type="html">
     
-      &lt;h1 id=&quot;一、前言&quot;&gt;&lt;a href=&quot;#一、前言&quot; class=&quot;headerlink&quot; title=&quot;一、前言&quot;&gt;&lt;/a&gt;一、前言&lt;/h1&gt;&lt;p&gt;   &lt;code&gt;Swift&lt;/code&gt;相较于&lt;code&gt;OC&lt;/code&gt;是一门类型更加安全的语言,其中引入的&lt;code&gt;Optional&lt;/code&gt;类型便是为了增强取值可靠性的一种方式。然而在新旧语言的转换过程中总是会踩到坑中,由于自己对于这个概念的理解还没有到位，在最近一次的实践中就遇到了由于&lt;code&gt;Optional Binding&lt;/code&gt;引发的问题。&lt;/p&gt;
+    <summary type="html">&lt;h1 id=&quot;一、前言&quot;&gt;&lt;a href=&quot;#一、前言&quot; class=&quot;headerlink&quot; title=&quot;一、前言&quot;&gt;&lt;/a&gt;一、前言&lt;/h1&gt;&lt;p&gt;   &lt;code&gt;Swift&lt;/code&gt;相较于&lt;code&gt;OC&lt;/code&gt;是一门类型更加安全的语言,其中引入的&lt;code&gt;Optional&lt;/code&gt;类型便是为了增强取值可靠性的一种方式。然而在新旧语言的转换过程中总是会踩到坑中,由于自己对于这个概念的理解还没有到位，在最近一次的实践中就遇到了由于&lt;code&gt;Optional Binding&lt;/code&gt;引发的问题。&lt;/p&gt;
 &lt;h1 id=&quot;二、问题场景&quot;&gt;&lt;a href=&quot;#二、问题场景&quot; class=&quot;headerlink&quot; title=&quot;二、问题场景&quot;&gt;&lt;/a&gt;二、问题场景&lt;/h1&gt;&lt;p&gt;   &lt;code&gt;textFiled&lt;/code&gt;中的&lt;code&gt;text&lt;/code&gt;属性是一个可选(&lt;code&gt;optional&lt;/code&gt;)类型,在对输入状态进行处理的时候肯定会涉及到对输入内容的逻辑操作。在&lt;code&gt;OC&lt;/code&gt;中这种操作还是很直接的,直接使用&lt;code&gt;.&lt;/code&gt;语法(&lt;code&gt;textField.text&lt;/code&gt;)获取属性进行判断。&lt;br&gt;    但在&lt;code&gt;swift&lt;/code&gt;中&lt;code&gt;text&lt;/code&gt;是一个可选属性,直接对属性进行操作就比较冗余了。因此我们往往会写出如下的代码。&lt;/p&gt;
 &lt;figure class=&quot;highlight swift&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; text &lt;span class=&quot;operator&quot;&gt;=&lt;/span&gt; textField.text &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;/// 逻辑操作&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;```    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;这是swift中推荐的可选绑定的写法,在其中的逻辑操作中`text`就是`textField.text`解包出的值,因此可以通过判断`text`的状态,获知`textField.text`的状态&lt;span class=&quot;operator&quot;&gt;。&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;那么问题来了,当我们判断完成需要对`textField.text`进行赋值的时候,一不小心就有可能直接写出这样的代码&lt;span class=&quot;operator&quot;&gt;。&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;```swift&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; text &lt;span class=&quot;operator&quot;&gt;=&lt;/span&gt; textField.text &lt;span class=&quot;operator&quot;&gt;【&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;/// 逻辑操作&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	text &lt;span class=&quot;operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&amp;quot;XXXXXXX&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;print&lt;/span&gt;(textField.text&lt;span class=&quot;operator&quot;&gt;!&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;打印&lt;code&gt;textField.text&lt;/code&gt;就会发现并不是&lt;code&gt;text&lt;/code&gt;赋值的值。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="mobile development" scheme="http://yoursite.com/categories/mobile-development/"/>
+&lt;p&gt;打印&lt;code&gt;textField.text&lt;/code&gt;就会发现并不是&lt;code&gt;text&lt;/code&gt;赋值的值。&lt;br&gt;</summary>
     
     
-      <category term="iOS" scheme="http://yoursite.com/tags/iOS/"/>
+    
+    <category term="mobile development" scheme="http://yoursite.com/categories/mobile-development/"/>
+    
+    
+    <category term="iOS" scheme="http://yoursite.com/tags/iOS/"/>
     
   </entry>
   
   <entry>
     <title>R.swift优雅的引入项目中的资源文件</title>
     <link href="http://yoursite.com/2017/07/10/R.swift%E4%BC%98%E9%9B%85%E7%9A%84%E5%BC%95%E5%85%A5%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6/"/>
-    <id>http://yoursite.com/2017/07/10/R.swift优雅的引入项目中的资源文件/</id>
+    <id>http://yoursite.com/2017/07/10/R.swift%E4%BC%98%E9%9B%85%E7%9A%84%E5%BC%95%E5%85%A5%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6/</id>
     <published>2017-07-10T01:39:35.000Z</published>
     <updated>2019-09-11T03:04:10.000Z</updated>
     
-    <summary type="html">
     
-      &lt;blockquote&gt;
+    <summary type="html">&lt;blockquote&gt;
 &lt;p&gt;R.swift是一个高效引入iOS资源的框架,避免了使用字符串引入资源文件导致程序崩溃的尴尬。&lt;br&gt;目前R.swift支持到Swift3.0版本&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&quot;优势&quot;&gt;&lt;a href=&quot;#优势&quot; class=&quot;headerlink&quot; title=&quot;优势&quot;&gt;&lt;/a&gt;优势&lt;/h2&gt;&lt;p&gt;使用代码的方式来引入资源:&lt;/p&gt;
@@ -303,27 +315,26 @@
 &lt;li&gt;&lt;strong&gt;自动补全&lt;/strong&gt;: 不再需要输入图片名称&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;示例：&lt;/p&gt;
-&lt;figure class=&quot;highlight swift&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;之前: &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; image &lt;span class=&quot;operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;type&quot;&gt;UIImage&lt;/span&gt;(named: &lt;span class=&quot;string&quot;&gt;&amp;quot;imageName&amp;quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;type&quot;&gt;R&lt;/span&gt;.swift: &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; image &lt;span class=&quot;operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;type&quot;&gt;R&lt;/span&gt;.image.imageName()&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-      <category term="mobile development" scheme="http://yoursite.com/categories/mobile-development/"/>
+&lt;figure class=&quot;highlight swift&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;之前: &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; image &lt;span class=&quot;operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;type&quot;&gt;UIImage&lt;/span&gt;(named: &lt;span class=&quot;string&quot;&gt;&amp;quot;imageName&amp;quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;type&quot;&gt;R&lt;/span&gt;.swift: &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; image &lt;span class=&quot;operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;type&quot;&gt;R&lt;/span&gt;.image.imageName()&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
     
     
-      <category term="iOS" scheme="http://yoursite.com/tags/iOS/"/>
+    
+    <category term="mobile development" scheme="http://yoursite.com/categories/mobile-development/"/>
+    
+    
+    <category term="iOS" scheme="http://yoursite.com/tags/iOS/"/>
     
   </entry>
   
   <entry>
     <title>在项目中使用RSA算法</title>
     <link href="http://yoursite.com/2016/11/05/%E5%9C%A8%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%BD%BF%E7%94%A8RSA%E7%AE%97%E6%B3%95/"/>
-    <id>http://yoursite.com/2016/11/05/在项目中使用RSA算法/</id>
+    <id>http://yoursite.com/2016/11/05/%E5%9C%A8%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%BD%BF%E7%94%A8RSA%E7%AE%97%E6%B3%95/</id>
     <published>2016-11-04T23:39:35.000Z</published>
     <updated>2021-02-09T02:20:43.000Z</updated>
     
-    <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;https://mytest1oss.oss-cn-beijing.aliyuncs.com/rsa/rsa.jpeg&quot; alt=&quot;封面图&quot;&gt;&lt;/p&gt;
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://mytest1oss.oss-cn-beijing.aliyuncs.com/rsa/rsa.jpeg&quot; alt=&quot;封面图&quot;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;在正文开始之前先吐个槽，看自己上一篇发文已经是好几个月之前的了。之前的设想是每周输出一篇技术方面的文档，接着就被硬生生拖成了一个月，然后就不知道几个月去了……其间还是有有不少可以写的题材，都是因为这该死的拖延~~~好了进入正题。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -332,62 +343,60 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;对称加密和非对称加密&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;对称加密&lt;/strong&gt; ：加密和解密用的是同一套密钥，缺陷是密钥管理存在风险。常用的加密方式有：&lt;code&gt;DES&lt;/code&gt;、&lt;code&gt;3DES&lt;/code&gt;、&lt;code&gt;AES&lt;/code&gt;等。&lt;br&gt;&lt;strong&gt;非对称加密&lt;/strong&gt; ：加密和解密用的不同的密钥，公钥加密私钥解密。常用的加密方式有&lt;code&gt;RSA&lt;/code&gt;。&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;RSA常见用法&lt;/strong&gt;：&lt;br&gt; 1.公钥加密，私钥解密；&lt;br&gt; 2.私钥签名;&lt;br&gt; 3.公钥验签。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="mobile development" scheme="http://yoursite.com/categories/mobile-development/"/>
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;RSA常见用法&lt;/strong&gt;：&lt;br&gt; 1.公钥加密，私钥解密；&lt;br&gt; 2.私钥签名;&lt;br&gt; 3.公钥验签。&lt;/p&gt;</summary>
     
     
-      <category term="iOS" scheme="http://yoursite.com/tags/iOS/"/>
+    
+    <category term="mobile development" scheme="http://yoursite.com/categories/mobile-development/"/>
+    
+    
+    <category term="iOS" scheme="http://yoursite.com/tags/iOS/"/>
     
   </entry>
   
   <entry>
     <title>静态库联调中的若干问题</title>
     <link href="http://yoursite.com/2016/08/12/%E9%9D%99%E6%80%81%E5%BA%93%E8%81%94%E8%B0%83%E4%B8%AD%E7%9A%84%E8%8B%A5%E5%B9%B2%E9%97%AE%E9%A2%98/"/>
-    <id>http://yoursite.com/2016/08/12/静态库联调中的若干问题/</id>
+    <id>http://yoursite.com/2016/08/12/%E9%9D%99%E6%80%81%E5%BA%93%E8%81%94%E8%B0%83%E4%B8%AD%E7%9A%84%E8%8B%A5%E5%B9%B2%E9%97%AE%E9%A2%98/</id>
     <published>2016-08-12T02:39:35.000Z</published>
     <updated>2021-02-09T02:24:01.000Z</updated>
     
-    <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;https://mytest1oss.oss-cn-beijing.aliyuncs.com/static_lib/s1.png&quot; alt=&quot;毫无意义的封面图&quot;&gt;&lt;/p&gt;
-&lt;h1 id=&quot;一-概述&quot;&gt;&lt;a href=&quot;#一-概述&quot; class=&quot;headerlink&quot; title=&quot;一.概述&quot;&gt;&lt;/a&gt;一.概述&lt;/h1&gt;&lt;p&gt;日常开发中，静态库的开发总是要花费开发者很大的精力。工作中我们一般都是在项目中进行代码编写，在需要的时候把代码提出来另行打包，若有需求修改或者调试时，总需要把代码或者库拿回原程序中进行测试修改。&lt;br&gt;由于工作需要我要经常修改静态库代码中的内容，恰好最近在静态库联调的时候出现了一些问题，记录下来以后避免踩到这些坑。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="mobile development" scheme="http://yoursite.com/categories/mobile-development/"/>
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://mytest1oss.oss-cn-beijing.aliyuncs.com/static_lib/s1.png&quot; alt=&quot;毫无意义的封面图&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;一-概述&quot;&gt;&lt;a href=&quot;#一-概述&quot; class=&quot;headerlink&quot; title=&quot;一.概述&quot;&gt;&lt;/a&gt;一.概述&lt;/h1&gt;&lt;p&gt;日常开发中，静态库的开发总是要花费开发者很大的精力。工作中我们一般都是在项目中进行代码编写，在需要的时候把代码提出来另行打包，若有需求修改或者调试时，总需要把代码或者库拿回原程序中进行测试修改。&lt;br&gt;由于工作需要我要经常修改静态库代码中的内容，恰好最近在静态库联调的时候出现了一些问题，记录下来以后避免踩到这些坑。&lt;br&gt;</summary>
     
     
-      <category term="iOS" scheme="http://yoursite.com/tags/iOS/"/>
+    
+    <category term="mobile development" scheme="http://yoursite.com/categories/mobile-development/"/>
+    
+    
+    <category term="iOS" scheme="http://yoursite.com/tags/iOS/"/>
     
   </entry>
   
   <entry>
     <title>将代码发布到CocoaPods(trunk方式)</title>
     <link href="http://yoursite.com/2016/07/06/%E5%B0%86%E4%BB%A3%E7%A0%81%E5%8F%91%E5%B8%83%E5%88%B0CocoaPods(trunk%E6%96%B9%E5%BC%8F)/"/>
-    <id>http://yoursite.com/2016/07/06/将代码发布到CocoaPods(trunk方式)/</id>
+    <id>http://yoursite.com/2016/07/06/%E5%B0%86%E4%BB%A3%E7%A0%81%E5%8F%91%E5%B8%83%E5%88%B0CocoaPods(trunk%E6%96%B9%E5%BC%8F)/</id>
     <published>2016-07-06T09:39:35.000Z</published>
     <updated>2021-02-09T02:35:44.000Z</updated>
     
-    <summary type="html">
     
-      &lt;h1 id=&quot;一、概述&quot;&gt;&lt;a href=&quot;#一、概述&quot; class=&quot;headerlink&quot; title=&quot;一、概述&quot;&gt;&lt;/a&gt;一、概述&lt;/h1&gt;&lt;p&gt;Cocoapods是当前iOS开发最流行的版本依赖工具，开发者使用Cocoapods进行项目的依赖管理会为开发节省不少时间。相信大家都尝试过通过Cocoapods管理自己的项目，但如何将自己开发的代码发布到Cocoapods上让别人也可以搜索使用呢？下面就将介绍trunk方式接入的方法，以及在过程中可能遇到的坑。&lt;/p&gt;
+    <summary type="html">&lt;h1 id=&quot;一、概述&quot;&gt;&lt;a href=&quot;#一、概述&quot; class=&quot;headerlink&quot; title=&quot;一、概述&quot;&gt;&lt;/a&gt;一、概述&lt;/h1&gt;&lt;p&gt;Cocoapods是当前iOS开发最流行的版本依赖工具，开发者使用Cocoapods进行项目的依赖管理会为开发节省不少时间。相信大家都尝试过通过Cocoapods管理自己的项目，但如何将自己开发的代码发布到Cocoapods上让别人也可以搜索使用呢？下面就将介绍trunk方式接入的方法，以及在过程中可能遇到的坑。&lt;/p&gt;
 &lt;h1 id=&quot;二、注册&quot;&gt;&lt;a href=&quot;#二、注册&quot; class=&quot;headerlink&quot; title=&quot;二、注册&quot;&gt;&lt;/a&gt;二、注册&lt;/h1&gt;&lt;p&gt;接入的第一步就是要注册trunk，在注册trunk之前需要确认当前的CocoaPods版本必须在0.33以上。若低于该版本请打开Terminal使用ruby的gem命令更新pod：&lt;/p&gt;
 &lt;figure class=&quot;highlight ruby&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo gem install cocoapods&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;若OSX版本在10.11以上请使用以下安装命令&lt;/p&gt;
 &lt;figure class=&quot;highlight ruby&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo gem install -n /usr/local/bin cocoapods&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;版本更新结束之后我们开始注册trunk:&lt;/p&gt;
 &lt;figure class=&quot;highlight ruby&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;pod trunk register &amp;lt;邮箱&amp;gt;  &amp;lt;&lt;span class=&quot;string&quot;&gt;&amp;#x27;用户名&amp;#x27;&lt;/span&gt;&amp;gt; --description=&lt;span class=&quot;string&quot;&gt;&amp;#x27;macbook pro&amp;#x27;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;其中邮箱是最重要的，因为注册之后pod会往你的邮箱发一封激活邮件，所以邮箱名就当相当于你的trunkID了。至于用户名个人感觉写不写都不太有所谓，–description参数是cocoapods推荐添加的，若以后你在别的设备上登录了trunk方便判断终端信息，也是一个可有可无的参数。点击邮箱中的注册链接，使用下列命令就可以向trunk服务器查询到自己的注册信息。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="mobile development" scheme="http://yoursite.com/categories/mobile-development/"/>
+&lt;p&gt;其中邮箱是最重要的，因为注册之后pod会往你的邮箱发一封激活邮件，所以邮箱名就当相当于你的trunkID了。至于用户名个人感觉写不写都不太有所谓，–description参数是cocoapods推荐添加的，若以后你在别的设备上登录了trunk方便判断终端信息，也是一个可有可无的参数。点击邮箱中的注册链接，使用下列命令就可以向trunk服务器查询到自己的注册信息。&lt;br&gt;</summary>
     
     
-      <category term="iOS" scheme="http://yoursite.com/tags/iOS/"/>
+    
+    <category term="mobile development" scheme="http://yoursite.com/categories/mobile-development/"/>
+    
+    
+    <category term="iOS" scheme="http://yoursite.com/tags/iOS/"/>
     
   </entry>
   
